@@ -17,7 +17,7 @@
     {% endblock %}
 
     <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="">
 
     {% block corecss %}
     <!-- Core Style CSS -->
@@ -59,6 +59,7 @@
                 <div class="col-12">
                     <div class="search-content">
                         <form action="#" method="GET">
+                            <!-- Search here is the equivalent of 'q' for query in the videos -->
                             <input type="search" name="search" id="search" placeholder="Type your keyword...">
                             <button type="submit"><img src="media/core-img/search.png" alt="Search Icon"></button>
                         </form>
@@ -97,34 +98,74 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                <a href="{% url 'home' %}"><img src="img/core-img/logo.png" alt="Navbar Logo"></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="product-details.html">Product</a></li>
+                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
+
+                    <li><a href="suggestions.html">Suggestions</a></li>
+
+                    <li><a href="shop.html">All Antiquities</a></li>
+
+                    <!-- Not necessary here? -->
+                    <!-- <li><a href="product-details.html">Product</a></li> -->
+
+                    <!-- Is this supposed to be here or just the icon below? -->
                     <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+
+                    <!-- Not necessary here? -->
+                    <!-- <li><a href="checkout.html">Checkout</a></li> -->
+
+                    {% if request.user.is_authenticated %}
+
+                    {% if request.user.is_superuser %}
+
+                    <li><a href="#">Product Management</a></li>
+
+                    {% endif %}
+
+                    <li><a href="#">My Profile</a></li>
+
+                    <li><a href="#">Logout</a></li>
+
+                    {% else %}
+
+                    <li><a href="#">Register</a></li>
+
+                    <li><a href="#">Login</a></li>
+
+                    {% endif %}
                 </ul>
             </nav>
             <!-- Button Group -->
             <div class="amado-btn-group mt-30 mb-100">
-                <a href="#" class="btn amado-btn mb-15">%Discount%</a>
-                <a href="#" class="btn amado-btn active">New this week</a>
+                <a href="#" class="btn amado-btn mb-15">Suggestions</a>
+
+                <a href="#" class="btn amado-btn active">Categories</a>
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
-                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favourite</a>
-                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
+                <a href="cart.html" class="cart-nav {% if grand_total %} text-black {% endif %}"><img
+                        src="img/core-img/cart.png" alt="Cart Icon"> Cart <span>
+                        {% if grand_total %}
+                        €{{ grand_total|floatformat:2 }}
+                        {% else %}
+                        €0.00
+                        {% endif %}
+                    </span></a>
+                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt="Favorites Icon"> Favourite </a>
+                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt="Search Icon"> Search </a>
             </div>
             <!-- Social Button -->
             <div class="social-info d-flex justify-content-between">
                 <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+
                 <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+
                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             </div>
         </header>
@@ -145,6 +186,7 @@
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="newsletter-text mb-100">
                         <h2>Subscribe for a <span>25% Discount</span></h2>
+
                         <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate
                             consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
                     </div>
@@ -154,6 +196,7 @@
                     <div class="newsletter-form mb-100">
                         <form action="#" method="post">
                             <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
+
                             <input type="submit" value="Subscribe">
                         </form>
                     </div>
@@ -167,6 +210,7 @@
     <footer class="footer_area clearfix">
         <div class="container">
             <div class="row align-items-center">
+
                 <!-- Single Widget Area -->
                 <div class="col-12 col-lg-4">
                     <div class="single_widget_area">
@@ -174,8 +218,10 @@
                         <div class="footer-logo mr-50">
                             <a href="index.html"><img src="img/core-img/logo2.png" alt=""></a>
                         </div>
+
                         <!-- Copywrite Text -->
                         <p class="copywrite">
+                            <!-- NB!! Use this in README -->
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
@@ -186,9 +232,11 @@
                         </p>
                     </div>
                 </div>
+
                 <!-- Single Widget Area -->
                 <div class="col-12 col-lg-8">
                     <div class="single_widget_area">
+
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <nav class="navbar navbar-expand-lg justify-content-end">
@@ -201,15 +249,19 @@
                                         <li class="nav-item active">
                                             <a class="nav-link" href="index.html">Home</a>
                                         </li>
+
                                         <li class="nav-item">
                                             <a class="nav-link" href="shop.html">Shop</a>
                                         </li>
+
                                         <li class="nav-item">
                                             <a class="nav-link" href="product-details.html">Product</a>
                                         </li>
+
                                         <li class="nav-item">
                                             <a class="nav-link" href="cart.html">Cart</a>
                                         </li>
+
                                         <li class="nav-item">
                                             <a class="nav-link" href="checkout.html">Checkout</a>
                                         </li>
