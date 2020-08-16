@@ -1,8 +1,10 @@
 .vscode
+.env
 /venv
+
 *.sqlite3
 *.pyc
 __pycache__
-.env
+
 /fixtures
-content_holder.html
+/extra_content
