@@ -17,12 +17,12 @@
     {% endblock %}
 
     <!-- Favicon  -->
-    <link rel="icon" href="">
+    <link rel="icon" href="{% static 'images/core_img/favicon.png' %}">
 
     {% block corecss %}
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -30,15 +30,15 @@
 
     {% block corejs %}
     <!-- ##### jQuery ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
     <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="{% static 'js/active.js' %}"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -61,7 +61,8 @@
                         <form action="#" method="GET">
                             <!-- Search here is the equivalent of 'q' for query in the videos -->
                             <input type="search" name="search" id="search" placeholder="Type your keyword...">
-                            <button type="submit"><img src="media/core-img/search.png" alt="Search Icon"></button>
+                            <button type="submit"><img src="{% static 'images/core_img/search.png' %}"
+                                    alt="Search Icon"></button>
                         </form>
                     </div>
                 </div>
@@ -82,7 +83,7 @@
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                <a href="index.html"><img src="{% static 'images/core_img/logo.png' %}" alt=""></a>
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
@@ -98,75 +99,79 @@
             </div>
             <!-- Logo -->
             <div class="logo">
-                <a href="{% url 'home' %}"><img src="img/core-img/logo.png" alt="Navbar Logo"></a>
+                <a href="{% url 'home' %}"><img src="{% static 'images/core_img/logo.png' %}" alt="Navbar Logo"></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
 
-                    <li><a href="suggestions.html">Suggestions</a></li>
+                    <!-- Does this work? -->
+                    {% with url_name=request.resolver_match.url_name %}
+                    <li class="{% if url_name == 'home' %} active {% endif %}"><a href="{% url 'home' %}">Home</a></li>
 
-                    <li><a href="shop.html">All Antiquities</a></li>
+                    <li><a href="#">Latest Options</a></li>
 
-                    <!-- Not necessary here? -->
-                    <!-- <li><a href="product-details.html">Product</a></li> -->
+                    <li><a href="#">All Antiquities</a></li>
 
-                    <!-- Is this supposed to be here or just the icon below? -->
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="#">Cart</a></li>
 
-                    <!-- Not necessary here? -->
-                    <!-- <li><a href="checkout.html">Checkout</a></li> -->
+                    <li><a href="#">Checkout</a></li>
+                    {% endwith %}
+
+                </ul>
+
+                <!-- Button Group -->
+                <div class="amado-btn-group mt-30 mb-100">
 
                     {% if request.user.is_authenticated %}
 
                     {% if request.user.is_superuser %}
 
-                    <li><a href="#">Product Management</a></li>
+                    <a href="#" class="btn amado-btn mb-15">Add Product</a>
 
                     {% endif %}
 
-                    <li><a href="#">My Profile</a></li>
+                    <a href="#" class="btn amado-btn mb-15">My Profile</a>
 
-                    <li><a href="#">Logout</a></li>
+                    <a href="#" class="btn amado-btn active">Logout</a>
 
                     {% else %}
 
-                    <li><a href="#">Register</a></li>
+                    <a href="#" class="btn amado-btn mb-15">Register</a>
 
-                    <li><a href="#">Login</a></li>
+                    <a href="#" class="btn amado-btn active">Login</a>
 
                     {% endif %}
-                </ul>
-            </nav>
-            <!-- Button Group -->
-            <div class="amado-btn-group mt-30 mb-100">
-                <a href="#" class="btn amado-btn mb-15">Suggestions</a>
 
-                <a href="#" class="btn amado-btn active">Categories</a>
-            </div>
+                </div>
+            </nav>
+
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
                 <a href="cart.html" class="cart-nav {% if grand_total %} text-black {% endif %}"><img
-                        src="img/core-img/cart.png" alt="Cart Icon"> Cart <span>
+                        src="{% static 'images/core_img/cart.png' %}" alt="Cart Icon"> Cart <span>
                         {% if grand_total %}
                         €{{ grand_total|floatformat:2 }}
                         {% else %}
                         €0.00
                         {% endif %}
                     </span></a>
-                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt="Favorites Icon"> Favourite </a>
-                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt="Search Icon"> Search </a>
+                <a href="#" class="fav-nav"><img src="{% static 'images/core_img/favorites.png' %}" alt="Favorites Icon">
+                    Favourite </a>
+                <a href="#" class="search-nav"><img src="{% static 'images/core_img/search.png' %}" alt="Search Icon"> Search
+                </a>
             </div>
             <!-- Social Button -->
             <div class="social-info d-flex justify-content-between">
-                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                <a href="https://www.pinterest.ie/heritagedaily/archaeology/"><i class="fa fa-pinterest"
+                        aria-hidden="true"></i></a>
 
-                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/britishmuseum/"><i class="fa fa-instagram"
+                        aria-hidden="true"></i></a>
 
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/unesco"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/nmireland"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             </div>
         </header>
         <!-- Header Area End -->
@@ -185,10 +190,10 @@
                 <!-- Newsletter Text -->
                 <div class="col-12 col-lg-6 col-xl-7">
                     <div class="newsletter-text mb-100">
-                        <h2>Subscribe for a <span>25% Discount</span></h2>
+                        <h2>Subscribe for the <span>Latest Research!</span></h2>
 
-                        <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate
-                            consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
+                        <p>Insert your email here and subscribe to The Philanthropist for the latest archaeological and
+                            historical research and news, direct to your inbox.</p>
                     </div>
                 </div>
                 <!-- Newsletter Form -->
@@ -216,20 +221,22 @@
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="index.html"><img src="img/core-img/logo2.png" alt=""></a>
+                            <a href="index.html"><img src="{% static 'images/core_img/logo2.png' %}" alt=""></a>
                         </div>
 
                         <!-- Copywrite Text -->
-                        <p class="copywrite">
-                            <!-- NB!! Use this in README -->
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+                        <!-- NB!! Use this in README -->
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+                        <!-- <p class="copywrite">
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
                             </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
                                 aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &
                             Re-distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                        </p> -->
+
                     </div>
                 </div>
 
@@ -247,15 +254,15 @@
                                 <div class="collapse navbar-collapse" id="footerNavContent">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Home</a>
+                                            <a class="nav-link" href="{% url 'home' %}">Home</a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="shop.html">Shop</a>
+                                            <a class="nav-link" href="#">Latest Options</a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="product-details.html">Product</a>
+                                            <a class="nav-link" href="#">All Antiquities</a>
                                         </li>
 
                                         <li class="nav-item">
