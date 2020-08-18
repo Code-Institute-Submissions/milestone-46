@@ -29,16 +29,6 @@
     {% endblock %}
 
     {% block corejs %}
-    <!-- ##### jQuery ##### -->
-    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
-    <!-- Popper js -->
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <!-- Bootstrap js -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- Plugins js -->
-    <script src="{% static 'js/plugins.js' %}"></script>
-    <!-- Active js -->
-    <script src="{% static 'js/active.js' %}"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -83,7 +73,7 @@
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="index.html"><img src="{% static 'images/core_img/logo.png' %}" alt=""></a>
+                <a href="{% url 'home' %}"><img src="{% static 'images/core_img/logo.png' %}" alt="Navbar Brand"></a>
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
@@ -109,7 +99,7 @@
                     {% with url_name=request.resolver_match.url_name %}
                     <li class="{% if url_name == 'home' %} active {% endif %}"><a href="{% url 'home' %}">Home</a></li>
 
-                    <li><a href="#">Latest Options</a></li>
+                    <li class="{% if url_name == 'latest_options' %} active {% endif %}"><a href="{% url 'latest_options' %}">Latest Options</a></li>
 
                     <li><a href="#">All Antiquities</a></li>
 
@@ -127,7 +117,7 @@
 
                     {% if request.user.is_superuser %}
 
-                    <a href="#" class="btn amado-btn mb-15">Add Product</a>
+                    <a href="#" id="add-product-btn" class="btn amado-btn mb-15">Add Product</a>
 
                     {% endif %}
 
@@ -156,22 +146,24 @@
                         €0.00
                         {% endif %}
                     </span></a>
-                <a href="#" class="fav-nav"><img src="{% static 'images/core_img/favorites.png' %}" alt="Favorites Icon">
+                <a href="#" class="fav-nav"><img src="{% static 'images/core_img/favorites.png' %}"
+                        alt="Favorites Icon">
                     Favourite </a>
-                <a href="#" class="search-nav"><img src="{% static 'images/core_img/search.png' %}" alt="Search Icon"> Search
+                <a href="#" class="search-nav"><img src="{% static 'images/core_img/search.png' %}" alt="Search Icon">
+                    Search
                 </a>
             </div>
             <!-- Social Button -->
             <div class="social-info d-flex justify-content-between">
-                <a href="https://www.pinterest.ie/heritagedaily/archaeology/"><i class="fa fa-pinterest"
+                <a href="https://www.pinterest.ie/heritagedaily/archaeology/" target="_blank"><i class="fa fa-pinterest"
                         aria-hidden="true"></i></a>
 
-                <a href="https://www.instagram.com/britishmuseum/"><i class="fa fa-instagram"
+                <a href="https://www.instagram.com/britishmuseum/" target="_blank"><i class="fa fa-instagram"
                         aria-hidden="true"></i></a>
 
-                <a href="https://www.facebook.com/unesco"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/unesco" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 
-                <a href="https://twitter.com/nmireland"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/nmireland" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             </div>
         </header>
         <!-- Header Area End -->
@@ -194,7 +186,7 @@
 
                         <p>Insert your email here and subscribe to The Philanthropist for the latest archaeological and
                             historical research and news, direct to your inbox.</p>
-                    </div>
+                    </div> 
                 </div>
                 <!-- Newsletter Form -->
                 <div class="col-12 col-lg-6 col-xl-5">
@@ -229,13 +221,13 @@
                         <!-- NB!! Use this in README -->
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
-                        <!-- <p class="copywrite">
+                        <p class="copywrite">
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
                             </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
                                 aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &
                             Re-distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
-                        </p> -->
+                        </p>
 
                     </div>
                 </div>
@@ -258,7 +250,7 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Latest Options</a>
+                                            <a class="nav-link" href="{% url 'latest_options' %}">Latest Options</a>
                                         </li>
 
                                         <li class="nav-item">
@@ -266,11 +258,11 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="cart.html">Cart</a>
+                                            <a class="nav-link" href="#">Cart</a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="checkout.html">Checkout</a>
+                                            <a class="nav-link" href="#">Checkout</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -284,6 +276,16 @@
     <!-- ##### Footer Area End ##### -->
 
     {% block postloadjs %}
+    <!-- ##### jQuery ##### -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
     {% endblock %}
 
 </body>

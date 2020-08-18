@@ -4,129 +4,24 @@
 
 {% block content %}
 
-<!-- NB!! This section is for the Suggestions (?) page (equivalent to Home in template) -->
-<!-- Product Catagories Area Start -->
-<div class="products-catagories-area clearfix">
+<!-- Main Landing Page Section -->
+<div id="landing-page-section" class="products-catagories-area clearfix">
     <div class="amado-pro-catagory clearfix">
+        <div id="landing-page-container" class="container">
+            <div id="main-logo-row" class="row">
+                <div id="main-logo-col" class="col-7">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/core_img/logo_main.png' %}"
+                            alt="Main Logo"></a>
 
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option1.jpg' %}" alt="Latest Option 1">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €40</p>
-                    <h4 class="option-title">Sutton Hoo Helmet</h4>
+                    <p>Welcome. Here you can support our archaeological heritage, by donating to The World Heritage
+                        Foundation&trade;. Every donation you make goes directly to help preserve the antiquity you have
+                        chosen.
+                    </p>
                 </div>
-            </a>
-        </div>
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option2.jpg' %}" alt="Latest Option 2">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €260</p>
-                    <h4 class="option-title">Luxor</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option3.jpg' %}" alt="Latest Option 3">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €280</p>
-                    <h4 class="option-title">Machu Picchu</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option4.jpg' %}" alt="Latest Option 4">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €100</p>
-                    <h4 class="option-title">Stonehenge</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option5.jpg' %}" alt="Latest Option 5">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €40</p>
-                    <h4 class="option-title">Book of Kells</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option6.jpg' %}" alt="Latest Option 6">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €40</p>
-                    <h4 class="option-title">Astrolobe</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option7.jpg' %}" alt="Latest Option 7">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €70</p>
-                    <h4 class="option-title">Easter Island Maoi</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option8.jpg' %}" alt="Latest Option 8">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €40</p>
-                    <h4 class="option-title">The Rosetta Stone</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="shop.html">
-                <img src="{% static 'images/latest_options/latest_option9.jpg' %}" alt="Latest Option 9">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €80</p>
-                    <h4 class="option-title">Uluru</h4>
-                </div>
-            </a>
+            </div>
         </div>
     </div>
 </div>
-<!-- Product Catagories Area End -->
+<!-- Main Landing Page Section End -->
 
 {% endblock %}

@@ -1,5 +1,67 @@
 /* My own custom styles are added below */
 
+/* Base Template Styles */
+
+#add-product-btn {
+    background-color: #b8bdc4;
+}
+
+@media (min-width: 992px) {
+    .main-content-wrapper .header-area .logo {
+        width: 13.5em;
+    }
+}
+
+/* Main Page Styles */
+
+#landing-page-section {
+    min-height: 90vh;
+    position: relative;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-image: url('/static/images/core_img/landing_page_bg.jpg');
+}
+
+#landing-page-container {
+    position: relative;
+}
+
+#main-logo-row {
+
+}
+
+#main-logo-col {
+    top: 2vh;
+    /* left: 13vh; */
+    text-align: right;
+}
+
+#main-logo {
+}
+
+#main-logo-col p {
+    color: #fff;
+
+}
+
+@media (min-width: 992px) {
+    #main-logo-col {
+        top: 5vh;
+        /* left: 24vh; */
+    }
+}
+
+@media (min-width: 1500px) {
+    #main-logo-col {
+        top: 20vh;
+        /* left: 40vh; */
+    }
+}
+
+/* Latest Options Styles */
+
 .single-products-catagory .hover-content .donation-text {
     color: #cfc0c0;
 }
