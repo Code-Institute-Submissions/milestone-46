@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Antiquity, Category
 
-# Register your models here.
+
+admin.site.register(Antiquity)
+admin.site.register(Category)
