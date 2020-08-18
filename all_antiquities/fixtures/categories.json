@@ -1,0 +1,34 @@
+[
+    {
+        "pk": 1,
+        "model": "all_antiquities.category",
+        "fields": {
+            "name": "sites",
+            "friendly_name": "Major Sites"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "all_antiquities.category",
+        "fields": {
+            "name": "monuments",
+            "friendly_name": "Single Monuments"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "all_antiquities.category",
+        "fields": {
+            "name": "artefacts",
+            "friendly_name": "Famous Artefacts"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "all_antiquities.category",
+        "fields": {
+            "name": "texts",
+            "friendly_name": "Important Texts"
+        }
+    }
+]

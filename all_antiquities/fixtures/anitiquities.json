@@ -1,0 +1,722 @@
+[{
+        "pk": 1,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Carnac",
+            "date": "4500 BC",
+            "period": "Neolithic",
+            "culture": "Neolithic",
+            "dimensions": "1,165m x 100m",
+            "description": "The Carnac stones are an exceptionally dense collection of megalithic sites in Brittany in northwestern France, consisting of stone alignments, dolmens, tumuli and single menhirs. More than 3,000 prehistoric standing stones were hewn from local granite and erected by the pre-Celtic people of Brittany, and form the largest such collection in the world",
+            "value": 280,
+            "image": "site_carnac.jpg",
+            "image_url": "https://www.amusingplanet.com/2016/06/the-carnac-stone-alignments.html",
+            "location": "Brittany, France",
+            "Altitude": "15m"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Persepolis",
+            "date": "515 BC",
+            "period": "Ancient Near-Eastern",
+            "culture": "Persian",
+            "dimensions": "1.25km Squared",
+            "description": "Persepolis was the ceremonial capital of the Achaemenid Empire. It is situated 60 kilometres northeast of the city of Shiraz in Fars Province, Iran. The earliest remains of Persepolis date back to 515 BC. It exemplifies the Achaemenid style of architecture.",
+            "value": 300,
+            "image": "site_persepolis.jpg",
+            "image_url": "https://www.robertharding.com/index.php?lang=en&page=search&s=persepolis&smode=0&zoom=1&display=5&sortby=0&bgcolour=white",
+            "location": "Marvdasht, Iran",
+            "Altitude": "1634m"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Tenochtitlan",
+            "date": "1325 AD",
+            "period": "Pre-Columbian",
+            "culture": "Aztec",
+            "dimensions": "13.5km Squared",
+            "description": "Tenochtitlan, also known as Mexica-Tenochtitlan, was a large Mexica altepetl in what is now the historic center of Mexico City. The exact date of the founding of the city is unclear. At its peak, it was the largest city in the pre-Columbian Americas",
+            "value": 300,
+            "image": "site_tenochtitlan.jpg",
+            "image_url": "https://learnodo-newtonic.com/aztec-achievements",
+            "location": "Mexico City, Mexico",
+            "Altitude": "2230m"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Timbuktu",
+            "date": "c. 1200 AD",
+            "period": "Medieval",
+            "culture": "Malian",
+            "dimensions": "10km Squared",
+            "description": "Timbuktu is a city in Mali, situated 20 km north of the Niger River. The town is the capital of the Timbuktu Region, one of the eight administrative regions of Mali. It had a population of 54,453 in the 2009 census. Timbuktu started out as a seasonal settlement and became a permanent settlement early in the 12th century.",
+            "value": 300,
+            "image": "site_timbuktu.jpg",
+            "image_url": "https://learnodo-newtonic.com/aztec-achievements",
+            "location": "Timbuktu, Mali",
+            "Altitude": "267m"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Pompeii",
+            "date": "79 AD",
+            "period": "Classical",
+            "culture": "Roman",
+            "dimensions": "0.68sq Kilometres",
+            "description": "Pompeii was an ancient city located in what is now the commune of Pompeii near Naples in the Campania region of Italy. Pompeii, along with Herculaneum and many villas in the surrounding area, was buried under 4 to 6 m of volcanic ash and pumice in the eruption of Mount Vesuvius in AD 79.",
+            "value": 280,
+            "image": "site_pompeii.jpg",
+            "image_url": "https://citywonders.com/rome-tours/pompeii-from-rome-tour",
+            "location": "Province of Naples, Italy",
+            "Altitude": "15m"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Machu Picchu",
+            "date": "2000 Year's Old",
+            "period": "Pre-Columbian",
+            "culture": "Incan",
+            "dimensions": "131sq Kilometres",
+            "description": "Machu Picchu is a 15th-century Inca citadel, located in the Eastern Cordillera of southern Peru, on a 2,430-metre mountain ridge. It is located in the Cusco Region, Urubamba Province, Machupicchu District, above the Sacred Valley, which is 80 kilometres northwest of Cuzco.",
+            "value": 280,
+            "image": "site_machuPicchu.jpg",
+            "image_url": "https://intosouthamerica.wordpress.com/2010/10/23/denise-van-outen-fearne-cotton-machu-picchu-challenge-what-did-they-do/",
+            "location": "Cuzco Region, Peru",
+            "Altitude": "2430m"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Babylon",
+            "date": "c. 1894 BC",
+            "period": "Ancient Near-Eastern",
+            "culture": "Babylonian",
+            "dimensions": "9sq Kilometres",
+            "description": "Babylon was the capital city of Babylonia, a kingdom in ancient Mesopotamia, between the 18th and 6th centuries BC. It was built along the left and right banks of the Euphrates river with steep embankments to contain the river's seasonal floods.",
+            "value": 290,
+            "image": "site_babylon.jpg",
+            "image_url": "https://www.shorthistory.org/ancient-civilizations/mesopotamia/babylonian-empire/neo-babylonian-empire-616-539-8-bc/",
+            "location": "Babil, Iraq",
+            "Altitude": "29m"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "The Acropolis",
+            "date": "c. 468 BC",
+            "period": "Classical",
+            "culture": "Greek",
+            "dimensions": "300sq Metres",
+            "description": "The Acropolis of Athens is an ancient citadel located on a rocky outcrop above the city of Athens and contains the remains of several ancient buildings of great architectural and historic significance, the most famous being the Parthenon.",
+            "value": 270,
+            "image": "site_acropolis.jpg",
+            "image_url": "https://www.biblicalarchaeology.org/daily/ancient-cultures/ancient-near-eastern-world/the-athenian-acropolis/",
+            "location": "Athens, Greece",
+            "Altitude": "151m"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Luxor",
+            "date": "1400 BC",
+            "period": "Ancient Egypt",
+            "culture": "Egyptian",
+            "dimensions": "416sq Kilometres",
+            "description": "Luxor was the ancient city of Thebes, the great capital of (Upper) Egypt during the New Kingdom, and the glorious city of Amun later to become the god Amun-Ra. The city was regarded in the Ancient Egyptian texts as was.t (approximate pronunciation: 'Waset'), which meant 'city of the sceptre', and later in Demotic Egyptian as ta jpt (conventionally pronounced as 'ta ipet' and meaning 'the shrine/temple')",
+            "value": 260,
+            "image": "site_luxor.jpg",
+            "image_url": "https://discoverdiscomfort.com/ultimate-guide-to-luxor-egypt/",
+            "location": "Luxor, Egypt",
+            "Altitude": "76m"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 1,
+            "name": "Angkor Wat",
+            "date": "c. 1200 AD",
+            "period": "Medieval",
+            "culture": "Khmerian",
+            "dimensions": "1.62sq Kilometres",
+            "description": "Angkor Wat is a temple complex in Cambodia and is the largest religious monument in the world, on a site measuring 162.6 hectares. Originally constructed as a Hindu temple dedicated to the god Vishnu for the Khmer Empire, it was gradually transformed into a Buddhist temple towards the end of the 12th century as such it is also described as a 'Hindu-Buddhist' temple.",
+            "value": 310,
+            "image": "site_angkorWat.jpg",
+            "image_url": "https://www.bortonoverseas.com/tour/temples-angkor-cambodia/",
+            "location": "Siem Reap, Cambodia",
+            "Altitude": "65m"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Poll na Brón",
+            "date": "4200 BC",
+            "period": "Neolithic",
+            "culture": "Neolithic",
+            "dimensions": "4m x 3m",
+            "description": "Poulnabrone dolmen is an unusually large dolmen or portal tomb located in the Burren, County Clare, Ireland. Situated on one of the most desolate and highest points of the region, it comprises three standing portal stones supporting a heavy horizontal capstone, and dates to the Neolithic period, probably between 4200 BC and 2900 BC.",
+            "value": 70,
+            "image": "monument_pollNaBron.jpg",
+            "image_url": "https://www.tripadvisor.ie/Attraction_Review-g186595-d526251-Reviews-Poulnabrone_Dolmen-County_Clare.html",
+            "location": "County Clare, Ireland",
+            "landscape": "The Burren"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Stonehenge",
+            "date": "3000 BC",
+            "period": "Neolithic",
+            "culture": "Neolithic",
+            "dimensions": "100sq Metres",
+            "description": "Stonehenge is a prehistoric monument in Wiltshire, England, two miles west of Amesbury. It consists of a ring of standing stones, each around 13 feet high, seven feet wide, and weighing around 25 tons. The stones are set within earthworks in the middle of the most dense complex of Neolithic and Bronze Age monuments in England, including several hundred tumuli.",
+            "value": 100,
+            "image": "monument_stonehenge.jpg",
+            "image_url": "https://traveltips.usatoday.com/stonehenge-tours-southampton-18525.html",
+            "location": "Wiltshire, England",
+            "landscape": "Stonehenge and Avebury"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Maoi",
+            "date": "1250 AD",
+            "period": "Iron Age",
+            "culture": "Rapa Nui",
+            "dimensions": "10m x 2m",
+            "description": "Moʻai, or moai, are monolithic human figures carved by the Rapa Nui people on Easter Island in eastern Polynesia between the years 1250 and 1500. Nearly half are still at Rano Raraku, the main moʻai quarry, but hundreds were transported from there and set on stone platforms called ahu around the island's perimeter.",
+            "value": 70,
+            "image": "monument_maoi.jpg",
+            "image_url": "https://www.dailymail.co.uk/travel/article-1199162/Finding-secret-long-life--worlds-amazing-statues--happy-Easter-Island.html",
+            "location": "Easter Island",
+            "landscape": "Easter Island"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Colosseum",
+            "date": "70 AD",
+            "period": "Classical",
+            "culture": "Roman",
+            "dimensions": "189m x 156m",
+            "description": "The Colosseum or Coliseum, also known as the Flavian Amphitheatre, is an oval amphitheatre in the centre of the city of Rome, Italy. Built of travertine limestone, tuff, and brick-faced concrete, it was the largest amphitheatre ever built at the time and held 50,000 to 80,000 spectators.",
+            "value": 100,
+            "image": "monument_colosseum.jpg",
+            "image_url": "https://foodtourrome.com/colosseum-food-tour-combo/",
+            "location": "Rome, Italy",
+            "landscape": "Ancient Rome"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Newgrange",
+            "date": "3200 BC",
+            "period": "Neolithic",
+            "culture": "Neolithic",
+            "dimensions": "85m in diameter",
+            "description": "Newgrange is a prehistoric monument in County Meath, Ireland, located 8 kilometres west of Drogheda on the north side of the River Boyne. It is an exceptionally grand passage tomb built during the Neolithic period, around 3200 BC, making it older than Stonehenge and the Egyptian pyramids.",
+            "value": 100,
+            "image": "monument_newgrange.jpg",
+            "image_url": "https://travelguide.michelin.com/europe/ireland/meath/navan/newgrange",
+            "location": "County Meath, Ireland",
+            "landscape": "The Boyne Valley"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Ishtari Gate",
+            "date": "575 BC",
+            "period": "Ancient Near-Eastern",
+            "culture": "Babylonian",
+            "dimensions": "14m x 30m",
+            "description": "The Ishtar Gate was the eighth gate to the inner city of Babylon. It was constructed in about 575 BCE by order of King Nebuchadnezzar II on the north side of the city. It was part of a grand walled processional way leading into the city",
+            "value": 90,
+            "image": "monument_ishtariGate.jpg",
+            "image_url": "https://klimtlover.wordpress.com/mesopotamia-and-persia/neo-babylonian-art/",
+            "location": "Berlin, Germany",
+            "landscape": "The City of Babylon"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Uluru",
+            "date": "8000 BC",
+            "period": "Neolithic",
+            "culture": "Aboriginal",
+            "dimensions": "348m x 9.4 km",
+            "description": "Uluru is sacred to the Pitjantjatjara Anangu, the Aboriginal people of the area. The area around the formation is home to an abundance of springs, waterholes, rock caves and ancient paintings. Uluru is listed as a UNESCO World Heritage Site. Uluru and Kata Tjuta, also known as the Olgas, are the two major features of the Uluṟu-Kata Tjuṯa National Park.",
+            "value": 40,
+            "image": "monument_uluru.jpg",
+            "image_url": "https://www.onestopadventures.com.au/tour/6-day-alice-springs-to-adelaide-tour/",
+            "location": "Northern Territory, Australia",
+            "landscape": "The Outback"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Rialto Bridge",
+            "date": "1591 AD",
+            "period": "Medieval",
+            "culture": "Venetian",
+            "dimensions": "23m x 7m",
+            "description": "The Rialto Bridge is the oldest of the four bridges spanning the Grand Canal in Venice, Italy. Connecting the sestieri (districts) of San Marco and San Polo, it has been rebuilt several times since its first construction as a pontoon bridge in 1173, and is now a significant tourist attraction in the city.",
+            "value": 80,
+            "image": "monument_rialtoBridge.jpg",
+            "image_url": "http://www.davidroth.com/blog/2014/09/09/history-retail-100-objects-rialto-bridge/",
+            "location": "Venice, Italy",
+            "landscape": "Venice"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Bavaria Statue",
+            "date": "1850 AD",
+            "period": "Modernity",
+            "culture": "Bavarian",
+            "dimensions": "18.5m",
+            "description": "Bavaria is the name given to a monumental, bronze sand-cast 19th-century statue in Munich, southern Germany. It is a female personification of the Bavarian homeland, and by extension its strength and glory. The statue is part of an ensemble which also includes a hall of fame and a stairway.",
+            "value": 70,
+            "image": "monument_bavaria.jpg",
+            "image_url": "https://www.muenchen.de/int/en/sights/attractions/hall-of-fame-and-bavaria.html",
+            "location": "Munich, Germany",
+            "landscape": "Ruhmeshalle"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 2,
+            "name": "Trevi Fountain",
+            "date": "1762 AD",
+            "period": "Modernity",
+            "culture": "Italian",
+            "dimensions": "26m x 49m",
+            "description": "The Trevi Fountain is a fountain in the Trevi district in Rome, Italy, designed by Italian architect Nicola Salvi and completed by Giuseppe Pannini and several others. Standing 26.3 metres high and 49.15 metres wide, it is the largest Baroque fountain in the city and one of the most famous fountains in the world.",
+            "value": 70,
+            "image": "monument_treviFountain.jpg",
+            "image_url": "https://viterboitaly.wordpress.com/one-afternoon-in-rome-heres-the-perfect-walk/the-trevi-fountain-versus-its-las-vegas-twin/",
+            "location": "Rome, Italy",
+            "landscape": "The Trevi District"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Mask of Tutankhamun",
+            "date": "1325 BC",
+            "period": "Ancient Egypt",
+            "culture": "Egyptian",
+            "dimensions": "54cm x 39cm x 49cm",
+            "description": "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1332–1323 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo.[4] The mask is one of the best-known works of art in the world",
+            "value": 50,
+            "image": "artefact_maskOfTut.jpg",
+            "image_url": "https://www.nationalgeographic.com/news/2010/2/100216-king-tut-health-malaria-inbred-bone-tutankhamun-pictures/",
+            "provenence": "Valley of the Kings, Egypt",
+            "materials": "Gold, Lapus Lazuli, Obsidian, turquiose."
+        }
+    },
+    {
+        "pk": 22,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Terracotta Warrior",
+            "date": "246 BC",
+            "period": "Ancient China",
+            "culture": "Chinese",
+            "dimensions": "1.9m",
+            "description": "The Terracotta Army is a collection of terracotta sculptures depicting the armies of Qin Shi Huang, the first Emperor of China. It is a form of funerary art buried with the emperor in 210–209 BCE with the purpose of protecting the emperor in his afterlife.",
+            "value": 40,
+            "image": "artefact_terracottaWarrior.jpg",
+            "image_url": "https://jingdaily.com/event-watch-the-warrior-emperor-and-chinas-terracotta-army-montreal-feb-11-jun-26/",
+            "provenence": "Valley of the Kings, Egypt",
+            "materials": "Terracotta"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Clovis Spearpoint",
+            "date": "c. 10,000 BC",
+            "period": "Neolithic",
+            "culture": "Clovis",
+            "dimensions": "20cm x 5cm",
+            "description": "Clovis points are the characteristically-fluted projectile points associated with the New World Clovis culture. They are present in dense concentrations across much of North America; in South America, they are largely restricted to the north of that continent.",
+            "value": 30,
+            "image": "artefact_clovis.jpg",
+            "image_url": "https://www.reddit.com/r/AskHistorians/comments/3kmwfq/clovis_culture_and_the_first_people_in_america/",
+            "provenence": "Clovis, New Mexico",
+            "materials": "Stone"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Standard of Ur",
+            "date": "2600 BC",
+            "period": "Ancient Near-Eastern",
+            "culture": "Sumerian",
+            "dimensions": "22cm x 50cm",
+            "description": "The Standard of Ur is a Sumerian artifact of the 3rd millennium BC that is now in the collection of the British Museum. It comprises a hollow wooden box measuring 21.59 centimetres wide by 49.53 centimetres long, inlaid with a mosaic of shell, red limestone and lapis lazuli",
+            "value": 40,
+            "image": "artefact_standardOfUr.jpg",
+            "image_url": "https://kornbluthphoto.com/StandardUr.html",
+            "provenence": "Royal Tomb of Ur, Iraq",
+            "materials": "Shell, red limestone, lapis lazuli"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Jadite Axe",
+            "date": "3000 BC",
+            "period": "Neolithic",
+            "culture": "Neolithic",
+            "dimensions": "12cm x 5cm",
+            "description": "This jade axe is unmarked and was not used to cut wood. It was probably a luxury status symbol, indicating its owner's power and prestige. Jade is not found in Britain and this axe was made from a boulder high in the Italian Alps. It was possibly traded through Brittany in France and then arrived in England as an object of ceremony or ritual.",
+            "value": 30,
+            "image": "artefact_jadeiteAxe.jpg",
+            "image_url": "https://www.pinterest.ie/markaeschliman/history-of-the-world-in-100-objects/",
+            "provenence": "Jersey, England",
+            "materials": "Jadeite"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Hebrew Astrolobe",
+            "date": "1300 AD",
+            "period": "Medieval",
+            "culture": "Spanish",
+            "dimensions": "12cm in diameter",
+            "description": "This instrument speaks of a great intellectual synthesis, and it can also tell us about a time when the three religions Christianity, Judaism and Islam all peacefully co-existed. There was, in fact, no religious synthesis, but the three faiths lived together in fruitful tension, and the friction between them made medieval Spain the intellectual powerhouse of Europe.",
+            "value": 50,
+            "image": "artefact_hebrewAstrolobe.jpg",
+            "image_url": "https://sites.google.com/site/100objectsbritishmuseum/home/hebrew-astrolabe",
+            "provenence": "British Museum, London",
+            "materials": "Brass"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Coin of Lysimachus",
+            "date": "281 BC",
+            "period": "Classical",
+            "culture": "Macedonian",
+            "dimensions": "2cm in diameter",
+            "description": "This silver coin with the head of Alexander III of Macedonia (336-323 BC) dates back to 308-281 BC. The coin was minted in Lampsakos under King Lysimachus (305-281 BC), one of Alexander's generals who divided his vast empire after his death in 323 BC.",
+            "value": 40,
+            "image": "artefact_coinOfLysimachus.jpg",
+            "image_url": "https://history2701.fandom.com/wiki/Silver_Tetradrachm_of_Lysimachus",
+            "provenence": "British Museum, London",
+            "materials": "Gold, Lapus Lazuli etc."
+        }
+    },
+    {
+        "pk": 28,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Incan Gold Llama",
+            "date": "c. 1400 AD",
+            "period": "Pre-Columbian",
+            "culture": "Incan",
+            "dimensions": "8cm x 10cm",
+            "description": "This small gold model of a llama is a fitting offering for an Inca mountain god. The Incas revered gold as the sweat of the sun and believed that it represented the sun's regenerative powers. All gold belonged to the ruler of the empire, the Inca himself, who claimed to be descended from the sun god.",
+            "value": 50,
+            "image": "artefact_goldLlama.jpg",
+            "image_url": "https://www.pinterest.ie/pin/322781498262548994/",
+            "provenence": "Cuzco, Peru",
+            "materials": "Gold"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Sutton Hoo Helmet",
+            "date": "625 AD",
+            "period": "Medieval",
+            "culture": "Anglo-Saxon",
+            "dimensions": "25cm x 15cm",
+            "description": "Sutton Hoo, at Sutton near Woodbridge, in Suffolk, England, is the site of two early medieval cemeteries, from the 6th to 7th centuries. Archaeologists have been excavating the area since the 1930s.",
+            "value": 40,
+            "image": "artefact_suttonHooHelmet",
+            "image_url": "http://northumberlandnaturalist.blogspot.com/2010/10/surfacing.html",
+            "provenence": "Suffolk, England",
+            "materials": "Iron, Bronze, Tin, Gold, Silver"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 3,
+            "name": "Arabian Bronze Hand",
+            "date": "622 AD",
+            "period": "Ancient Near-Eastern",
+            "culture": "Arabian",
+            "dimensions": "16cm x 7cm",
+            "description": "This bronze hand was given as an offering to the god Talab Riyam in a temple in pre-Islamic Yemen. The right hand was traditionally a symbol of good luck and an inscription on the hand indicates it was offered in exchange for well-being.",
+            "value": 40,
+            "image": "artefact_arabianBronzeHand.jpg",
+            "image_url": "https://history2701.fandom.com/wiki/Bronze_Hand_of_Pre-Islamic_Arabia",
+            "provenence": "Zafar, Yemen",
+            "materials": "Bronze"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "The Book of Lismore",
+            "date": "c. 1480 AD",
+            "period": "Medieval",
+            "culture": "Celtic",
+            "dimensions": "37cm x 25cm",
+            "description": "The Book of Lismore, also known as the Book of Mac Carthaigh Riabhach, is a late fifteenth-century Gaelic manuscript that was created at Kilbrittain, Co. Cork, for Fínghean Mac Carthaigh, Lord of Carbery. Defective at beginning and end, 198 leaves survive today, containing a miscellany of religious and secular texts written entirely in Irish.",
+            "value": 50,
+            "image": "text_bookOfLismore.jpg",
+            "image_url": "http://www.frg.ie/wp-content/uploads/Book-of-Lismore.jpg",
+            "provenence": "Waterford, Ireland",
+            "pages/units": 198
+        }
+    },
+    {
+        "pk": 32,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "Isaiah Scroll",
+            "date": "c. 150 BC",
+            "period": "Classical",
+            "culture": "Hebrew",
+            "dimensions": "734 cm x 27 cm",
+            "description": "The Isaiah Scroll, designated 1Qlsaᵃ and also known as the Great Isaiah Scroll, is one of the seven Dead Sea Scrolls that were first discovered by Bedouin shepherds in 1946 from Qumran Cave 1. The scroll is written in Hebrew and contains the entire Book of Isaiah from beginning to end, apart from a few small damaged portions.",
+            "value": 50,
+            "image": "text_isaiahScroll.jpg",
+            "image_url": "https://truthofmasoretic.blogspot.com/2017/",
+            "provenence": "The Dead Sea, Israel",
+            "pages/units": 17
+        }
+    },
+    {
+        "pk": 33,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "The Rhind Papyrus",
+            "date": "c. 1550 BC",
+            "period": "Ancient Egypt",
+            "culture": "Egyptian",
+            "dimensions": "199 cm x 32cm",
+            "description": "The Rhind Mathematical Papyrus is one of the best known examples of ancient Egyptian mathematics. It is named after Alexander Henry Rhind, a Scottish antiquarian, who purchased the papyrus in 1858 in Luxor, Egypt; it was apparently found during illegal excavations in or near the Ramesseum.",
+            "value": 50,
+            "image": "text_rhindPapyrus.jpg",
+            "image_url": "https://chroniclesofcalculation.wordpress.com/2015/03/12/how-to-find-prime-numbers/",
+            "provenence": "Luxor, Egypt",
+            "pages/units": 1
+        }
+    },
+    {
+        "pk": 34,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "The Magna Carta",
+            "date": "1215 AD",
+            "period": "Medieval",
+            "culture": "English",
+            "dimensions": "38cm x 51cm",
+            "description": "Magna Carta Libertatum, commonly called Magna Carta, is a royal charter of rights agreed to by King John of England at Runnymede, near Windsor, on 15 June 1215.",
+            "value": 50,
+            "image": "text_magnaCarta.jpg",
+            "image_url": "https://www.dkfindout.com/uk/explore/five-amazing-facts-about-magna-carta/",
+            "provenence": "Lincoln, England",
+            "pages/units": 1
+        }
+    },
+    {
+        "pk": 35,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "The Book of Kells",
+            "date": "c. 800 AD",
+            "period": "Medieval",
+            "culture": "Celtic",
+            "dimensions": "33cm x 25 cm",
+            "description": "The Book of Kells is an illuminated manuscript Gospel book in Latin, containing the four Gospels of the New Testament together with various prefatory texts and tables.",
+            "value": 40,
+            "image": "text_bookOfKells.jpg",
+            "image_url": "https://www.irelandbeforeyoudie.com/5-fascinating-facts-about-the-book-of-kells/",
+            "provenence": "Trinity College, Dublin",
+            "pages/units": 680
+        }
+    },
+    {
+        "pk": 36,
+        "model": "all_antiquities.antiquity",
+        ,
+        "fields": {
+            "category": 4,
+            "name": "The Rosetta Stone",
+            "date": "196 BC",
+            "period": "Ancient Egypt",
+            "culture": "Egyptian",
+            "dimensions": "112cm x 75cm x 28cm",
+            "description": "The Rosetta Stone is a granodiorite stele inscribed with three versions of a decree issued in Memphis, Egypt in 196 BC during the Ptolemaic dynasty on behalf of King Ptolemy V Epiphanes. The top and middle texts are in Ancient Egyptian using hieroglyphic and Demotic scripts respectively, while the bottom is in Ancient Greek",
+            "value": 40,
+            "image": "text_rosettaStone.jpg",
+            "image_url": "https://www.ebay.com/p/1232852596?iid=161144397881",
+            "provenence": "Rashid, Nile Delta, Egypt",
+            "pages/units": 1
+        }
+    },
+    {
+        "pk": 37,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "The Epic of Gilgamesh",
+            "date": "c. 1800 BC",
+            "period": "Ancient Near-Eastern",
+            "culture": "Akkadian",
+            "dimensions": "40cm x 25cm",
+            "description": "The Epic of Gilgamesh is an epic poem from ancient Mesopotamia that is often regarded as the earliest surviving great work of literature and the second oldest religious text, after the Pyramid Texts. The literary history of Gilgamesh begins with five Sumerian poems about Bilgamesh, king of Uruk, dating from the Third Dynasty of Ur",
+            "value": 40,
+            "image": "text_epicOfGilgamesh.jpg",
+            "image_url": "https://www.ancient.eu/image/4821/flood-tablet-of-the-epic-of-gilgamesh/",
+            "provenence": "Ur, Mesopotamia",
+            "pages/units": 12
+        }
+    },
+    {
+        "pk": 38,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "The Cyrus Cylinder",
+            "date": "c. 538 BC",
+            "period": "Ancient Near-Eastern",
+            "culture": "Persian",
+            "dimensions": "22cm x 10cm max",
+            "description": "The Cyrus Cylinder or Cyrus Charter is an ancient clay cylinder, now broken into several pieces, on which is written a declaration in Akkadian cuneiform script in the name of Persia's Achaemenid king Cyrus the Great. It dates from the 6th century BC and was discovered in the ruins of Babylon in Mesopotamia in 1879.",
+            "value": 30,
+            "image": "text_cyrusCylinder.jpg",
+            "image_url": "https://amazingdiscoveries.org/S-deception_archaeology_Bible_Cyrus",
+            "provenence": "Babylon, Mesopotamia",
+            "pages/units": 1
+        }
+    },
+    {
+        "pk": 39,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "Luther's Disputations",
+            "date": "1517 AD",
+            "period": "Medieval",
+            "culture": "Germanic",
+            "dimensions": "40cm x 18cm",
+            "description": "The Ninety-five Theses or Disputation on the Power and Efficacy of Indulgences is a list of propositions for an academic disputation written in 1517 by Martin Luther, professor of moral theology at the University of Wittenberg, Germany",
+            "value": 30,
+            "image": "text_luthersDisputations.jpg",
+            "image_url": "https://www.zazzle.com/martin_luther_95_theses_original_latin_poster-228755041497462328",
+            "provenence": "Wittenberg, Germany",
+            "pages/units": 1
+        }
+    },
+    {
+        "pk": 40,
+        "model": "all_antiquities.antiquity",
+        "fields": {
+            "category": 4,
+            "name": "Don Quixote",
+            "date": "1605-15 AD",
+            "period": "Medieval",
+            "culture": "Spanish",
+            "dimensions": "30cm x 22cm",
+            "description": "The Ingenious Gentleman Don Quixote of La Mancha, or just Don Quixote, is a Spanish novel by Miguel de Cervantes. It was published in two parts, in 1605 and 1615. A founding work of Western literature, it is often labeled 'the first modern novel' and many authors consider it to be the best literary work ever written.",
+            "value": 30,
+            "image": "text_donQuixote.jpg",
+            "image_url": "https://www.nsk.hr/en/first-editions-of-cervantes-don-quixote-among-nsk-treasures/",
+            "provenence": "La Mancha, Spain",
+            "pages/units": 863
+        }
+    }
+]
