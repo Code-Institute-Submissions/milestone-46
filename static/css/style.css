@@ -3,7 +3,27 @@
 /* Base Template Styles */
 
 #add-product-btn {
-    background-color: #b8bdc4;
+    background-color: #a5a7aa;
+}
+
+#add-product-btn:hover {
+    background-color: #7995bb;
+}
+
+#add-product-btn:focus {
+    background-color: #263549;
+}
+
+.profile-button {
+    background-color: #3c3c3c;
+}
+
+.profile-button:hover {
+    background-color: #252525;
+}
+
+.profile-button:focus {
+    background-color: #000;
 }
 
 @media (min-width: 992px) {
