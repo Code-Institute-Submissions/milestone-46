@@ -188,7 +188,7 @@
             "period": "Neolithic",
             "culture": "Neolithic",
             "dimensions": "4m x 3m",
-            "description": "Poulnabrone dolmen is an unusually large dolmen or portal tomb located in the Burren, County Clare, Ireland. Situated on one of the most desolate and highest points of the region, it comprises three standing portal stones supporting a heavy horizontal capstone, and dates to the Neolithic period, probably between 4200 BC and 2900 BC.",
+            "description": "Poll na Brón (English: 'Poulnabrone') dolmen is an unusually large dolmen or portal tomb located in the Burren, County Clare, Ireland. Situated on one of the most desolate and highest points of the region, it comprises three standing portal stones supporting a heavy horizontal capstone, and dates to the Neolithic period, probably between 4200 BC and 2900 BC.",
             "value": 70,
             "image": "monument_pollNaBron.jpg",
             "image_url": "https://www.tripadvisor.ie/Attraction_Review-g186595-d526251-Reviews-Poulnabrone_Dolmen-County_Clare.html",
@@ -373,7 +373,7 @@
             "image": "artefact_maskOfTut.jpg",
             "image_url": "https://www.nationalgeographic.com/news/2010/2/100216-king-tut-health-malaria-inbred-bone-tutankhamun-pictures/",
             "provenence": "Valley of the Kings, Egypt",
-            "materials": "Gold, Lapus Lazuli, Obsidian, turquiose."
+            "materials": "Gold, Lapus Lazuli, Obsidian, turquoise."
         }
     },
     {
@@ -399,7 +399,7 @@
         "model": "all_antiquities.antiquity",
         "fields": {
             "category": 3,
-            "name": "Clovis Spearpoint",
+            "name": "Clovis Spear-point",
             "date": "c. 10,000 BC",
             "period": "Neolithic",
             "culture": "Clovis",
@@ -631,7 +631,6 @@
     {
         "pk": 36,
         "model": "all_antiquities.antiquity",
-        ,
         "fields": {
             "category": 4,
             "name": "The Rosetta Stone",
