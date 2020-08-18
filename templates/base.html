@@ -95,7 +95,6 @@
             <nav class="amado-nav">
                 <ul>
 
-                    <!-- Does this work? -->
                     {% with url_name=request.resolver_match.url_name %}
                     <li class="{% if url_name == 'home' %} active {% endif %}"><a href="{% url 'home' %}">Home</a></li>
 
@@ -116,7 +115,7 @@
                     {% if request.user.is_authenticated %}
 
                     {% if request.user.is_superuser %}
-
+                    
                     <a href="#" id="add-product-btn" class="btn amado-btn mb-15">Add Product</a>
 
                     {% endif %}

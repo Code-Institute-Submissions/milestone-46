@@ -6,18 +6,19 @@
 
 <!-- Main Landing Page Section -->
 <div id="landing-page-section" class="products-catagories-area clearfix">
-    <div class="amado-pro-catagory clearfix">
-        <div id="landing-page-container" class="container">
-            <div id="main-logo-row" class="row">
-                <div id="main-logo-col" class="col-7">
-                    <a href="{% url 'home' %}"><img src="{% static 'images/core_img/logo_main.png' %}"
-                            alt="Main Logo"></a>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="main-logo-col" class="col-7">
+                <a href="{% url 'home' %}" class="mb-4"><img src="{% static 'images/core_img/logo_main.png' %}"
+                        alt="Main Logo"></a>
 
-                    <p>Welcome. Here you can support our archaeological heritage, by donating to The World Heritage
-                        Foundation&trade;. Every donation you make goes directly to help preserve the antiquity you have
-                        chosen.
-                    </p>
-                </div>
+                <p class="mt-2 mb-4">Welcome. <br> Here you can support our archaeological heritage, by donating to The
+                    World Heritage
+                    Foundation&trade;. Every donation you make goes directly to help preserve the antiquity you have
+                    chosen.
+                </p>
+
+                <a href="{% url 'latest_options' %}" class="btn amado-btn mb-15">Donate Now</a>
             </div>
         </div>
     </div>

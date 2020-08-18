@@ -24,21 +24,11 @@
     background-image: url('/static/images/core_img/landing_page_bg.jpg');
 }
 
-#landing-page-container {
-    position: relative;
-}
-
-#main-logo-row {
-
-}
-
 #main-logo-col {
-    top: 2vh;
-    /* left: 13vh; */
-    text-align: right;
-}
-
-#main-logo {
+    top: 5vh;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #main-logo-col p {
@@ -46,17 +36,37 @@
 
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1500px) {
     #main-logo-col {
-        top: 5vh;
-        /* left: 24vh; */
+        top: 7vh;
+    }
+
+    #main-logo-col p {
+        padding-left: 4em;
+        padding-right: 4em;
     }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 992px) {
     #main-logo-col {
-        top: 20vh;
-        /* left: 40vh; */
+        top: 5vh;
+    }
+}
+
+@media (max-width: 767px) {
+    #landing-page-section {
+        background-attachment: fixed;
+    }
+
+    #main-logo-col p {
+        font-size: 0.8em;
+    }
+
+    #main-logo-col .btn {
+        min-width: 110px;
+        height: 48px;
+        font-size: 15px;
+        line-height: 50px;
     }
 }
 
