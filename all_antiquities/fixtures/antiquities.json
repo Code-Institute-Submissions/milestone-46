@@ -52,7 +52,7 @@
         "fields": {
             "category": 1,
             "name": "Timbuktu",
-            "date": "c. 1200 AD",
+            "date": "1200 AD",
             "period": "Medieval",
             "culture": "Malian",
             "dimensions": "10km Squared",
@@ -84,7 +84,7 @@
         "fields": {
             "category": 1,
             "name": "Machu Picchu",
-            "date": "2000 Year's Old",
+            "date": "1450 AD",
             "period": "Pre-Columbian",
             "culture": "Incan",
             "dimensions": "131sq Kilometres",
@@ -100,7 +100,7 @@
         "fields": {
             "category": 1,
             "name": "Babylon",
-            "date": "c. 1894 BC",
+            "date": "1894 BC",
             "period": "Ancient Near-Eastern",
             "culture": "Babylonian",
             "dimensions": "9sq Kilometres",
@@ -116,7 +116,7 @@
         "fields": {
             "category": 1,
             "name": "The Acropolis",
-            "date": "c. 468 BC",
+            "date": "468 BC",
             "period": "Classical",
             "culture": "Greek",
             "dimensions": "300sq Metres",
@@ -148,7 +148,7 @@
         "fields": {
             "category": 1,
             "name": "Angkor Wat",
-            "date": "c. 1200 AD",
+            "date": "1200 AD",
             "period": "Medieval",
             "culture": "Khmerian",
             "dimensions": "1.62sq Kilometres",
@@ -356,7 +356,7 @@
         "fields": {
             "category": 3,
             "name": "Clovis Spear-point",
-            "date": "c. 10,000 BC",
+            "date": "10,000 BC",
             "period": "Neolithic",
             "culture": "Clovis",
             "dimensions": "20cm x 5cm",
@@ -436,7 +436,7 @@
         "fields": {
             "category": 3,
             "name": "Incan Gold Llama",
-            "date": "c. 1400 AD",
+            "date": "1400 AD",
             "period": "Pre-Columbian",
             "culture": "Incan",
             "dimensions": "8cm x 10cm",
@@ -484,7 +484,7 @@
         "fields": {
             "category": 4,
             "name": "The Book of Lismore",
-            "date": "c. 1480 AD",
+            "date": "1480 AD",
             "period": "Medieval",
             "culture": "Celtic",
             "dimensions": "37cm x 25cm",
@@ -500,7 +500,7 @@
         "fields": {
             "category": 4,
             "name": "Isaiah Scroll",
-            "date": "c. 150 BC",
+            "date": "150 BC",
             "period": "Classical",
             "culture": "Hebrew",
             "dimensions": "734 cm x 27 cm",
@@ -516,7 +516,7 @@
         "fields": {
             "category": 4,
             "name": "The Rhind Papyrus",
-            "date": "c. 1550 BC",
+            "date": "1550 BC",
             "period": "Ancient Egypt",
             "culture": "Egyptian",
             "dimensions": "199 cm x 32cm",
@@ -548,7 +548,7 @@
         "fields": {
             "category": 4,
             "name": "The Book of Kells",
-            "date": "c. 800 AD",
+            "date": "800 AD",
             "period": "Medieval",
             "culture": "Celtic",
             "dimensions": "33cm x 25 cm",
@@ -580,7 +580,7 @@
         "fields": {
             "category": 4,
             "name": "The Epic of Gilgamesh",
-            "date": "c. 1800 BC",
+            "date": "1800 BC",
             "period": "Ancient Near-Eastern",
             "culture": "Akkadian",
             "dimensions": "40cm x 25cm",
@@ -596,7 +596,7 @@
         "fields": {
             "category": 4,
             "name": "The Cyrus Cylinder",
-            "date": "c. 538 BC",
+            "date": "538 BC",
             "period": "Ancient Near-Eastern",
             "culture": "Persian",
             "dimensions": "22cm x 10cm max",
@@ -628,7 +628,7 @@
         "fields": {
             "category": 4,
             "name": "Don Quixote",
-            "date": "1605-15 AD",
+            "date": "1615 AD",
             "period": "Medieval",
             "culture": "Spanish",
             "dimensions": "30cm x 22cm",
