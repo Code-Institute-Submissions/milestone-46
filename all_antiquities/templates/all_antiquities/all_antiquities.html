@@ -12,16 +12,12 @@
         <!-- Categories -->
         <h6 class="widget-title mb-30">Categories</h6>
 
-        <!--  List of Categories  -->
         <div class="catagories-menu">
             <ul>
 
                 {% for category in categories %}
 
-                <li><a href="#">{{ category.name }}</a></li>
-
-                <!-- Code for active element -->
-                <!-- <li class="active"></li> -->
+                <li><a class="{% if category.name == selected %} active {% endif %}" href="#">{{ category.name }}</a></li>
 
                 {% endfor %}
 
@@ -35,60 +31,22 @@
         <h6 class="widget-title mb-30">Periods</h6>
 
         <div class="widget-desc">
-            <!-- Periods Form Check-->
             
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Neolithic">
-                <label class="form-check-label" for="Neolithic">Neolithic</label>
-            </div>
-
-            <!-- Extra form checks in case above code doesn't work -->
-            <!-- <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Ancient Chinese">
-                <label class="form-check-label" for="Ancient Chinese">Ancient Chinese</label>
-            </div>
+            {% for period in periods %}
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Ancient Egyptian">
-                <label class="form-check-label" for="Ancient Egyptian">Ancient Egyptian</label>
+                <input class="form-check-input" type="checkbox" value="{{ period.name }}" id="{{ period.name }}">
+                <label class="form-check-label" for="{{ period.name }}">{{ period.name }}</label>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Ancient Near-Eastern">
-                <label class="form-check-label" for="Ancient Near-Eastern">Ancient Near-Eastern</label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Iron Age">
-                <label class="form-check-label" for="Iron Age">Iron Age</label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Classical">
-                <label class="form-check-label" for="Classical">Classical</label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Medieval">
-                <label class="form-check-label" for="Medieval">Medieval</label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Pre-Columbian">
-                <label class="form-check-label" for="Pre-Columbian">Pre-Columbian</label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="Modernity">
-                <label class="form-check-label" for="Modernity">Modernity</label>
-            </div> -->
+            {% endfor %}
 
         </div>
     </div>
 
     <!-- ##### Single Widget ##### -->
     <div class="widget price mb-50">
-        <!-- Widget Title -->
+        <!-- Donation Value -->
         <h6 class="widget-title mb-30">Donation Value</h6>
 
         <div class="widget-desc">
@@ -96,10 +54,14 @@
                 <div data-min="10" data-max="400" data-unit="$"
                     class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
                     data-value-min="10" data-value-max="1000" data-label-result="">
+
                     <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+
                     <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+
                     <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
                 </div>
+                
                 <div class="range-price">€10 - €400</div>
             </div>
         </div>

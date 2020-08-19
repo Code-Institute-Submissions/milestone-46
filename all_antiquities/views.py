@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-
+from django.contrib import messages
+from django.db.models import Q
 
 from .models import Antiquity, Category, Period
 
@@ -10,11 +11,23 @@ def all_antiquities(request):
     antiquities = Antiquity.objects.all()
     categories = Category.objects.all()
     periods = Period.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "Please enter your search parameters.")
+                return redirect(reverse('all_antiquities'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            antiquities = antiquities.filter(queries)
 
     context = {
         'antiquities': antiquities,
         'categories': categories,
         'periods': periods,
+        'search_term': query,
     }
 
     return render(request, 'all_antiquities/all_antiquities.html', context)

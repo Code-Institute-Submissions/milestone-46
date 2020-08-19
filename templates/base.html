@@ -48,9 +48,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="search-content">
-                        <form action="#" method="GET">
-                            <!-- Search here is the equivalent of 'q' for query in the videos -->
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                        <form action="{% url 'all_antiquities' %}" method="GET">
+                            <input type="search" name="q" id="search" placeholder="Type your keyword...">
+                            
                             <button type="submit"><img src="{% static 'images/core_img/search.png' %}"
                                     alt="Search Icon"></button>
                         </form>
