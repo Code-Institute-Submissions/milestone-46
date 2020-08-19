@@ -99,3 +99,10 @@
 .single-products-catagory .hover-content .option-title {
     color: #e4e4e4;
 }
+
+/* All Antiquities Styles */
+
+.product-topbar .golden-text p,
+.golden-text p {
+    color: #fbb710;
+}
