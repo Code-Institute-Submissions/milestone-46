@@ -12,15 +12,23 @@ def all_antiquities(request):
     categories = Category.objects.all()
     periods = Period.objects.all()
     query = None
+    # categories = None
 
     if request.GET:
+
+        if 'category' in request.GET:
+            categories = request.GET['category']
+            print(antiquities
+            antiquities = antiquities.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, "Please enter your search parameters.")
                 return redirect(reverse('all_antiquities'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(period__icontains=query) | Q(culture__icontains=query)
             antiquities = antiquities.filter(queries)
 
     context = {
@@ -28,6 +36,7 @@ def all_antiquities(request):
         'categories': categories,
         'periods': periods,
         'search_term': query,
+        'current_categories': categories,
     }
 
     return render(request, 'all_antiquities/all_antiquities.html', context)

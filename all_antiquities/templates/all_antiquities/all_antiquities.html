@@ -15,12 +15,20 @@
         <div class="catagories-menu">
             <ul>
 
-                {% for category in categories %}
+                <!-- Original template solution for category search, didn't work -->
+                <!-- {% for category in categories %}
 
-                <li><a class="{% if category.name == selected %} active {% endif %}" href="#">{{ category.name }}</a></li>
+                <li><a class="{% if 'Sites' == selected %} active {% endif %}" href="{% url 'all_antiquities' %}?category={{ category.name }}">{{ category.name }}</a></li>
 
-                {% endfor %}
+                {% endfor %} -->
 
+                <li><a class="" href="{% url 'all_antiquities' %}?category=sites">Sites</a></li>
+
+                <li><a class="" href="{% url 'all_antiquities' %}?category=monuments">Monuments</a></li>
+
+                <li><a class="" href="{% url 'all_antiquities' %}?category=artefacts">Artefacts</a></li>
+
+                <li><a class="" href="{% url 'all_antiquities' %}?category=texts">Texts</a></li>
             </ul>
         </div>
     </div>
@@ -87,15 +95,14 @@
                     <div class="product-sorting d-flex">
                         <div class="sort-by-date d-flex align-items-center mr-15">
                             <p>Sort by&nbsp;</p>
-                            <form action="#" method="get">
+                            <form action="#" method="GET">
                                 <select name="select" id="sortBydate">
-                                    <option value="value">Value (Low to High)</option>
-                                    <option value="value">Value (High to Low)</option>
-                                    <option value="value">Date (Low to High)</option>
-                                    <option value="value">Date (High to Low)</option>
-                                    <option value="value">Name (A-Z)</option>
-                                    <option value="value">Name (Z-A)</option>
-
+                                    <option value="{% url 'all_antiquities' %}?sort=value&direction=asc">Value (Low to High)</option>
+                                    <option value="{% url 'all_antiquities' %}?sort=value&direction=desc">Value (High to Low)</option>
+                                    <option value="{% url 'all_antiquities' %}?sort=date&direction=asc">Date (Low to High)</option>
+                                    <option value="{% url 'all_antiquities' %}?sort=date&direction=desc">Date (High to Low)</option>
+                                    <option value="{% url 'all_antiquities' %}?sort=name&direction=asc">Name (A-Z)</option>
+                                    <option value="{% url 'all_antiquities' %}?sort=name&direction=asc">Name (Z-A)</option>
                                 </select>
                             </form>
                         </div>
@@ -154,7 +161,7 @@
                         <div class="ratings-cart text-right">
                             <div class="ratings golden-text">
                                 <!-- Maybe the category instead? PQ -->
-                                <p>{{ antiquity.date }}</p>
+                                <p>{{ antiquity.category }}</p>
                             </div>
 
                             <div class="cart">

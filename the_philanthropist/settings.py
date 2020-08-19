@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'home',
     'latest_options',
     'all_antiquities',
+    'bag',
 ]
 
 MIDDLEWARE = [
