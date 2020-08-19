@@ -1,0 +1,65 @@
+[
+    {
+        "pk": 1,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Neolithic"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Ancient China"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Ancient Egypt"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Ancient Near-Eastern"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Iron Age"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Classical"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Medieval"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Pre-Columbian"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "all_antiquities.period",
+        "fields": {
+            "name": "Modernity"
+        }
+    }
+]

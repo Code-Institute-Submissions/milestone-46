@@ -9,71 +9,80 @@
 
     <!-- ##### Single Widget ##### -->
     <div class="widget catagory mb-50">
-        <!-- Widget Title -->
+        <!-- Categories -->
         <h6 class="widget-title mb-30">Categories</h6>
 
-        <!--  Categories  -->
+        <!--  List of Categories  -->
         <div class="catagories-menu">
             <ul>
-                <li class="active"><a href="#">Sites</a></li>
-                <li><a href="#">Monuments</a></li>
-                <li><a href="#">Artefacts</a></li>
-                <li><a href="#">Texts</a></li>
+
+                {% for category in categories %}
+
+                <li><a href="#">{{ category.name }}</a></li>
+
+                <!-- Code for active element -->
+                <!-- <li class="active"></li> -->
+
+                {% endfor %}
+
             </ul>
         </div>
     </div>
 
     <!-- ##### Single Widget ##### -->
     <div class="widget brands mb-50">
-        <!-- Widget Title -->
+        <!-- Periods -->
         <h6 class="widget-title mb-30">Periods</h6>
 
         <div class="widget-desc">
-            <!-- Single Form Check -->
+            <!-- Periods Form Check-->
+            
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="amado">
-                <label class="form-check-label" for="amado">Neolithic</label>
+                <input class="form-check-input" type="checkbox" value="" id="Neolithic">
+                <label class="form-check-label" for="Neolithic">Neolithic</label>
             </div>
-            <!-- Single Form Check -->
+
+            <!-- Extra form checks in case above code doesn't work -->
+            <!-- <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="Ancient Chinese">
+                <label class="form-check-label" for="Ancient Chinese">Ancient Chinese</label>
+            </div>
+
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="ikea">
-                <label class="form-check-label" for="ikea">Ancient Chinese</label>
+                <input class="form-check-input" type="checkbox" value="" id="Ancient Egyptian">
+                <label class="form-check-label" for="Ancient Egyptian">Ancient Egyptian</label>
             </div>
-            <!-- Single Form Check -->
+
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="furniture">
-                <label class="form-check-label" for="furniture">Ancient Egyptian</label>
+                <input class="form-check-input" type="checkbox" value="" id="Ancient Near-Eastern">
+                <label class="form-check-label" for="Ancient Near-Eastern">Ancient Near-Eastern</label>
             </div>
-            <!-- Single Form Check -->
+
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="factory">
-                <label class="form-check-label" for="factory">Ancient Near-Eastern</label>
+                <input class="form-check-input" type="checkbox" value="" id="Iron Age">
+                <label class="form-check-label" for="Iron Age">Iron Age</label>
             </div>
-            <!-- Single Form Check -->
+
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="artdeco">
-                <label class="form-check-label" for="artdeco">Iron Age</label>
+                <input class="form-check-input" type="checkbox" value="" id="Classical">
+                <label class="form-check-label" for="Classical">Classical</label>
             </div>
-            <!-- Single Form Check -->
+
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="artdeco">
-                <label class="form-check-label" for="artdeco">Classical</label>
+                <input class="form-check-input" type="checkbox" value="" id="Medieval">
+                <label class="form-check-label" for="Medieval">Medieval</label>
             </div>
-            <!-- Single Form Check -->
+
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="artdeco">
-                <label class="form-check-label" for="artdeco">Medieval</label>
+                <input class="form-check-input" type="checkbox" value="" id="Pre-Columbian">
+                <label class="form-check-label" for="Pre-Columbian">Pre-Columbian</label>
             </div>
-            <!-- Single Form Check -->
+
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="artdeco">
-                <label class="form-check-label" for="artdeco">Pre-Columbian</label>
-            </div>
-            <!-- Single Form Check -->
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="artdeco">
-                <label class="form-check-label" for="artdeco">Modernity</label>
-            </div>
+                <input class="form-check-input" type="checkbox" value="" id="Modernity">
+                <label class="form-check-label" for="Modernity">Modernity</label>
+            </div> -->
+
         </div>
     </div>
 
@@ -161,9 +170,7 @@
 
                         {% else %}
 
-                        <img src="{% static 'images/core_img/no_image_1.png' %}" alt="{{ antiquity.name }}">
-                        <!-- Hover Thumb -->
-                        <img class="hover-img" src="{{ MEDIA_URL }}no_image_1.png" alt="{{ antiquity.name }}">
+                        <img src="{% static 'images/core_img/no_image_1.jpg' %}" alt="{{ antiquity.name }}">
 
                         {% endif %}
 
@@ -177,7 +184,7 @@
 
                             <p class="product-price">€{{ antiquity.value }}</p>
 
-                            <a href="product-details.html">
+                            <a href="{% url 'single_antiquity' antiquity.id %}">
                                 <h6>{{ antiquity.name }}</h6>
                             </a>
                         </div>

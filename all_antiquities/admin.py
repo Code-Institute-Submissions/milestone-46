@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Antiquity, Category
+from .models import Antiquity, Category, Period
 
 
 class AntiquityAdmin(admin.ModelAdmin):
@@ -23,5 +23,12 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
+class PeriodAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+    )
+
+
 admin.site.register(Antiquity, AntiquityAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Period, PeriodAdmin)

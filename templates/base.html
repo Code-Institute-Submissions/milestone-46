@@ -98,9 +98,11 @@
                     {% with url_name=request.resolver_match.url_name %}
                     <li class="{% if url_name == 'home' %} active {% endif %}"><a href="{% url 'home' %}">Home</a></li>
 
-                    <li class="{% if url_name == 'latest_options' %} active {% endif %}"><a href="{% url 'latest_options' %}">Latest Options</a></li>
+                    <li class="{% if url_name == 'latest_options' %} active {% endif %}"><a
+                            href="{% url 'latest_options' %}">Latest Options</a></li>
 
-                    <li class="{% if url_name == 'all_antiquities' %} active {% endif %}"><a href="{% url 'all_antiquities' %}">All Antiquities</a></li>
+                    <li class="{% if url_name == 'all_antiquities' %} active {% endif %}"><a
+                            href="{% url 'all_antiquities' %}">All Antiquities</a></li>
 
                     <li><a href="#">Cart</a></li>
 
@@ -115,7 +117,7 @@
                     {% if request.user.is_authenticated %}
 
                     {% if request.user.is_superuser %}
-                    
+
                     <a href="#" id="add-product-btn" class="btn amado-btn mb-15">Add Product</a>
 
                     {% endif %}
@@ -139,15 +141,16 @@
             <div class="cart-fav-search mb-100">
                 <a href="cart.html" class="cart-nav {% if grand_total %} text-black {% endif %}"><img
                         src="{% static 'images/core_img/cart.png' %}" alt="Cart Icon"> Cart <span>
+
                         {% if grand_total %}
                         €{{ grand_total|floatformat:2 }}
                         {% else %}
                         €0.00
                         {% endif %}
-                    </span></a>
-                <a href="#" class="fav-nav"><img src="{% static 'images/core_img/favorites.png' %}"
-                        alt="Favorites Icon">
-                    Favourite </a>
+
+                    </span>
+                </a>
+
                 <a href="#" class="search-nav"><img src="{% static 'images/core_img/search.png' %}" alt="Search Icon">
                     Search
                 </a>
@@ -160,9 +163,11 @@
                 <a href="https://www.instagram.com/britishmuseum/" target="_blank"><i class="fa fa-instagram"
                         aria-hidden="true"></i></a>
 
-                <a href="https://www.facebook.com/unesco" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/unesco" target="_blank"><i class="fa fa-facebook"
+                        aria-hidden="true"></i></a>
 
-                <a href="https://twitter.com/nmireland" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/nmireland" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a>
             </div>
         </header>
         <!-- Header Area End -->
@@ -185,7 +190,7 @@
 
                         <p>Insert your email here and subscribe to The Philanthropist for the latest archaeological and
                             historical research and news, direct to your inbox.</p>
-                    </div> 
+                    </div>
                 </div>
                 <!-- Newsletter Form -->
                 <div class="col-12 col-lg-6 col-xl-5">

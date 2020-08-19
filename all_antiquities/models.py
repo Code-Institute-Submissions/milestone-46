@@ -16,6 +16,14 @@ class Category(models.Model):
         return self.friendly_name
 
 
+class Period(models.Model):
+
+    name = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self.name
+
+
 class Antiquity(models.Model):
 
     class Meta:

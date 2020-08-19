@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Product Details Area Start -->
+<div class="single-product-area section-padding-100 clearfix">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-50">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'all_antiquities' %}">All Antiquities</a></li>
+                        <li class="breadcrumb-item"><a
+                                href="{% url 'all_antiquities' %}">{{ antiquity.category.name }}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ antiquity.name }}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <div class="single_product_thumb">
+                    <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <!-- Add an index loop to this -->
+                            <li class="active" data-target="#product_details_slider" data-slide-to="0"
+                                style="background-image: url('{{ antiquity.image.url }}');">
+                            </li>
+                            <li data-target="#product_details_slider" data-slide-to="1"
+                                style="background-image: url('{{ antiquity.image.url }}');">
+                            </li>
+                            <li data-target="#product_details_slider" data-slide-to="2"
+                                style="background-image: url('{{ antiquity.image.url }}');">
+                            </li>
+                            <li data-target="#product_details_slider" data-slide-to="3"
+                                style="background-image: url('{{ antiquity.image.url }}');">
+                            </li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <!-- Add an index loop to this -->
+                            <div class="carousel-item active">
+                                <a class="gallery_img" href="{{ antiquity.image.url }}">
+                                    <img class="d-block w-100" src="{{ antiquity.image.url }}" alt="First slide">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a class="gallery_img" href="{{ antiquity.image.url }}">
+                                    <img class="d-block w-100" src="{{ antiquity.image.url }}" alt="Second slide">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a class="gallery_img" href="{{ antiquity.image.url }}">
+                                    <img class="d-block w-100" src="{{ antiquity.image.url }}" alt="Third slide">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a class="gallery_img" href="{{ antiquity.image.url }}">
+                                    <img class="d-block w-100" src="{{ antiquity.image.url }}" alt="Fourth slide">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="single_product_desc">
+                    <!-- Antiquity Meta Data -->
+                    <div class="product-meta-data">
+                        <div class="line"></div>
+                        <p class="product-price">€{{ antiquity.value }}</p>
+                        <a href="{% url 'single_antiquity' antiquity.id %}">
+                            <h6>{{ antiquity.name }}</h6>
+                        </a>
+                        <!-- Antiquity Details -->
+                        <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                            <div class="ratings golden-text">
+                                <p>{{ antiquity.date }}</p>
+                            </div>
+                            <div class="review golden-text">
+                                <p>{{ antiquity.category.friendly_name }}</p>
+                            </div>
+                        </div>
+
+                        <p><strong>Culture:</strong> {{ antiquity.culture }}</p>
+
+
+                        <p><strong>Dimensions:</strong> {{ antiquity.dimensions }}</p>
+
+                        <div class="short_overview my-5">
+                            <p><strong>Description:</strong></p>
+                            <p>{{ antiquity.description }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart Form -->
+                    <form class="cart clearfix" method="post">
+                        <div class="cart-btn d-flex mb-50">
+                            <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Details Area End -->
+
+{% endblock %}

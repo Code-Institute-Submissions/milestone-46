@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 def latest_options(request):
     """ This view returns the Latest Options page """
 
