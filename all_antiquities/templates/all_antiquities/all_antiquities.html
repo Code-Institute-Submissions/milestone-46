@@ -157,6 +157,7 @@
                             <!-- Hover Thumb -->
                             <img class="hover-img" src="{{ antiquity.image.url }}" alt="{{ antiquity.name }}">
                         </a>
+
                         {% else %}
 
                         <img src="{% static 'images/core_img/no_image_1.jpg' %}" alt="{{ antiquity.name }}">
@@ -183,10 +184,23 @@
                                 <p>{{ antiquity.date }}</p>
                             </div>
 
-                            <div class="cart">
-                                <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img
-                                        src="{% static 'images/core_img/cart.png' %}" alt=""></a>
-                            </div>
+                            <form class="cart" action="{% url 'add_to_bag' antiquity.id %}" method="POST">
+
+                                {% csrf_token %}
+
+                                <div class="form-group text-right m-0 p-0">
+                                    <input type="hidden" class="form-control qty_input" name="quantity" value="1"
+                                        min="1" max="10" data-item_id="{{ antiquity.id }}"
+                                        id="id_qty_{{ antiquity.id }}">
+                                </div>
+
+                                <button class="add-to-cart-btn" type="submit" data-toggle="tooltip"
+                                        data-placement="left" title="Add to Cart"><img
+                                            src="{% static 'images/core_img/cart.png' %}" alt=""></button>
+
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
+                            </form>
                         </div>
                     </div>
                 </div>

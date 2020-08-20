@@ -67,12 +67,12 @@
 
                                 {% for item in bag_items %}
                                 
-                                {{ item.antiquity.culture }}, <br>
+                                - {{ item.antiquity.culture }} <br>
 
                                 {% endfor %}
 
                             </span></li>
-                        <li><span>Number of Items:</span> <span>{{ product_count }}</span></li>
+                        <li><span>Number of Items:</span> <span class="text-left">{{ product_count }}</span></li>
                         <li><span>Total Donated:</span> <span>€{{ total|floatformat:2 }}</span></li>
                     </ul>
                     <div class="cart-btn mt-100">

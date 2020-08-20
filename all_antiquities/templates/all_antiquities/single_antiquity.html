@@ -119,14 +119,15 @@
 
                     <!-- Add to Cart Form -->
                     <form class="cart clearfix" action="{% url 'add_to_bag' antiquity.id %}" method="POST">
+
                         {% csrf_token %}
 
                         <div class="form-row">
                             <div class="col-12">
                                 <p class="quantity-heading"><strong>Quantity:</strong></p>
-                                <div class="form-group w-50">
+                                <div class="form-group">
                                     <div class="input-group">
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ antiquity.id }}" id="id_qty_{{ antiquity.id }}">
+                                        <input type="number" class="form-control qty_input" name="quantity" value="1" min="1" max="10" data-item_id="{{ antiquity.id }}" id="id_qty_{{ antiquity.id }}">
                                     </div>
                                 </div>
                             </div>

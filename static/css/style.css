@@ -113,8 +113,18 @@
     color: #fbb710;
 }
 
+.ratings-cart form .add-to-cart-btn {
+    border: none;
+    background-color: transparent;
+}
+
 /* Single Antiquity Styles */
 
 .main-content-wrapper .single-product-area .single_product_desc .cart .quantity-heading {
     background-color: transparent;
+}
+
+.cart .form-row .col-12 .input-group {
+    width: 30%;
+    margin-left: 0.7em;
 }
