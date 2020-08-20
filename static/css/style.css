@@ -33,6 +33,11 @@
     }
 }
 
+/* .main-content-wrapper .header-area .cart-fav-search .golden-text, */
+.main-content-wrapper .header-area .cart-fav-search a span {
+    color: #fbb710;
+}
+
 /* Main Page Styles */
 
 #landing-page-section {
