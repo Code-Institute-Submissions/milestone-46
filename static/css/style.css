@@ -107,3 +107,9 @@
 .golden-text p {
     color: #fbb710;
 }
+
+/* Single Antiquity Styles */
+
+.main-content-wrapper .single-product-area .single_product_desc .cart .quantity-heading {
+    background-color: transparent;
+}

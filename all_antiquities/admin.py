@@ -4,8 +4,8 @@ from .models import Antiquity, Category, Period
 
 class AntiquityAdmin(admin.ModelAdmin):
     list_display = (
-        'category',
         'name',
+        'category',
         'date',
         'period',
         'culture',
@@ -13,7 +13,7 @@ class AntiquityAdmin(admin.ModelAdmin):
         'image',
     )
 
-    ordering = ('category',)
+    ordering = ('name',)
 
 
 class CategoryAdmin(admin.ModelAdmin):

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 
 from .models import Antiquity, Category, Period
 
@@ -13,12 +14,25 @@ def all_antiquities(request):
     periods = Period.objects.all()
     query = None
     # categories = None
+    sort = None
+    direction = None
 
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                antiquities = antiquities.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            antiquities = antiquities.order_by(sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            print(antiquities)
             antiquities = antiquities.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
@@ -31,12 +45,15 @@ def all_antiquities(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(period__icontains=query) | Q(culture__icontains=query)
             antiquities = antiquities.filter(queries)
 
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'antiquities': antiquities,
         'categories': categories,
         'periods': periods,
         'search_term': query,
         'current_categories': categories,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'all_antiquities/all_antiquities.html', context)

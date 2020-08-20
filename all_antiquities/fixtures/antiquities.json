@@ -328,7 +328,7 @@
             "period": "Ancient Egypt",
             "culture": "Egyptian",
             "dimensions": "54cm x 39cm x 49cm",
-            "description": "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1332–1323 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo.[4] The mask is one of the best-known works of art in the world",
+            "description": "The mask of Tutankhamun is a gold mask of the 18th-dynasty ancient Egyptian Pharaoh Tutankhamun (reigned 1332–1323 BC). It was discovered by Howard Carter in 1925 in tomb KV62 in the Valley of the Kings, and is now housed in the Egyptian Museum in Cairo. The mask is one of the best-known works of art in the world.",
             "value": 50,
             "image": "artefact_maskOfTut.jpg",
             "image_url": "https://www.nationalgeographic.com/news/2010/2/100216-king-tut-health-malaria-inbred-bone-tutankhamun-pictures/"
@@ -458,7 +458,7 @@
             "dimensions": "25cm x 15cm",
             "description": "Sutton Hoo, at Sutton near Woodbridge, in Suffolk, England, is the site of two early medieval cemeteries, from the 6th to 7th centuries. Archaeologists have been excavating the area since the 1930s.",
             "value": 40,
-            "image": "artefact_suttonHooHelmet",
+            "image": "artefact_suttonHooHelmet.jpg",
             "image_url": "http://northumberlandnaturalist.blogspot.com/2010/10/surfacing.html"
         }
     },

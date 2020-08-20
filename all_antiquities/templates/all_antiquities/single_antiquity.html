@@ -15,7 +15,8 @@
                         <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{% url 'all_antiquities' %}">All Antiquities</a></li>
                         <li class="breadcrumb-item"><a
-                                href="{% url 'all_antiquities' %}">{{ antiquity.category.name }}</a></li>
+                                href="{% url 'all_antiquities' %}?category={{ antiquity.category.name }}">{{ antiquity.category.name }}</a>
+                        </li>
                         <li class="breadcrumb-item active" aria-current="page">{{ antiquity.name }}</li>
                     </ol>
                 </nav>
@@ -30,7 +31,7 @@
 
                     <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                            <!-- Add an index loop to this -->
+                            <!-- Add an index loop to this and more images if there is time! PQ-->
                             <li class="active" data-target="#product_details_slider" data-slide-to="0"
                                 style="background-image: url('{{ antiquity.image.url }}');">
                             </li>
@@ -45,7 +46,7 @@
                             </li>
                         </ol>
                         <div class="carousel-inner">
-                            <!-- Add an index loop to this -->
+                            <!-- Add an index loop to this and more images if there is time! PQ-->
                             <div class="carousel-item active">
                                 <a class="gallery_img" href="{{ antiquity.image.url }}">
                                     <img class="d-block w-100" src="{{ antiquity.image.url }}" alt="First slide">
@@ -75,7 +76,8 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <a class="gallery_img" href="{% url 'all_antiquities' %}">
-                                    <img class="d-block w-100" src="{% static 'images/core_img/no_image_1.jpg' %}" alt="First slide">
+                                    <img class="d-block w-100" src="{% static 'images/core_img/no_image_1.jpg' %}"
+                                        alt="First slide">
                                 </a>
                             </div>
                         </div>
@@ -116,12 +118,31 @@
                     </div>
 
                     <!-- Add to Cart Form -->
-                    <form class="cart clearfix" method="post">
-                        <div class="cart-btn d-flex mb-50">
-                            <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
-                        </div>
-                    </form>
+                    <form class="cart clearfix" action="{% url 'add_to_bag' antiquity.id %}" method="POST">
+                        {% csrf_token %}
 
+                        <div class="form-row">
+                            <div class="col-12">
+                                <p class="quantity-heading"><strong>Quantity:</strong></p>
+                                <div class="form-group w-50">
+                                    <div class="input-group">
+                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ antiquity.id }}" id="id_qty_{{ antiquity.id }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <input type="submit" class="btn amado-btn" value="Add to Cart">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+
+                        <!-- <div class="cart-btn d-flex mb-50">
+                            <button type="submit" class="btn amado-btn" name="addtocart" value="Add to Bag" data-item_id="{{ antiquity.id }}">Add to
+                                Cart</button>
+                        </div>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}"> -->
+                    </form>
                 </div>
             </div>
         </div>
