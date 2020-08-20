@@ -17,8 +17,8 @@ def all_antiquities(request):
     if request.GET:
 
         if 'category' in request.GET:
-            categories = request.GET['category']
-            print(antiquities
+            categories = request.GET['category'].split(',')
+            print(antiquities)
             antiquities = antiquities.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 

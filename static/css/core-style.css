@@ -316,15 +316,16 @@ img {
   font-size: 18px;
   line-height: 56px;
   background-color: #fbb710;
-  font-weight: 400; }
+  font-weight: 400;
+  transition: all ease-in 0.3s; }
   .amado-btn.active, .amado-btn:focus {
     font-size: 18px;
     color: #ffffff;
-    background-color: #131212; }
+    background-color: #464444; }
   .amado-btn:hover {
     font-size: 18px;
     color: #ffffff;
-    background-color: #464444; }
+    background-color: #665944; }
 
 /* :: 4.0 Search Wrapper Area CSS */
 .search-wrapper {

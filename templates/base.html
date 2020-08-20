@@ -104,7 +104,7 @@
                     <li class="{% if url_name == 'all_antiquities' %} active {% endif %}"><a
                             href="{% url 'all_antiquities' %}">All Antiquities</a></li>
 
-                    <li><a href="#">Cart</a></li>
+                    <li class="{% if url_name == 'view_bag' %} active {% endif %}"><a href="{% url 'view_bag' %}">Cart</a></li>
 
                     <li><a href="#">Checkout</a></li>
                     {% endwith %}
@@ -139,7 +139,7 @@
 
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="cart.html" class="cart-nav {% if grand_total %} text-black {% endif %}"><img
+                <a href="{% url 'view_bag' %}" class="cart-nav {% if grand_total %} text-black {% endif %}"><img
                         src="{% static 'images/core_img/cart.png' %}" alt="Cart Icon"> Cart <span>
 
                         {% if grand_total %}
@@ -258,11 +258,11 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">All Antiquities</a>
+                                            <a class="nav-link" href="{% url 'all_antiquities' %}">All Antiquities</a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Cart</a>
+                                            <a class="nav-link" href="{% url 'view_bag' %}">Cart</a>
                                         </li>
 
                                         <li class="nav-item">

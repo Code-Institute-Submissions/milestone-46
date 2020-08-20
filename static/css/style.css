@@ -4,10 +4,11 @@
 
 #add-product-btn {
     background-color: #a5a7aa;
+    transition: all ease-in 0.3s;
 }
 
 #add-product-btn:hover {
-    background-color: #7995bb;
+    background-color: #5e7ca7;
 }
 
 #add-product-btn:focus {
@@ -15,11 +16,11 @@
 }
 
 .profile-button {
-    background-color: #3c3c3c;
+    background-color: #616060;
 }
 
 .profile-button:hover {
-    background-color: #252525;
+    background-color: #464444;
 }
 
 .profile-button:focus {
