@@ -142,17 +142,19 @@
 
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="{% url 'view_bag' %}" class="cart-nav">
-                    <img src="{% static 'images/core_img/cart.png' %}" alt="Cart Icon">Cart
-                    <span class="{% if total %} golden-text {% endif %}">
+                <a href="{% url 'view_bag' %}" class="cart-nav {% if total == 0  %} golden-text {% endif %}">
+                    <img src="{% static 'images/core_img/cart.png' %}" alt="Cart Icon">Cart&nbsp;
 
-                        {% if total >= 0 %}
-                        &nbsp; €{{ total|floatformat:2 }}
-                        {% else %}
-                        €0.00
-                        {% endif %}
+                    {% if total %}
 
-                    </span>
+                    <span id="total-text"> €{{ total|floatformat:2 }}</span>
+
+                    {% else %}
+
+                    <span>€0.00</span>
+
+                    {% endif %}
+
                 </a>
 
                 <a href="#" class="search-nav"><img src="{% static 'images/core_img/search.png' %}" alt="Search Icon">

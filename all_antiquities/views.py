@@ -16,6 +16,7 @@ def all_antiquities(request):
     # categories = None
     sort = None
     direction = None
+    # import pdb; pdb.set_trace()
 
     if request.GET:
         if 'sort' in request.GET:
@@ -32,9 +33,15 @@ def all_antiquities(request):
             antiquities = antiquities.order_by(sortkey)
 
         if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            antiquities = antiquities.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+            get_categories = request.GET['category'].split(',')
+            antiquities = antiquities.filter(category__name__in=get_categories)
+            categories = Category.objects.filter(name__in=get_categories)
+
+        if 'period' in request.GET:
+            get_periods = request.GET['period'].split(',')
+            print(periods)
+            antiquities = [antiquity for antiquity in antiquities if antiquity.period == get_periods[0]]
+            periods = Period.objects.filter(name__in=get_periods)
 
         if 'q' in request.GET:
             query = request.GET['q']

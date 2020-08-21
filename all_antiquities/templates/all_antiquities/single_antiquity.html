@@ -124,7 +124,9 @@
 
                         <div class="form-row">
                             <div class="col-12">
-                                <p class="quantity-heading"><strong>Quantity:</strong></p>
+
+                                <!-- If Quantity not used = Remove!! PQ -->
+                                <!-- <p class="quantity-heading"><strong>Quantity:</strong></p> -->
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="number" class="form-control qty_input" name="quantity" value="1" min="1" max="10" data-item_id="{{ antiquity.id }}" id="id_qty_{{ antiquity.id }}">
@@ -138,6 +140,7 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
 
+                        <!-- Original Attempt with no quantity = Remove if not used!! -->
                         <!-- <div class="cart-btn d-flex mb-50">
                             <button type="submit" class="btn amado-btn" name="addtocart" value="Add to Bag" data-item_id="{{ antiquity.id }}">Add to
                                 Cart</button>

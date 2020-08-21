@@ -33,9 +33,15 @@
     }
 }
 
-/* .main-content-wrapper .header-area .cart-fav-search .golden-text, */
-.main-content-wrapper .header-area .cart-fav-search a span {
-    color: #fbb710;
+
+/* General Styles */
+
+.add-cursor {
+    cursor: pointer;
+}
+
+.cart-fav-search a #total-text {
+    color: #fbb710 ;
 }
 
 /* Main Page Styles */

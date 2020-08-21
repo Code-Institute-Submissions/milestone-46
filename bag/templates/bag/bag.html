@@ -29,24 +29,56 @@
                             {% for item in bag_items %}
 
                             <tr>
+
+                                <!-- Item Image -->
                                 <td class="cart_product_img">
                                     <a href="{{ item.antiquity.image.url }}"><img src="{{ item.antiquity.image.url }}"
                                             alt="{{ item.name }}"></a>
                                 </td>
 
+                                <!-- Item Name -->
                                 <td class="cart_product_desc">
-                                    <h5>{{ item.antiquity.name }}</h5>
+                                    <h5><a
+                                            href="{% url 'single_antiquity' item.antiquity.id %}">{{ item.antiquity.name }}</a>
+                                    </h5>
                                 </td>
 
-                                <td class="cart_product_desc">
-                                    <h5>{{ item.quantity }}</h5>
+                                <!-- Item Quantity -->
+                                <td class="cart_product_desc mt-5">
+                                    <form class="update-form" action="{% url 'adjust_bag' item.antiquity.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-row w-75 ml-3">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control qty_input"
+                                                            name="quantity" value="{{ item.quantity }}" min="0"
+                                                            max="100" data-item_id="{{ item.antiquity.id }}"
+                                                            id="id_qty_{{ item.antiquity.id }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="col-12">
+                                                <input type="submit" class="btn amado-btn" value="Add to Cart">
+                                            </div>
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}"> -->
+                                        </div>
+                                    </form>
+
+                                    <!-- Quantity Update Link -->
+                                    <a class="update-link text-info float-center add-cursor">Update</a>
                                 </td>
 
-                                <td class="price">
-                                    <span>€{{ item.antiquity.value }}</span>
+                                <!-- Item Value -->
+                                <td class="price mt-5">
+                                    <span>€{{ item.antiquity.value }}</span><br><br>
+
+                                    <!-- Delete Item Link  -->
+                                    <a class="remove-item text-danger float-center add-cursor"
+                                        id="remove_{{ item.item_id }}">Remove</a>
                                 </td>
                             </tr>
-
                             {% endfor %}
 
                             {% else %}
@@ -66,14 +98,14 @@
                         <li><span>Cultures <br> Supported:</span> <span>
 
                                 {% for item in bag_items %}
-                                
+
                                 - {{ item.antiquity.culture }} <br>
 
                                 {% endfor %}
 
                             </span></li>
-                        <li><span>Number of Items:</span> <span class="text-left">{{ product_count }}</span></li>
-                        <li><span>Total Donated:</span> <span>€{{ total|floatformat:2 }}</span></li>
+                        <li><span>Number of Items:</span> <span class="mr-4">{{ product_count }}</span></li>
+                        <li><span>Total Donation:</span> <span>€{{ total|floatformat:2 }}</span></li>
                     </ul>
                     <div class="cart-btn mt-100">
                         <a href="cart.html" class="btn amado-btn w-100">Donate</a>
@@ -83,5 +115,33 @@
         </div>
     </div>
 </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+{{ block.super }}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
 
 {% endblock %}

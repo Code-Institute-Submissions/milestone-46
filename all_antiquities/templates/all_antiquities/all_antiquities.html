@@ -22,13 +22,14 @@
 
                 {% endfor %} -->
 
-                <li><a href="{% url 'all_antiquities' %}?category=sites">Sites</a></li>
+                <li><a href="{% url 'all_antiquities' %}">All Categories</a></li>
 
-                <li><a href="{% url 'all_antiquities' %}?category=monuments">Monuments</a></li>
+                {% for category in categories %}
 
-                <li><a href="{% url 'all_antiquities' %}?category=artefacts">Artefacts</a></li>
+                <li><a href="{% url 'all_antiquities' %}?category={{ category.name }}">{{ category.name }}</a></li>
 
-                <li><a href="{% url 'all_antiquities' %}?category=texts">Texts</a></li>
+                {% endfor %}
+
             </ul>
         </div>
     </div>
@@ -38,17 +39,17 @@
         <!-- Periods -->
         <h6 class="widget-title mb-30">Periods</h6>
 
-        <div class="widget-desc">
+        <div class="catagories-menu">
+            <ul>
+                <li><a href="{% url 'all_antiquities' %}">All Periods</a></li>
 
-            {% for period in periods %}
+                {% for period in periods %}
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{ period.name }}" id="{{ period.name }}">
-                <label class="form-check-label" for="{{ period.name }}">{{ period.name }}</label>
-            </div>
+                <li><a href="{% url 'all_antiquities' %}?period={{ period.name }}">{{ period.name }}</a></li>
 
-            {% endfor %}
+                {% endfor %}
 
+            </ul>
         </div>
     </div>
 
@@ -96,28 +97,19 @@
                         <div class="sort-by-date d-flex align-items-center mr-15">
                             <p>Sort by&nbsp;</p>
 
-                            <!-- Boutique Ado Dropdown Menu -->
-                            <!-- <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Clothing
-                                </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                                    <a href="{% url 'all_antiquities' %}?category=activewear,essentials" class="dropdown-item">Activewear &amp; Essentials</a>
-                                    <a href="{% url 'all_antiquities' %}?category=jeans" class="dropdown-item">Jeans</a>
-                                    <a href="{% url 'all_antiquities' %}?category=shirts" class="dropdown-item">Shirts</a>
-                                    <a href="{% url 'all_antiquities' %}?category=activewear,essentials,jeans,shirts" class="dropdown-item">All Clothing</a>
-                                </div>
-                            </li> -->
-
                             <!-- Not working!! NB -->
+                            <!-- Use Dropdown with a tags -->
                             <form action="{% url 'view_bag' %}" method="GET">
                                 <select name="select" id="sortBydate">
                                     <option href="{% url 'all_antiquities' %}?sort=value&direction=asc">Value (Low to
                                         High)</option>
+
                                     <option href="{% url 'all_antiquities' %}?sort=value&direction=desc">Value (High to
                                         Low)</option>
+
                                     <option href="{% url 'all_antiquities' %}?sort=name&direction=asc">Name (A-Z)
                                     </option>
+
                                     <option href="{% url 'all_antiquities' %}?sort=name&direction=asc">Name (Z-A)
                                     </option>
                                     <!-- Possible Date sorting, needs calculation of relative date for each item -->
@@ -126,12 +118,15 @@
                                 </select>
                             </form>
                         </div>
+
                         <div class="view-product d-flex align-items-center">
                             <p>View</p>
                             <form action="#" method="get">
                                 <select name="select" id="viewProduct">
                                     <option value="value">8</option>
+
                                     <option value="value">16</option>
+
                                     <option value="value">32</option>
                                 </select>
                             </form>
@@ -194,9 +189,9 @@
                                         id="id_qty_{{ antiquity.id }}">
                                 </div>
 
-                                <button class="add-to-cart-btn" type="submit" data-toggle="tooltip"
-                                        data-placement="left" title="Add to Cart"><img
-                                            src="{% static 'images/core_img/cart.png' %}" alt=""></button>
+                                <button class="add-to-cart-btn add-cursor" type="submit" data-toggle="tooltip"
+                                    data-placement="left" title="Add to Cart"><img
+                                        src="{% static 'images/core_img/cart.png' %}" alt=""></button>
 
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
 

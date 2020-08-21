@@ -31,32 +31,25 @@
         "pk": 5,
         "model": "all_antiquities.period",
         "fields": {
-            "name": "Iron Age"
+            "name": "Classical"
         }
     },
     {
         "pk": 6,
         "model": "all_antiquities.period",
         "fields": {
-            "name": "Classical"
+            "name": "Medieval"
         }
     },
     {
         "pk": 7,
         "model": "all_antiquities.period",
         "fields": {
-            "name": "Medieval"
-        }
-    },
-    {
-        "pk": 8,
-        "model": "all_antiquities.period",
-        "fields": {
             "name": "Pre-Columbian"
         }
     },
     {
-        "pk": 9,
+        "pk": 8,
         "model": "all_antiquities.period",
         "fields": {
             "name": "Modernity"
