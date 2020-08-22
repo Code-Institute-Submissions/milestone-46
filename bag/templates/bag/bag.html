@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load bag_tools %}
+
 {% block content %}
 
 <div class="cart-table-area section-padding-100">
@@ -15,20 +17,31 @@
                 <div class="cart-table clearfix">
                     <table class="table table-responsive text-center">
                         <thead>
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Quantity</th>
-                                <th>Value</th>
-                            </tr>
-                        </thead>
-                        <tbody>
 
                             {% if bag_items %}
 
-                            {% for item in bag_items %}
-
                             <tr>
+                                <th>Image</th>
+
+                                <th>Name</th>
+
+                                <th>Quantity</th>
+
+                                <th>Value</th>
+
+                                {% else %}
+
+                                {% endif %}
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+
+                                {% if bag_items %}
+
+                                {% for item in bag_items %}
 
                                 <!-- Item Image -->
                                 <td class="cart_product_img">
@@ -45,8 +58,11 @@
 
                                 <!-- Item Quantity -->
                                 <td class="cart_product_desc mt-5">
-                                    <form class="update-form" action="{% url 'adjust_bag' item.antiquity.id %}" method="POST">
+                                    <form class="update-form" action="{% url 'adjust_bag' item.antiquity.id %}"
+                                        method="POST">
+
                                         {% csrf_token %}
+
                                         <div class="form-row w-75 ml-3">
                                             <div class="col-12">
                                                 <div class="form-group">
@@ -72,18 +88,23 @@
 
                                 <!-- Item Value -->
                                 <td class="price mt-5">
-                                    <span>€{{ item.antiquity.value }}</span><br><br>
+                                    <span>€{{ item.antiquity.value | calc_subtotal:item.quantity }}</span><br><br>
 
                                     <!-- Delete Item Link  -->
                                     <a class="remove-item text-danger float-center add-cursor"
                                         id="remove_{{ item.item_id }}">Remove</a>
                                 </td>
                             </tr>
+                            
                             {% endfor %}
 
                             {% else %}
 
-                            <p class="lead mb-5">Your cart is empty</p>
+                            <div class="cart-btn mt-50">
+                                <p class="lead">Your cart is empty</p>
+
+                                <a href="{% url 'all_antiquities' %}" class="btn amado-btn mt-30">Find Antiquities</a>
+                            </div>
 
                             {% endif %}
 
@@ -105,6 +126,7 @@
 
                             </span></li>
                         <li><span>Number of Items:</span> <span class="mr-4">{{ product_count }}</span></li>
+
                         <li><span>Total Donation:</span> <span>€{{ total|floatformat:2 }}</span></li>
                     </ul>
                     <div class="cart-btn mt-100">
