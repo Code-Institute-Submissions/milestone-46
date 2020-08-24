@@ -43,11 +43,25 @@
 
                                 {% for item in bag_items %}
 
+
                                 <!-- Item Image -->
                                 <td class="cart_product_img">
-                                    <a href="{{ item.antiquity.image.url }}"><img src="{{ item.antiquity.image.url }}"
-                                            alt="{{ item.name }}"></a>
+
+                                    {% if item.antiquity.image %}
+
+                                    <a class="gallery_img" href="{{ item.antiquity.image.url }}"><img
+                                            src="{{ item.antiquity.image.url }}" alt="{{ item.name }}"></a>
+
+                                    {% else %}
+
+                                    <a class="gallery_img" href="{% static 'images/core_img/no_image_1.jpg' %}"><img
+                                            src="{% static 'images/core_img/no_image_1.jpg' %}"
+                                            alt="No Image Available"></a>
+
+                                    {% endif %}
+
                                 </td>
+
 
                                 <!-- Item Name -->
                                 <td class="cart_product_desc">
@@ -95,7 +109,7 @@
                                         id="remove_{{ item.item_id }}">Remove</a>
                                 </td>
                             </tr>
-                            
+
                             {% endfor %}
 
                             {% else %}

@@ -1,0 +1,91 @@
+[{
+        "pk": 1,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Sutton Hoo Helmet",
+            "value": 40,
+            "image": "artefact_suttonHooHelmet.jpg",
+            "antiquity_id": 29
+        }
+    },
+    {
+        "pk": 2,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Luxor",
+            "value": 260,
+            "image": "site_luxor.jpg",
+            "antiquity_id": 9
+        }
+    },
+    {
+        "pk": 3,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Machu Picchu",
+            "value": 280,
+            "image": "site_machuPicchu.jpg",
+            "antiquity_id": 6
+        }
+    },
+    {
+        "pk": 4,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Stonehenge",
+            "value": 100,
+            "image": "monument_stonehenge.jpg",
+            "antiquity_id": 12
+        }
+    },
+    {
+        "pk": 5,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Book of Kells",
+            "value": 40,
+            "image": "text_bookOfKells.jpg",
+            "antiquity_id": 35
+        }
+    },
+    {
+        "pk": 6,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Astrolobe",
+            "value": 40,
+            "image": "artefact_hebrewAstrolobe.jpg",
+            "antiquity_id": 26
+        }
+    },
+    {
+        "pk": 7,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Maoi",
+            "value": 70,
+            "image": "monument_maoi.jpg",
+            "antiquity_id": 13
+        }
+    },
+    {
+        "pk": 8,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Rosetta Stone",
+            "value": 40,
+            "image": "text_rosettaStone.jpg",
+            "antiquity_id": 36
+        }
+    },
+    {
+        "pk": 9,
+        "model": "latest_options.latest_option",
+        "fields": {
+            "name": "Uluru",
+            "value": 40,
+            "image": "monument_uluru.jpg",
+            "antiquity_id": 17
+        }
+    }
+]

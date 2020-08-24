@@ -8,122 +8,42 @@
 <div class="products-catagories-area clearfix">
     <div class="amado-pro-catagory clearfix">
 
-        <!-- Single Antiquity -->
+        {% for option in latest_options %}
+
+        {% if forloop.counter <= 8 %}
+
+        <!-- Latest Option -->
         <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 29 %}">
-                <img src="{% static 'images/latest_options/latest_option1.jpg' %}" alt="Latest Option 1">
+            <a href="{% url 'single_antiquity' option.antiquity_id %}">
+                <img src="{{ option.image.url }}" class="h-auto" alt="Latest Option {{ forloop.counter }}">
                 <!-- Hover Content -->
                 <div class="hover-content">
                     <div class="line"></div>
-                    <p class="donation-text">Donation €40</p>
-                    <h4 class="option-title">Sutton Hoo Helmet</h4>
+                    <p class="donation-text">Donation €{{ option.value }}</p>
+                    <h4 class="option-title">{{ option.name }}</h4>
                 </div>
             </a>
         </div>
 
-        <!-- Single Antiquity -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 9 %}">
-                <img src="{% static 'images/latest_options/latest_option2.jpg' %}" alt="Latest Option 2">
+        {% else %}
+
+        <!-- Latest Option Number 9: Displays on XL only -->
+        <div class="d-none d-xl-block single-products-catagory clearfix">
+            <a href="{% url 'single_antiquity' option.antiquity_id %}">
+                <img src="{{ option.image.url }}" class="h-auto" alt="Latest Option 9">
                 <!-- Hover Content -->
                 <div class="hover-content">
                     <div class="line"></div>
-                    <p class="donation-text">Donation €260</p>
-                    <h4 class="option-title">Luxor</h4>
+                    <p class="donation-text">Donation €{{ option.value }}</p>
+                    <h4 class="option-title">{{ option.name }}</h4>
                 </div>
             </a>
         </div>
 
-        <!-- Single Antiquity -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 6 %}">
-                <img src="{% static 'images/latest_options/latest_option3.jpg' %}" alt="Latest Option 3">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €280</p>
-                    <h4 class="option-title">Machu Picchu</h4>
-                </div>
-            </a>
-        </div>
+        {% endif %}
 
-        <!-- Single Antiquity -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 12 %}">
-                <img src="{% static 'images/latest_options/latest_option4.jpg' %}" alt="Latest Option 4">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €100</p>
-                    <h4 class="option-title">Stonehenge</h4>
-                </div>
-            </a>
-        </div>
+        {% endfor %}
 
-        <!-- Single Antiquity -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 35 %}">
-                <img src="{% static 'images/latest_options/latest_option5.jpg' %}" alt="Latest Option 5">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €40</p>
-                    <h4 class="option-title">Book of Kells</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Antiquity -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 26 %}">
-                <img src="{% static 'images/latest_options/latest_option6.jpg' %}" alt="Latest Option 6">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €40</p>
-                    <h4 class="option-title">Astrolobe</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Antiquity -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 13 %}">
-                <img src="{% static 'images/latest_options/latest_option7.jpg' %}" alt="Latest Option 7">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €70</p>
-                    <h4 class="option-title">Maoi</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Antiquity -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 36 %}">
-                <img src="{% static 'images/latest_options/latest_option8.jpg' %}" alt="Latest Option 8">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €40</p>
-                    <h4 class="option-title">Rosetta Stone</h4>
-                </div>
-            </a>
-        </div>
-
-        <!-- Single Antiquity -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' 17 %}">
-                <img src="{% static 'images/latest_options/latest_option9.jpg' %}" alt="Latest Option 9">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €80</p>
-                    <h4 class="option-title">Uluru</h4>
-                </div>
-            </a>
-        </div>
     </div>
 </div>
 <!-- Latest Options Area End -->
