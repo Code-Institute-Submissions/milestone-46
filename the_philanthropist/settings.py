@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'latest_options',
     'all_antiquities',
     'bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [

@@ -6,33 +6,47 @@
 <head>
 
     {% block meta %}
+
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
+    <!-- {% block extra_meta %}
+    {% endblock %} -->
 
     <!-- Favicon  -->
     <link rel="icon" href="{% static 'images/core_img/favicon.png' %}">
 
     {% block corecss %}
+
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     {% endblock %}
 
-    {% block extra_css %}
-    {% endblock %}
+    <!-- {% block extra_css %}
+    {% endblock %} -->
 
     {% block corejs %}
+
+    <!-- ##### jQuery ##### -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+
     {% endblock %}
 
-    {% block extra_js %}
-    {% endblock %}
+    <!-- {% block extra_js %}
+    {% endblock %} -->
 
     <!-- Title  -->
     <title>The Philanthropist {% block extra_title %} {% endblock %}</title>
@@ -91,7 +105,7 @@
             {% endif %}
 
             {% endwith %}
-            
+
             {% endfor %}
 
         </div>
@@ -314,18 +328,10 @@
     </footer>
     <!-- ##### Footer Area End ##### -->
 
-    <!-- ##### jQuery ##### -->
-    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
-    <!-- Popper js -->
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <!-- Bootstrap js -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- Plugins js -->
-    <script src="{% static 'js/plugins.js' %}"></script>
+    {% block postloadjs %}
+
     <!-- Active js -->
     <script src="{% static 'js/active.js' %}"></script>
-
-    {% block postloadjs %}
 
     <!-- Toast js -->
     <script type="text/javascript">
