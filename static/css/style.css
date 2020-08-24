@@ -41,8 +41,30 @@
 }
 
 .cart-fav-search a #total-text {
-    color: #fbb710 ;
+    color: #fbb710;
 }
+
+
+/* Toast Styles */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.toast-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5em;
+    border-radius: 5px;
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 
 /* Main Page Styles */
 

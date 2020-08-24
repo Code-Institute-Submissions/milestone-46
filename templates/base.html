@@ -65,9 +65,38 @@
     <div class="main-content-wrapper d-flex clearfix">
 
         {% if messages %}
-        <div class="message-container"></div>
-        {% endif %}
 
+        <div class="message-container">
+
+            {% for message in messages %}
+
+            {% with message.level as level %}
+
+            {% if level == 40 %}
+
+            {% include 'includes/toasts/toast_error.html' %}
+
+            {% elif level == 30 %}
+
+            {% include 'includes/toasts/toast_warning.html' %}
+
+            {% elif level == 25 %}
+
+            {% include 'includes/toasts/toast_success.html' %}
+
+            {% else %}
+
+            {% include 'includes/toasts/toast_info.html' %}
+
+            {% endif %}
+
+            {% endwith %}
+            
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
 
         <!-- Mobile Nav (max width 767px)-->
         <div class="mobile-nav">
@@ -285,7 +314,6 @@
     </footer>
     <!-- ##### Footer Area End ##### -->
 
-    {% block postloadjs %}
     <!-- ##### jQuery ##### -->
     <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
     <!-- Popper js -->
@@ -296,6 +324,14 @@
     <script src="{% static 'js/plugins.js' %}"></script>
     <!-- Active js -->
     <script src="{% static 'js/active.js' %}"></script>
+
+    {% block postloadjs %}
+
+    <!-- Toast js -->
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+
     {% endblock %}
 
 </body>
