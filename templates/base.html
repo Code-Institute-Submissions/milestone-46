@@ -42,9 +42,12 @@
 
     <!-- Bootstrap js -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    
+
     <!-- Plugins js -->
     <script src="{% static 'js/plugins.js' %}"></script>
+    
+    <!-- Stripe js -->
+    <script src="https://js.stripe.com/v3/"></script>
 
     {% endblock %}
 
@@ -154,7 +157,8 @@
                     <li class="{% if url_name == 'view_bag' %} active {% endif %}"><a
                             href="{% url 'view_bag' %}">Cart</a></li>
 
-                    <li class="{% if url_name == 'checkout' %} active {% endif %}"><a href="{% url 'checkout' %}">Checkout</a></li>
+                    <li class="{% if url_name == 'checkout' %} active {% endif %}"><a
+                            href="{% url 'checkout' %}">Checkout</a></li>
 
                     {% endwith %}
 
