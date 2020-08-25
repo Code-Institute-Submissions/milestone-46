@@ -7,43 +7,47 @@
 <!-- Latest Options Area Start -->
 <div class="products-catagories-area clearfix">
     <div class="amado-pro-catagory clearfix">
+        <div class="container-fluid m-0 p-0">
+            <div class="row m-0 p-0">
 
-        {% for option in latest_options %}
+                {% for option in latest_options %}
 
-        {% if forloop.counter <= 8 %}
+                {% if forloop.counter <= 8 %}
 
-        <!-- Latest Option -->
-        <div class="single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' option.antiquity_id %}">
-                <img src="{{ option.image.url }}" class="h-auto" alt="Latest Option {{ forloop.counter }}">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €{{ option.value }}</p>
-                    <h4 class="option-title">{{ option.name }}</h4>
+                <!-- Latest Option -->
+                <div class="col-12 col-md-6 col-lg-4 m-0 p-0 single-products-catagory clearfix">
+                    <a href="{% url 'single_antiquity' option.antiquity_id %}">
+                        <img src="{{ option.image.url }}" class="h-auto" alt="Latest Option {{ forloop.counter }}">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p class="donation-text">Donation €{{ option.value }}</p>
+                            <h4 class="option-title">{{ option.name }}</h4>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
 
-        {% else %}
+                {% else %}
 
-        <!-- Latest Option Number 9: Displays on XL only -->
-        <div class="d-none d-xl-block single-products-catagory clearfix">
-            <a href="{% url 'single_antiquity' option.antiquity_id %}">
-                <img src="{{ option.image.url }}" class="h-auto" alt="Latest Option 9">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p class="donation-text">Donation €{{ option.value }}</p>
-                    <h4 class="option-title">{{ option.name }}</h4>
+                <!-- Latest Option Number 9: Displays on XL only -->
+                <div class="col-12 col-md-6 col-lg-4 m-0 p-0 d-none d-lg-block single-products-catagory clearfix">
+                    <a href="{% url 'single_antiquity' option.antiquity_id %}">
+                        <img src="{{ option.image.url }}" class="h-auto" alt="Latest Option 9">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p class="donation-text">Donation €{{ option.value }}</p>
+                            <h5 class="option-title">{{ option.name }}</h5>
+                        </div>
+                    </a>
                 </div>
-            </a>
+
+                {% endif %}
+
+                {% endfor %}
+
+            </div>
         </div>
-
-        {% endif %}
-
-        {% endfor %}
-
     </div>
 </div>
 <!-- Latest Options Area End -->

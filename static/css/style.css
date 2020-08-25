@@ -55,7 +55,7 @@
 }
 
 .toast-container {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 0.5em;
     border-radius: 5px;
     overflow: visible;
@@ -134,6 +134,14 @@
     color: #e4e4e4;
 }
 
+.single-products-catagory .hover-content {
+    max-width: 68%;
+}
+
+.single-products-catagory .hover-content h5 {
+    max-width: 60%;
+}
+
 /* All Antiquities Styles */
 
 .product-topbar .golden-text p,
@@ -152,7 +160,15 @@
     background-color: transparent;
 }
 
+/* Cart Styles */
+
 .cart .form-row .col-12 .input-group {
     width: 30%;
     margin-left: 0.7em;
+}
+
+/* Checkout Styles */
+
+.cart-table-area .checkout_details_area .golden-text {
+    color: #fbb710;
 }

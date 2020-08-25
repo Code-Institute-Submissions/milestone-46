@@ -16,15 +16,17 @@
     <div class="container-fluid">
         <div class="row">
 
-            <!-- Checkout Information Section -->
-            <div class=" col-12 col-lg-6">
+            <!-- Checkout and Credit Card Sections -->
+            <div class=" col-12 col-lg-6 order-2 order-lg-1">
                 <div class="checkout_details_area mt-50 clearfix">
-
+                    
+                    <!-- Checkout Information Section -->
                     <div class="cart-title">
                         <h2>Checkout Information</h2>
                     </div>
 
                     <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+
                         {% csrf_token %}
 
                         <div class="row">
@@ -83,12 +85,55 @@
 
                             </div>
                         </div>
+
+                        <!-- Credit Card and Donate Section -->
+                        <div class="cart-summary">
+                            <h5>Credit Card Details</h5>
+
+                            <!-- A Stripe card element will go here -->
+                            <div class="mb-3 mt-3" id="card-element"></div>
+
+                            <!-- Used to display form errors -->
+                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                        </div>
+
+                        <div class="cart-summary">
+                            <h5>Cart Total</h5>
+                            <ul class="summary-table">
+                                <li><span>Cultures <br> Supported:</span> <span>
+
+                                        {% for item in bag_items %}
+
+                                        - {{ item.antiquity.culture }} <br>
+
+                                        {% endfor %}
+
+                                    </span></li>
+                                <li><span>Number of Items:</span> <span class="mr-4">{{ product_count }}</span></li>
+
+                                <li><span>Total Donation:</span> <span>€{{ total|floatformat:2 }}</span></li>
+                            </ul>
+
+                            <div class="payment-method submit-button">
+                                <div class="cart-btn mt-50">
+                                    <a href="{% url 'view_bag' %}" class="btn amado-btn profile-button w-100">Adjust
+                                        Cart</a>
+                                </div>
+                                
+                                <button id="submit-button" class="cart-btn btn amado-btn w-100 mt-5">
+                                    <span class="btn amado-btn w-100">Donate</span>
+                                </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
+
+
+
             </div>
 
             <!-- Cart Information Section -->
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 order-1 order-lg-2">
 
                 <div class="cart-title mt-50">
                     <h2>Chosen Donations</h2>
@@ -175,49 +220,6 @@
 
                         </tbody>
                     </table>
-                </div>
-            </div>
-
-            <!-- Credit Card and Donate Section -->
-            <div class="col-12 col-lg-10">
-
-                <div class="cart-summary">
-                    <h5>Credit Card Details</h5>
-
-                    <!-- A Stripe card element will go here -->
-                    <div class="mb-3 mt-3" id="card-element"></div>
-
-                    <!-- Used to display form errors -->
-                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                </div>
-
-                <div class="cart-summary">
-                    <h5>Cart Total</h5>
-                    <ul class="summary-table">
-                        <li><span>Cultures <br> Supported:</span> <span>
-
-                                {% for item in bag_items %}
-
-                                - {{ item.antiquity.culture }} <br>
-
-                                {% endfor %}
-
-                            </span></li>
-                        <li><span>Number of Items:</span> <span class="mr-4">{{ product_count }}</span></li>
-
-                        <li><span>Total Donation:</span> <span>€{{ total|floatformat:2 }}</span></li>
-                    </ul>
-
-                    <div class="payment-method submit-button">
-
-                        <div class="cart-btn mt-50">
-                            <a href="{% url 'view_bag' %}" class="btn amado-btn profile-button w-100">Adjust Cart</a>
-                        </div>
-                    </div>
-
-                    <div id="donate-button" class="cart-btn mt-50">
-                        <a href="#" class="btn amado-btn w-100">Donate</a>
-                    </div>
                 </div>
             </div>
 

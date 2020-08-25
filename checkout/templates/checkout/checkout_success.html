@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Checkout Information Section -->
+            <div class=" col-12 col-lg-6">
+                <div class="checkout_details_area mt-50 clearfix text-center">
+
+                    <div class="cart-title">
+                        <h2>Donation Gratefully Received!</h2>
+                    </div>
+
+                    <p class= "golden-text">See Below for Your Order Information</p>
+
+                    <p>The confirmation details will be sent to <span class= "golden-text">{{ order.email }}</span></p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
