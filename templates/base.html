@@ -36,10 +36,13 @@
 
     <!-- ##### jQuery ##### -->
     <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+
     <!-- Popper js -->
     <script src="{% static 'js/popper.min.js' %}"></script>
+
     <!-- Bootstrap js -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
     <!-- Plugins js -->
     <script src="{% static 'js/plugins.js' %}"></script>
 
@@ -151,7 +154,7 @@
                     <li class="{% if url_name == 'view_bag' %} active {% endif %}"><a
                             href="{% url 'view_bag' %}">Cart</a></li>
 
-                    <li><a href="#">Checkout</a></li>
+                    <li class="{% if url_name == 'checkout' %} active {% endif %}"><a href="{% url 'checkout' %}">Checkout</a></li>
 
                     {% endwith %}
 

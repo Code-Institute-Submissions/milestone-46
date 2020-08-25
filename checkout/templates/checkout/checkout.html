@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load bag_tools %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class=" col-12 col-lg-6">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                    <div class="cart-title">
+                        <h2>Checkout</h2>
+                    </div>
+
+                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="first_name" value=""
+                                    placeholder="First Name" required>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="last_name" value="" placeholder="Last Name"
+                                    required>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Email" value="">
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <select class="w-100" id="country">
+                                    <option value="usa">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="ger">Germany</option>
+                                    <option value="fra">France</option>
+                                    <option value="ind">India</option>
+                                    <option value="aus">Australia</option>
+                                    <option value="bra">Brazil</option>
+                                    <option value="cana">Canada</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <input type="text" class="form-control mb-3" id="street_address1"
+                                    placeholder="Address Line 1" value="">
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <input type="text" class="form-control mb-3" id="street_address2"
+                                    placeholder="Address Line 2" value="">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="city" placeholder="Town" value="">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <input type="number" class="form-control" id="phone_number" min="0"
+                                    placeholder="Phone No" value="">
+                            </div>
+
+                            <div class="col-12">
+                                <div class="custom-control custom-checkbox d-block mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+
+                                    <label class="custom-control-label" for="customCheck2">Create an
+                                        Account</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+
+                <div class="cart-title mt-50">
+                    <h2>Shopping Cart</h2>
+                </div>
+
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive text-center">
+                        <thead>
+
+                            {% if bag_items %}
+
+                            <tr>
+                                <th class="d-block d-lg-none d-xl-block">Image</th>
+
+                                <th>Name</th>
+
+                                <th>Quantity</th>
+
+                                <th>Value</th>
+
+                                {% else %}
+
+                                {% endif %}
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+
+                                {% if bag_items %}
+
+                                {% for item in bag_items %}
+
+
+                                <!-- Item Image -->
+                                <td class="cart_product_img d-block d-lg-none d-xl-block">
+
+                                    {% if item.antiquity.image %}
+
+                                    <a class="gallery_img" href="{{ item.antiquity.image.url }}"><img
+                                            src="{{ item.antiquity.image.url }}" alt="{{ item.name }}"></a>
+
+                                    {% else %}
+
+                                    <a class="gallery_img" href="{% static 'images/core_img/no_image_1.jpg' %}"><img
+                                            src="{% static 'images/core_img/no_image_1.jpg' %}"
+                                            alt="No Image Available"></a>
+
+                                    {% endif %}
+
+                                </td>
+
+
+                                <!-- Item Name -->
+                                <td class="cart_product_desc">
+                                    <h5><a
+                                            href="{% url 'single_antiquity' item.antiquity.id %}">{{ item.antiquity.name }}</a>
+                                    </h5>
+                                </td>
+
+                                <!-- Item Quantity -->
+                                <td class="cart_product_desc">
+                                    <h5>{{ item.quantity }}</h5>
+                                </td>
+
+                                <!-- Item Value -->
+                                <td class="price">
+                                    <span>€{{ item.antiquity.value | calc_subtotal:item.quantity }}</span>
+                                </td>
+                            </tr>
+
+                            {% endfor %}
+
+                            {% else %}
+
+                            <div class="cart-btn mt-50">
+                                <p class="lead">Your cart is empty</p>
+
+                                <a href="{% url 'all_antiquities' %}" class="btn amado-btn mt-30">Find Antiquities</a>
+                            </div>
+
+                            {% endif %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class=" col-12 col-lg-10">
+
+                <div class="cart-summary">
+                    <h5>Credit Card Details:</h5>
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3" id="card-element"></div>
+
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                </div>
+
+                <div class="cart-summary">
+                    <h5>Cart Total</h5>
+                    <ul class="summary-table">
+                        <li><span>Cultures <br> Supported:</span> <span>
+
+                                {% for item in bag_items %}
+
+                                - {{ item.antiquity.culture }} <br>
+
+                                {% endfor %}
+
+                            </span></li>
+                        <li><span>Number of Items:</span> <span class="mr-4">{{ product_count }}</span></li>
+
+                        <li><span>Total Donation:</span> <span>€{{ total|floatformat:2 }}</span></li>
+                    </ul>
+
+                    <div class="payment-method submit-button">
+
+                        <div class="cart-btn mt-50">
+                            <a href="{% url 'view_bag' %}" class="btn amado-btn profile-button w-100">Adjust Cart</a>
+                        </div>
+                    </div>
+
+                    <div class="cart-btn mt-50">
+                        <a href="#" class="btn amado-btn w-100">Checkout</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
