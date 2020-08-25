@@ -172,3 +172,12 @@
 .cart-table-area .checkout_details_area .golden-text {
     color: #fbb710;
 }
+
+.cart-table-area .checkout_details_area .centered-text {
+    text-align: center;
+}
+
+.order-details-container {
+    background-color: #f5f7fa;
+    padding: 30px 20px;
+}
