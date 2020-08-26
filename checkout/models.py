@@ -9,7 +9,7 @@ from all_antiquities.models import Antiquity
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    first_name = models.CharField(max_length=50, null=True, blank=False)
+    first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=True, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -57,8 +57,9 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.antiquity.value
+        self.lineitem_total = self.antiquity.value * self.quantity
+        super().save(*args, **kwargs)
 
     def __str__(self):
         # Maybe use antiquity name here
-        return f'Antiquity {self.antiquity.pk } on order {self.order.order_number}'
+        return f'Antiquity {self.antiquity.name } on order {self.order.order_number}'
