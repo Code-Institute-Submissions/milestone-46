@@ -1,1 +1,1 @@
-web: gunicorn the_philantropist.wsgi:application
+web: gunicorn the_philanthropist.wsgi:application
