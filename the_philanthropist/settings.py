@@ -48,14 +48,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    
+    # Admin Apps
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    
+    # Site Apps
     'home',
     'latest_options',
     'all_antiquities',
     'bag',
     'checkout',
+    'profiles',
+
+    # Other Apps
     'crispy_forms',
 ]
 
