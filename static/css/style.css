@@ -236,7 +236,6 @@
 
 .cart-table-area .row #profile-update-form #div_id_default_country .nice-select {
     width: 100%;
-    text-emphasis: bold;
     padding: 0 0 0 1em;
     color: #495057;
     font-size: medium;
@@ -246,4 +245,24 @@
     overflow: scroll;
     max-height: 30em;
     z-index: 99999;
+}
+
+/* Add Antiquity Styles */
+
+.cart-table-area .checkout_details_area form .add-antiquity-row div {
+    width: 100%;
+}
+
+.cart-table-area .checkout_details_area form .add-antiquity-row #div_id_category .nice-select {
+    width: 100%;
+    padding-top: 0;
+}
+
+.cart-table-area .checkout_details_area form .add-antiquity-row #div_id_category .nice-select .current  {
+    color: #495057;
+    font-size: medium;
+}
+
+.cart-table-area .checkout_details_area form .add-antiquity-row #div_id_category .nice-select .list {
+    overflow: scroll;
 }

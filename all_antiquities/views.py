@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Antiquity, Category, Period
+from .forms import AntiquityForm
 
 
 def all_antiquities(request):
@@ -80,3 +81,24 @@ def single_antiquity(request, antiquity_id):
     }
 
     return render(request, 'all_antiquities/single_antiquity.html', context)
+
+
+def add_antiquity(request):
+    """ Add an Antiquity to the site """
+    if request.method == 'POST':
+        form = AntiquityForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'You successfully added the antiquity to site.')
+            return redirect(reverse('add_antiquity'))
+        else:
+            messages.error(request, 'Failed to add antiquity. Please ensure the form is valid.')
+    else:
+        form = AntiquityForm()
+        
+    template = 'all_antiquities/add_antiquity.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
