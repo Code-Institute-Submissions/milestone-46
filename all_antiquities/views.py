@@ -95,10 +95,34 @@ def add_antiquity(request):
             messages.error(request, 'Failed to add antiquity. Please ensure the form is valid.')
     else:
         form = AntiquityForm()
-        
+
     template = 'all_antiquities/add_antiquity.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_antiquity(request, antiquity_id):
+    """ Edit a antiquity in the store """
+    antiquity = get_object_or_404(Antiquity, pk=antiquity_id)
+    if request.method == 'POST':
+        form = AntiquityForm(request.POST, request.FILES, instance=antiquity)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated antiquity!')
+            return redirect(reverse('single_antiquity', args=[antiquity.id]))
+        else:
+            messages.error(request, 'Failed to update antiquity. Please ensure that the form is valid.')
+    else:
+        form = AntiquityForm(instance=antiquity)
+        messages.info(request, f'You are editing {antiquity.name}')
+
+    template = 'all_antiquities/edit_antiquity.html'
+    context = {
+        'form': form,
+        'antiquity': antiquity,
     }
 
     return render(request, template, context)
