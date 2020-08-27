@@ -60,16 +60,18 @@
                     </div>
 
                     {% for item in order.lineitems.all %}
+                    
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-3">
-                                <strong>{{ item.product.name }}</strong>
+                                <strong>{{ item.antiquity.name }}</strong>
                             </p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-5">{{ item.quantity }} @ €{{ item.product.price }} each</p>
+                            <p class="mb-5">€{{ item.antiquity.value }} (x {{ item.quantity }})</p>
                         </div>
                     </div>
+
                     {% endfor %}
 
                     <div class="row centered-text mb-3">
@@ -132,7 +134,7 @@
                             <p class="mb-2"><strong>Country</strong></p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="mb-2">{{ order.Country }}</p>
+                            <p class="mb-2">{{ order.country }}</p>
                         </div>
                     </div>
 

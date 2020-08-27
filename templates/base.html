@@ -15,9 +15,6 @@
 
     {% endblock %}
 
-    <!-- {% block extra_meta %}
-    {% endblock %} -->
-
     <!-- Favicon  -->
     <link rel="icon" href="{% static 'images/core_img/favicon.ico' %}">
 
@@ -28,9 +25,6 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     {% endblock %}
-
-    <!-- {% block extra_css %}
-    {% endblock %} -->
 
     {% block corejs %}
 
@@ -52,6 +46,7 @@
 
     <!-- Template js -->
 
+    <!-- Remove if unnecessary!! PQ -->
     <!-- ##### jQuery ##### -->
     <!-- <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script> -->
 
@@ -68,9 +63,6 @@
     <script src="https://js.stripe.com/v3/"></script>
 
     {% endblock %}
-
-    <!-- {% block extra_js %}
-    {% endblock %} -->
 
     <!-- Title  -->
     <title>The Philanthropist {% block extra_title %} {% endblock %}</title>
@@ -174,9 +166,6 @@
 
                     <li class="{% if url_name == 'view_bag' %} active {% endif %}"><a
                             href="{% url 'view_bag' %}">Cart</a></li>
-
-                    <li class="{% if url_name == 'checkout' %} active {% endif %}"><a
-                            href="{% url 'checkout' %}">Checkout</a></li>
 
                     {% endwith %}
 
@@ -300,11 +289,15 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
                         <p class="copywrite">
-                            Copyright &copy;<script>
+                            Copyright &copy;
+                            <script>
                                 document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &
-                            Re-distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
+                            </script>
+                            | Site design by <a href="https://www.linkedin.com/in/paul-quinn-9b91b5162/" target="_blank">Paul Quinn</a>
+                            
+                            | Template by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+
+                            | Re-distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
                         </p>
 
                     </div>
@@ -337,10 +330,6 @@
 
                                         <li class="nav-item">
                                             <a class="nav-link" href="{% url 'view_bag' %}">Cart</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Checkout</a>
                                         </li>
                                     </ul>
                                 </div>

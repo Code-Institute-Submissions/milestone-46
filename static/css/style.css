@@ -181,3 +181,15 @@
     background-color: #f5f7fa;
     padding: 30px 20px;
 }
+
+.checkout_details_area #payment-form #country-field #div_id_country .nice-select {
+    width: 100%;
+    /* z-index: 99999; */
+    padding: 0 0 0 2.4em;
+}
+
+.checkout_details_area #payment-form #country-field #div_id_country .nice-select .list {
+    overflow: scroll;
+    max-height: 50em;
+    z-index: 99999;
+}
