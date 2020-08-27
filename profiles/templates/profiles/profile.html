@@ -17,15 +17,35 @@
             <!-- Profile Section -->
             <div class=" col-12 col-lg-6 order-2 order-lg-1">
                 <div class="checkout_details_area mt-50 clearfix">
-                    <div class="cart-title">
+                    <div class="cart-title text-center">
                         <h2>My Profile</h2>
                     </div>
-                    {{ profile }}
                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="profile-update-form" class="col-12 col-lg-6">
+                <h4 class="golden-text mb-4 text-center">Default Billing Information</h4>
+                <form action="{% url 'profile' %}" method="POST"></form>
+
+                {% csrf_token %}
+
+                {{ form|crispy }}
+
+
+                <button type="submit" class="add-cursor amado-btn mt-4 mb-5 w-100">Update</button>
+
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <h4 class="golden-text text-center">Order History</h4>
+
+                {{ orders }}
+
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock %}

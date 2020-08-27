@@ -184,7 +184,6 @@
 
 .checkout_details_area #payment-form #country-field #div_id_country .nice-select {
     width: 100%;
-    /* z-index: 99999; */
     padding: 0 0 0 2.4em;
 }
 
@@ -196,10 +195,51 @@
 
 /* Allauth Styles */
 
+.allauth-form-inner-content {
+    padding: 0;
+    margin: 0;
+}
+
+.allauth-form-inner-content #allauth-bg {
+    background-color: #f5f7fa;
+    padding: 2em;
+}
+
+@media (max-width: 767px) {
+    .allauth-form-inner-content #allauth-bg {
+        margin: 0 1em 2em 1em;
+    }
+}
+
+.allauth-form-inner-content #allauth-bg div {
+    margin-bottom: 1em;
+}
+
+.allauth-form-inner-content input {
+    border-radius: 0;
+}
+
 .allauth-form-inner-content .golden-text {
     color: #fbb710;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
     display: none;
+}
+
+
+/* Profile Page Styles */
+
+.cart-table-area .row #profile-update-form #div_id_default_country .nice-select {
+    width: 100%;
+    text-emphasis: bold;
+    padding: 0 0 0 1em;
+    color: #495057;
+    font-size: medium;
+}
+
+.cart-table-area .row #profile-update-form #div_id_default_country .nice-select .list {
+    overflow: scroll;
+    max-height: 30em;
+    z-index: 99999;
 }
