@@ -193,3 +193,13 @@
     max-height: 50em;
     z-index: 99999;
 }
+
+/* Allauth Styles */
+
+.allauth-form-inner-content .golden-text {
+    color: #fbb710;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
