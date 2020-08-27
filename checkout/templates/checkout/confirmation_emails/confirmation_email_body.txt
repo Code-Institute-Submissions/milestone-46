@@ -1,0 +1,18 @@
+Dear {{ order.first_name }},
+
+This is Bartholomew from The Philanthopist.
+We are writing to you to confirm that we have received your donation of {{ order.order_total }}.
+Each donation is so gratefully received by us, and I assure you that all proceeds will go directly to 
+help preserve the antiquities that you selected. See below for your order summary:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+Order Total: ${{ order.order_total }}
+
+If you have any issues, please contact us at {{ contact_email }}.
+
+Thanks again for your donation.
+
+Yours sincerely,
+
+Bartholomew.

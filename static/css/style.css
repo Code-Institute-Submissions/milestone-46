@@ -230,6 +230,10 @@
 
 /* Profile Page Styles */
 
+.cart-table-area .checkout_details_area .golden-text h2 {
+    color: #fbb710;
+}
+
 .cart-table-area .row #profile-update-form #div_id_default_country .nice-select {
     width: 100%;
     text-emphasis: bold;

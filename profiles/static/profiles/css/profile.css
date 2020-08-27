@@ -1,3 +1,9 @@
+
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
+
 .header-area .allauth-form-inner-content {
     background-color: #f5f7fa;
 }

@@ -15,7 +15,7 @@
         <div class="row">
 
             <!-- Checkout Information Section -->
-            <div class="col-12 col-lg-8 col-xl-7">
+            <div class="col-12 col-lg-9 col-xl-8">
                 <div class="checkout_details_area mt-50 clearfix text-center">
 
                     <div class="cart-title golden-text">
@@ -27,7 +27,8 @@
                     <p>The confirmation email will be sent to <span class="golden-text">{{ order.email }}</span></p>
                 </div>
             </div>
-            <div class="col-12 col-lg-8 col-xl-7">
+
+            <div class="col-12 col-lg-9 col-xl-8">
                 <div class="checkout_details_area order-details-container mt-25 clearfix">
                     <div class="row centered-text mb-3">
                         <div class="col">
@@ -60,7 +61,7 @@
                     </div>
 
                     {% for item in order.lineitems.all %}
-                    
+
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-3">
@@ -162,6 +163,26 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="col-12 col-lg-9 col-xl-8 text-center">
+
+                {% if from_profile %}
+
+                <div class="cart-btn mt-50">
+                    <a href="{% url 'profile' %}" class="btn amado-btn mt-20 ">Back to Profile</a>
+                </div>
+
+                {% else %}
+
+                <div class="cart-btn mt-50">
+                    <p class="lead">Do you want to continue browsing?</p>
+
+                    <a href="{% url 'all_antiquities' %}" class="btn amado-btn mt-20 ">Find Antiquities</a>
+                </div>
+
+                {% endif %}
+
             </div>
 
         </div>

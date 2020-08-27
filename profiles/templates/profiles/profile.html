@@ -17,7 +17,7 @@
             <!-- Profile Section -->
             <div class=" col-12 col-lg-6 order-2 order-lg-1">
                 <div class="checkout_details_area mt-50 clearfix">
-                    <div class="cart-title text-center">
+                    <div class="cart-title text-center golden-text">
                         <h2>My Profile</h2>
                     </div>
                 </div>
@@ -27,21 +27,78 @@
         <div class="row">
             <div id="profile-update-form" class="col-12 col-lg-6">
                 <h4 class="golden-text mb-4 text-center">Default Billing Information</h4>
-                <form action="{% url 'profile' %}" method="POST"></form>
+                <form action="{% url 'profile' %}" method="POST">
 
-                {% csrf_token %}
+                    {% csrf_token %}
 
-                {{ form|crispy }}
+                    {{ form|crispy }}
 
-
-                <button type="submit" class="add-cursor amado-btn mt-4 mb-5 w-100">Update</button>
-
+                    <button type="submit" class="add-cursor amado-btn mt-4 mb-5 w-100">Update</button>
+                </form>
             </div>
 
             <div class="col-12 col-lg-6">
-                <h4 class="golden-text text-center">Order History</h4>
+                <h4 class="golden-text text-center mb-4">Order History</h4>
 
-                {{ orders }}
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive text-center">
+                        <thead>
+                            <tr>
+                                <th>Order no.</th>
+
+                                <th>Date</th>
+
+                                <th>Items</th>
+
+                                <th>Order Total</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            {% for order in orders %}
+
+                            <tr>
+
+                                <!-- Order Number -->
+                                <td class="cart_product_desc">
+                                    <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                        {{ order.order_number|truncatechars:6 }}
+                                    </a>
+                                </td>
+
+                                <!-- Date -->
+                                <td class="cart_product_desc small">
+                                    {{ order.date }}
+                                </td>
+
+                                <!-- Items -->
+                                <td class="cart_product_desc">
+                                    <ul class="list-unstyled">
+
+                                        {% for item in order.lineitems.all %}
+
+                                        <li class="small">
+                                            {{ item.antiquity.name }} x {{ item.quantity }}
+                                        </li>
+
+                                        {% endfor %}
+
+                                    </ul>
+                                </td>
+
+                                <!-- Order Total -->
+                                <td class="price">
+                                    €{{ order.order_total }}
+                                </td>
+                            </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
         </div>
