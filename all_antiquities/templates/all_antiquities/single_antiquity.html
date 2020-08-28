@@ -92,15 +92,19 @@
                     <!-- Antiquity Meta Data -->
                     <div class="product-meta-data">
                         <div class="line"></div>
+
                         <p class="product-price">€{{ antiquity.value }}</p>
+
                         <a href="{% url 'single_antiquity' antiquity.id %}">
                             <h6>{{ antiquity.name }}</h6>
                         </a>
+
                         <!-- Antiquity Details -->
                         <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
                             <div class="ratings golden-text">
                                 <p>{{ antiquity.date }}</p>
                             </div>
+
                             <div class="review golden-text">
                                 <p>{{ antiquity.category.friendly_name }}</p>
                             </div>
@@ -108,12 +112,25 @@
 
                         <p><strong>Culture:</strong> {{ antiquity.culture }}</p>
 
-
                         <p><strong>Dimensions:</strong> {{ antiquity.dimensions }}</p>
 
                         <div class="short_overview my-5">
                             <p><strong>Description:</strong></p>
+
+                            {% if request.user.is_authenticated %}
+
                             <p>{{ antiquity.description }}</p>
+
+                            {% else %}
+
+                            <p>
+                                <a href="{% url 'account_login' %}" class="d-inline">Login</a>
+                                or <a href="{% url 'account_signup' %}" class="d-inline">Register</a>
+                                to read interesting information about this antiquity!
+                            </p>
+
+                            {% endif %}
+
                         </div>
                     </div>
 
@@ -129,7 +146,9 @@
                                 <!-- <p class="quantity-heading"><strong>Quantity:</strong></p> -->
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="number" class="form-control qty_input" name="quantity" value="1" min="1" max="10" data-item_id="{{ antiquity.id }}" id="id_qty_{{ antiquity.id }}">
+                                        <input type="number" class="form-control qty_input" name="quantity" value="1"
+                                            min="1" max="10" data-item_id="{{ antiquity.id }}"
+                                            id="id_qty_{{ antiquity.id }}">
                                     </div>
                                 </div>
                             </div>
@@ -139,14 +158,18 @@
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
-
-                        <!-- Original Attempt with no quantity = Remove if not used!! -->
-                        <!-- <div class="cart-btn d-flex mb-50">
-                            <button type="submit" class="btn amado-btn" name="addtocart" value="Add to Bag" data-item_id="{{ antiquity.id }}">Add to
-                                Cart</button>
-                        </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}"> -->
                     </form>
+
+                    {% if request.user.is_superuser %}
+
+                    <div class="mt-4">
+                        <a class="text-danger centered-text "
+                            href="{% url 'delete_antiquity' antiquity.id %}">Delete</a> |
+
+                        <a class="text-info" href="{% url 'edit_antiquity' antiquity.id %}">Edit</a>
+                    </div>
+
+                    {% endif %}
                 </div>
             </div>
         </div>

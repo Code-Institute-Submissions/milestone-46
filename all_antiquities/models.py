@@ -36,7 +36,7 @@ class Antiquity(models.Model):
     period = models.CharField(max_length=254)
     culture = models.CharField(max_length=254)
     dimensions = models.CharField(max_length=254, null=True, blank=True)
-    description = models.TextField(max_length=354)
+    description = models.TextField(max_length=500)
     value = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
     image2 = models.ImageField(null=True, blank=True)

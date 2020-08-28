@@ -88,9 +88,9 @@ def add_antiquity(request):
     if request.method == 'POST':
         form = AntiquityForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            antiquity = form.save()
             messages.success(request, 'You successfully added the antiquity to site.')
-            return redirect(reverse('add_antiquity'))
+            return redirect(reverse('single_antiquity', args=[antiquity.id]))
         else:
             messages.error(request, 'Failed to add antiquity. Please ensure the form is valid.')
     else:
@@ -126,3 +126,11 @@ def edit_antiquity(request, antiquity_id):
     }
 
     return render(request, template, context)
+
+
+def delete_antiquity(request, antiquity_id):
+    """ Delete a antiquity from the store """
+    antiquity = get_object_or_404(Antiquity, pk=antiquity_id)
+    antiquity.delete()
+    messages.success(request, 'Antiquity deleted!')
+    return redirect(reverse('all_antiquities'))

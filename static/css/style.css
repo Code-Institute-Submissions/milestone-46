@@ -33,7 +33,6 @@
     }
 }
 
-
 /* General Styles */
 
 .add-cursor {
@@ -158,6 +157,11 @@
 
 .main-content-wrapper .single-product-area .single_product_desc .cart .quantity-heading {
     background-color: transparent;
+}
+
+.product-meta-data .short_overview p .d-inline {
+    font-size: inherit;
+    color: #fbb710;
 }
 
 /* Cart Styles */
