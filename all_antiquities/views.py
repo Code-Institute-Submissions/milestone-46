@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -83,8 +84,13 @@ def single_antiquity(request, antiquity_id):
     return render(request, 'all_antiquities/single_antiquity.html', context)
 
 
+@login_required
 def add_antiquity(request):
     """ Add an Antiquity to the site """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only certified Philanthropists can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = AntiquityForm(request.POST, request.FILES)
         if form.is_valid():
@@ -104,8 +110,13 @@ def add_antiquity(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_antiquity(request, antiquity_id):
     """ Edit a antiquity in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only certified Philanthropists can do that.')
+        return redirect(reverse('home'))
+
     antiquity = get_object_or_404(Antiquity, pk=antiquity_id)
     if request.method == 'POST':
         form = AntiquityForm(request.POST, request.FILES, instance=antiquity)
@@ -128,8 +139,13 @@ def edit_antiquity(request, antiquity_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_antiquity(request, antiquity_id):
     """ Delete a antiquity from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only certified Philanthropists can do that.')
+        return redirect(reverse('home'))
+
     antiquity = get_object_or_404(Antiquity, pk=antiquity_id)
     antiquity.delete()
     messages.success(request, 'Antiquity deleted!')
