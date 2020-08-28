@@ -7,7 +7,20 @@ class AntiquityForm(forms.ModelForm):
 
     class Meta:
         model = Antiquity
-        fields = '__all__'
+        fields = (
+            'category',
+            'name',
+            'date',
+            'period',
+            'culture',
+            'dimensions',
+            'description',
+            'value',
+            'image',
+            'image2',
+            'image3',
+            'image4',
+            )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
