@@ -20,7 +20,7 @@
 
                             {% if bag_items %}
 
-                            <tr>
+                            <tr class="bigger-text">
                                 <th>Image</th>
 
                                 <th>Name</th>
@@ -65,8 +65,8 @@
 
                                 <!-- Item Name -->
                                 <td class="cart_product_desc">
-                                    <h5><a
-                                            href="{% url 'single_antiquity' item.antiquity.id %}">{{ item.antiquity.name }}</a>
+                                    <h5>
+                                        <a class="bigger-text" href="{% url 'single_antiquity' item.antiquity.id %}">{{ item.antiquity.name }}</a>
                                     </h5>
                                 </td>
 
@@ -84,12 +84,13 @@
                                                         <input type="number" class="form-control qty_input"
                                                             name="quantity" value="{{ item.quantity }}" min="0"
                                                             max="100" data-item_id="{{ item.antiquity.id }}"
-                                                            id="id_qty_{{ item.antiquity.id }}">
+                                                            id="id_qty_{{ item.antiquity.id }}" required>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="update-link text-info float-center add-cursor">Update</button>
+                                        <button type="submit"
+                                            class="bg-transparent border-0 mb-2 update-link text-info float-center add-cursor">Update</button>
                                     </form>
 
                                     <!-- Quantity Update Link -->
@@ -100,8 +101,9 @@
                                     <span>€{{ item.antiquity.value | calc_subtotal:item.quantity }}</span><br><br>
 
                                     <!-- Delete Item Link  -->
-                                    <a class="remove-item text-danger float-center add-cursor"
-                                        id="remove_{{ item.item_id }}">Remove</a>
+                                    <button type="submit"
+                                        class="remove-item text-danger bg-transparent border-0 float-center add-cursor bigger-text"
+                                        id="remove_{{ item.item_id }}">Remove</button>
                                 </td>
                             </tr>
 

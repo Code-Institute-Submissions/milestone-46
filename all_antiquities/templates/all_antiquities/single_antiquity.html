@@ -143,12 +143,12 @@
                             <div class="col-12">
 
                                 <!-- If Quantity not used = Remove!! PQ -->
-                                <!-- <p class="quantity-heading"><strong>Quantity:</strong></p> -->
+                                <p class="quantity-heading"><strong>Quantity:</strong></p>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="number" class="form-control qty_input" name="quantity" value="1"
                                             min="1" max="10" data-item_id="{{ antiquity.id }}"
-                                            id="id_qty_{{ antiquity.id }}">
+                                            id="id_qty_{{ antiquity.id }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -163,10 +163,11 @@
                     {% if request.user.is_superuser %}
 
                     <div class="mt-4">
-                        <a class="text-danger centered-text "
-                            href="{% url 'delete_antiquity' antiquity.id %}">Delete</a> |
+                        <a class="text-info bigger-text" href="{% url 'edit_antiquity' antiquity.id %}"> Edit</a>
+                        &nbsp; | &nbsp;
+                        <a class="text-danger bigger-text"
+                            href="{% url 'delete_antiquity' antiquity.id %}">Delete</a>
 
-                        <a class="text-info" href="{% url 'edit_antiquity' antiquity.id %}">Edit</a>
                     </div>
 
                     {% endif %}

@@ -64,6 +64,9 @@
     height: 2px;
 }
 
+.bigger-text {
+    font-size: inherit;
+}
 
 /* Main Page Styles */
 

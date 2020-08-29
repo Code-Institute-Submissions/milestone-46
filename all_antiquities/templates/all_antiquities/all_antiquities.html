@@ -164,10 +164,11 @@
 
                     {% if request.user.is_superuser %}
 
-                    <div class="mt-3">
-                        <a class="text-danger float-left" href="{% url 'delete_antiquity' antiquity.id %}">Delete</a>
-
-                        <a class="text-info float-right" href="{% url 'edit_antiquity' antiquity.id %}">Edit</a>
+                    <div class="mt-4">
+                        <a class="text-info bigger-text" href="{% url 'edit_antiquity' antiquity.id %}"> Edit</a>
+                        &nbsp; | &nbsp;
+                        <a class="text-danger bigger-text"
+                            href="{% url 'delete_antiquity' antiquity.id %}">Delete</a>
                     </div>
 
                     {% endif %}
