@@ -178,7 +178,8 @@
 
                     {% if request.user.is_superuser %}
 
-                    <a href="{% url 'add_antiquity' %}" id="add-product-btn" class="btn amado-btn mb-15">Add Antiquity</a>
+                    <a href="{% url 'add_antiquity' %}" id="add-product-btn" class="btn amado-btn mb-15">Add
+                        Antiquity</a>
 
                     {% endif %}
 
@@ -258,7 +259,9 @@
                 <!-- Newsletter Form -->
                 <div class="col-12 col-lg-6 col-xl-5">
                     <div class="newsletter-form mb-100">
-                        <form action="#" method="post">
+                        <!-- <form action="#" method="post"> -->
+                        <form onsubmit="return sendMail(this);">
+
                             <input type="email" name="email" class="nl-email" placeholder="Your E-mail">
 
                             <input type="submit" value="Subscribe">
@@ -293,8 +296,9 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
-                            | Site design by <a href="https://www.linkedin.com/in/paul-quinn-9b91b5162/" target="_blank">Paul Quinn</a>
-                            
+                            | Site design by <a href="https://www.linkedin.com/in/paul-quinn-9b91b5162/"
+                                target="_blank">Paul Quinn</a>
+
                             | Template by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 
                             | Re-distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a>
@@ -351,6 +355,16 @@
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
+
+    <!-- Js for EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_sidwnvCWhgSDRphSQk7JI");
+        })();
+    </script>
+    <script src="assets/js/sendEmail.js"></script>
 
     {% endblock %}
 
