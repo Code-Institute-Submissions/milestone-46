@@ -35,15 +35,31 @@
                             <li class="active" data-target="#product_details_slider" data-slide-to="0"
                                 style="background-image: url('{{ antiquity.image.url }}');">
                             </li>
+
+                            {% if antiquity.image2 %}
+
                             <li data-target="#product_details_slider" data-slide-to="1"
                                 style="background-image: url('{{ antiquity.image2.url }}');">
                             </li>
+
+                            {% endif %}
+
+                            {% if antiquity.image3 %}
+
                             <li data-target="#product_details_slider" data-slide-to="2"
                                 style="background-image: url('{{ antiquity.image3.url }}');">
                             </li>
+
+                            {% endif %}
+
+                            {% if antiquity.image4 %}
+
                             <li data-target="#product_details_slider" data-slide-to="3"
                                 style="background-image: url('{{ antiquity.image4.url }}');">
                             </li>
+
+                            {% endif %}
+
                         </ol>
                         <div class="carousel-inner">
                             <!-- Add an index loop to this and more images if there is time! PQ-->
@@ -52,21 +68,37 @@
                                     <img class="d-block w-100" src="{{ antiquity.image.url }}" alt="First slide">
                                 </a>
                             </div>
+
+                            {% if antiquity.image2 %}
+
                             <div class="carousel-item">
                                 <a class="gallery_img" href="{{ antiquity.image2.url }}">
                                     <img class="d-block w-100" src="{{ antiquity.image2.url }}" alt="Second slide">
                                 </a>
                             </div>
+
+                            {% endif %}
+
+                            {% if antiquity.image3 %}
+
                             <div class="carousel-item">
                                 <a class="gallery_img" href="{{ antiquity.image3.url }}">
                                     <img class="d-block w-100" src="{{ antiquity.image3.url }}" alt="Third slide">
                                 </a>
                             </div>
+
+                            {% endif %}
+
+                            {% if antiquity.image4 %}
+
                             <div class="carousel-item">
                                 <a class="gallery_img" href="{{ antiquity.image4.url }}">
                                     <img class="d-block w-100" src="{{ antiquity.image4.url }}" alt="Fourth slide">
                                 </a>
                             </div>
+
+                            {% endif %}
+
                         </div>
                     </div>
 
@@ -165,8 +197,7 @@
                     <div class="mt-4">
                         <a class="text-info bigger-text" href="{% url 'edit_antiquity' antiquity.id %}"> Edit</a>
                         &nbsp; | &nbsp;
-                        <a class="text-danger bigger-text"
-                            href="{% url 'delete_antiquity' antiquity.id %}">Delete</a>
+                        <a class="text-danger bigger-text" href="{% url 'delete_antiquity' antiquity.id %}">Delete</a>
 
                     </div>
 
