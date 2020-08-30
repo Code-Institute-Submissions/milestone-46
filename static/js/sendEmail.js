@@ -7,7 +7,7 @@ function sendMail(contactForm) {
             console.log("Email Sent!", response);
             swal({
                 title: "Your Email was Sent!",
-                text: "Thank you for subscribing to Elite Gourmet. \n We will be in touch with you shortly.",
+                text: "Thank you for subscribing to The Philanthropist. \n We will be in touch with you shortly.",
                 icon: "success",
                 button: "Return to Site",
             });
