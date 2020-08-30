@@ -146,6 +146,10 @@ else:
         }
     }
 
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://eysnehulduzyir:7f8a702cc7d106eb1c73dc87954409bb76b11886d2ec1fd4bac05da6f86c93d5@ec2-52-31-94-195.eu-west-1.compute.amazonaws.com:5432/dd86oub3oiji4f')
+# }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
