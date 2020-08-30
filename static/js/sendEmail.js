@@ -10,7 +10,7 @@ function sendMail(contactForm) {
                 text: "Thank you for subscribing to Elite Gourmet. \n We will be in touch with you shortly.",
                 icon: "success",
                 button: "Return to Site",
-              });
+            });
         },
         function (error) {
             console.log("Email Not Sent...", error);
@@ -19,7 +19,7 @@ function sendMail(contactForm) {
                 text: "We're sorry, there was an error! \n Please try again.",
                 icon: "error",
                 button: "Try Again",
-              });
+            });
         });
     return false;
 }
