@@ -24,8 +24,10 @@ There is a full overview of the design/development process below, along with an 
         * [The Authenticated Site User](#the-authenticated-site-user)
         * [The Site Administrator](#the-site-administrator)
     - [Design Documents](#design-documents)
-        * [Basic Wireframes](#basic-wireframes)
-        * [Database Schema](#database-schema)
+        * [Wireframes](#wireframes)
+        * [Mockups](#mockups)
+        <!-- If there is time!! NB -->
+        <!-- * [Database Schema](#database-schema) -->
     - [Design Choices](#design-choices)
         * [Images](#images)
         * [Colours](#colours)
@@ -123,40 +125,31 @@ There are different types of user which may visit the site, each with different 
 
 I used [**Adobe XD**](https://www.adobe.com/ie/products/xd.html) to design and create **Wireframes** for this site. For the database schema I used [**DBDiagram**](https://dbdiagram.io/). These documents can be found as PNGs (wireframes) and PDFs (schema) in the **Design Docs Folder**.
 
-#### Basic Wireframes
+#### Wireframes
 
-The basic **Wireframes** are available in 6 PNGs; one which shows the [**Main Menu Screens**](static/design_docs/wireframes/1_main_menu_screens.png), one for [**Classes Screens**](static/design_docs/wireframes/2_classes_screens.png), one for [**Races Screens**](static/design_docs/wireframes/3_races_screens.png), the [**Character Screens**](static/design_docs/wireframes/4_character_screens.png), the [**Game Screens**](static/design_docs/wireframes/5_game_screens.png), and an  [**Overview Wireframe**](static/design_docs/wireframes/wireframes_overview.png) with the UI relationship between each screen. Any colour used is for contrast only. Simple text headings were added to each element to denote its purpose. These overall [**Design Choices**](#design-choices) can be traced to the final deployed [**Website**](https://pq-original-fantasy-game.herokuapp.com/), with some changes (see [**Design Changes**](#design-changes)).
+The basic **Wireframes** are available in 8 PNGs; one which shows the [**Home Page**](static/design_docs/wireframes/home_page.png), one for [**Selected Products**](static/design_docs/wireframes/selected_products.png), one for a [**Shop**](static/design_docs/wireframes/shop.png) screen, the [**Single Item**](static/design_docs/wireframes/single_item.png) screen, the [**Shopping Cart**](static/design_docs/wireframes/shopping_cart.png) screen, one for [**Checkout**](static/design_docs/wireframes/checkout.png), [**Registration**](static/design_docs/wireframes/registration.png) and [**Login**](static/design_docs/wireframes/login.png). Any colour used is for contrast only. Simple text headings were added to each element to denote its purpose. These overall [**Design Choices**](#design-choices) can be traced to the final deployed [**Website**](https://pq-original-fantasy-game.herokuapp.com/), with some changes (see [**Design Changes**](#design-changes)).
 
+#### Mockups
+
+As the templae came with its own colour scheme that complimented the assets I had for the project, there was no need for full colour design mockups of the project.
+
+<!-- 
+If there is Time!! NB
 #### Database Schema
 
-The database in this project was non-relational, and therefore the actual schema is very simlple. It can be found [here](static/design_docs/database_schema.pdf) and it shows how the Race and Class creation routes feed into the character creation section.
+The database in this project was non-relational, and therefore the actual schema is very simple. It can be found [here](static/design_docs/database_schema.pdf) and it shows how the Race and Class creation routes feed into the character creation section. -->
 
 ### **Design Choices**
 
-The template was amended and shaped to match the overall aesthetic, allowing the image's colours to really shine through.??
-I used a Start Bootstrap theme to make this site called [Grayscale](https://startbootstrap.com/themes/grayscale/) (live site [here](https://startbootstrap.github.io/startbootstrap-grayscale/)). The mood and interplay between the theme elements seemed perfect for my project, particularly the Navbar and footer and general component stylings. The theme needs its [**Grayscale CSS**](static/css/grayscale.css) and [**JavaScript**](static/js/grayscale.js) to work, and I changed and added to these with my own [**CSS**](static/css/style.css).
+The template was amended and shaped to match the overall aesthetic, allowing the image's colours to really shine through. The template I used was called [Amado](https://colorlib.com/wp/template/amado/) (live site [here](https://colorlib.com/preview/theme/amado/)). It was created by [Colorlib](https://colorlib.com) and distributed by [Themewagon](https://themewagon.com/). The theme needs several of its own static files to work ([**CSS**](static/css/) and [**JavaScript**](static/js/)). I changed and added to the CSS with my own [**CSS**](static/css/style.css).
 
 #### Images
 
-I wanted a selection of high quality fantasy images for the site, which were atmospheric and epic and would create a mood of 1980s high fantasy. Where these images would be used was already decided in the design **Wireframes** (see [above](#basic-wireframes)). I found the art I sought  in various places (including [Pinterest](https://www.pinterest.ie/) and [Deviant Art](https://www.deviantart.com/)) as well as using some of my own assets (see below for full [**Credits List**](#credits)). All images were re-sized and compressed in [Photoshop](https://www.photoshop.com/en) before use.
-
-#### Colours
-
-I combined the **Grayscale Theme** colour scheme with the art I had prepared to create my colour palette. The elements colours gelled well with the [**Main Screen Background**](static/images/misc/main_page_bg.pdf) and the other art. In particular I made use of the Grayscale Button colour in the drop-down on scroll Navbar background for larger res, which complimented the art nicely. I altered various hover effect colours on elements to work with this. An opaque background colour was used in various elements to make text visible.
-
-The colours used for the site are:
-
-* Main Text Colour - #FFF
-* Navbar Text Colour - #00000099
-* Main Background Colour - #212529
-* Opaque Background Colour - rgba(0, 0, 0, 0.6)
-* Button Colour - #64a19d
-* Link Hover Colour - #C29C64
-* Footer Colour - #FFFFFFCCC
+I wanted a selection of high quality images for the site, which would accurately bring across the nature of the antiquities. Where these images would be used was already decided in the design **Wireframes** (see [above](#basic-wireframes)). I found the art I sought  in various places, including [Pinterest](https://www.pinterest.ie/), the [Museum of Ireland](https://www.museum.ie/en-IE/home) website, the [British Museum](https://www.britishmuseum.org/) website, the [BBC](https://www.bbc.com/) website and various museum and heritage website sources (see below for full [**Credits List**](#credits)). All images were re-sized and compressed in [Photoshop](https://www.photoshop.com/en) before use.
 
 #### Fonts
 
-The fonts I used were mostly from the [**Grayscale Theme**] such as **Great Vibes** **Varela Round**. The theme gets these from [**Google Fonts**](https://fonts.google.com/). I used basic **Serif** for the headings on the CRUD pages, as it suited the more gothic look of the [**CRUD Pages Background Image**](static/images/misc/crud_screen_bg.pdf).
+The fonts I used were mostly from the [**Amado Theme**] and were mostly of the Helvetica Neue font family. I combined the [**Napoli Initialen**](https://www.1001fonts.com/napoli-initialen-font.htm) font (from typographer [**Mediengestaltung**](https://www.1001fonts.com/users/steffmann/)) with Times New Roman to create the different iterations of the **Logo**.
 
 #### Icons
 
@@ -164,31 +157,33 @@ A [**Navicon**](static/images/misc/favicon.png) was created for the site using t
 
 ### **Design Changes From Wireframes**
 
-There were very little changes from the original design, other than the actual adventure game becoming a **Future Feature**. I decided to keep the fully responsive **Navbar** on all pages and views as it works so well, instead of having a collapsed **Burgerbun Nav**. The **Form Fields** in the **CRUD Pages** had different input fields on the finished site. The Stamina, Intelligence and Skill scores in the character creation screen were ommited, as they would not be necessary until the game is constructed. Finally, the actiual **Game UI HUD** was not included for the same reason. Instead, I have created a separate screen available from the **Start Game** page which contains a carousel of all the **Location Images** which will be used in the game.
-
+The main difference from the original design is the use of the navbar to the left of screen rather than along the top. The left sided nav was part of the **Amado** template design, and provides a robust wrapping element for the 'base.html' file, into which all block content could be inserted to the right. This made for easy insertion and application of the various views and pages throughout site. I also used the original home page of the template to make a **Latest Options** page on site, with a new **Landing Page** created to greet the user when they first visit the site.
 ___
 
 ## **Features**
 
-This is a multi-page site with 23 **Flask** app routes and 15 **HTML Templates**. The basic layout of the site was created using the [**Bootstrap 4**](https://getbootstrap.com) grid system (which is based on [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)), with alterations and additions. The core of this is the use of containers, rows and columns as classes for elements. All **anchor** links within text are fully navigable; they also change colour when hovered over. On **Desktop**, the separate Character, Race and Class elements alternate between ones with image left/text right and image right/text left. On **Mobile** devices the text appears above the image as you scroll down.
+This is a multi-page fullstack framework site, with 6 separate **Django** apps. The basic layout of the site was created using the [**Bootstrap 4**](https://getbootstrap.com) grid system (which is based on [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)), with alterations and additions. The core of this is the use of containers, rows and columns as classes for elements. All **anchor** links within text are fully navigable; they also change colour when hovered over.
 
 ### **Existing Features**
 
 #### Base HTML
 
-This the is main template for the site, which contains the Head and Footer and Navbar elements for each following route.
+This the is main template for the site, which contains the Head and Footer and Navbar elements for every other page, route or view. There is also a **Subscription** section which appears just above the **Footer** on each page.
 
 * **Navbar**  
 
-   This Navbar is the fully responsive **Grayscale Theme** navigation element, with some style changes. I amended the code with my own **CSS** to change the Navbar colours (text and background) on larger resolutions, and gave the links a longer hover transition. It contains links to the following screens: **Home**, **New Character**, **Saved Characters**, **List of Classes**, **List of Races** and **New Game**. As the main title does not display on smaller resolutions thanks to the Grayscale code (becoming a **Burgerbun** icon instead) I wrote code to include a **Home** link on smaller resolutions.
+   This Navbar is the fully responsive navigation element. It contains links to the following screens: **Home**, **Latest Options**, **All Antiquities**, **Cart**, links for **Login**, **Registration** and **Add Antiquity**. There is also a **Cart Total** icon, a **Search** icon and some **Social Media** links. I added my own logo to the top of the navbar to connect it with the overall site theme. This element collapses to a dropdown on smaller resolutions.
+
+* **Subscription**
+    This is a simple element where users can subscribe to the site via an **EmailJS** enabled form.
 
 * **Footer**  
 
-   The Footer is a basic element that contains a small **Copyright** text. It is designed to flow into the bottom of the main content elements of each page through a gradual **Linear-gradient**.
+   The Footer is a basic element that contains a small **Copyright** text and the site logo. The links in the navbar also appear here, and become a dropdown on smaller devices.
 
 #### Main Page
 
-The games opening page, containing the games title and the [**Main Page Background**](static/images/misc/main_page_bg.jpeg). There is also a CTA button asking the user to 'start a new game'.
+The games opening page, containing the main logo and some information about the site, along with the [**Landing Page Background**](static/images/misc/landing_page_bg.jpg) which is an image of the Parthenon in Athens at night. There is also a CTA button asking the user to 'Donate Now'.
 
 #### List of Classes/Races/Characters
 
