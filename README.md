@@ -1,6 +1,6 @@
 # **The Philanthropist**
 
-![The Philanthropist Banner Logo](static/images/core_img/logo_main.png "The Philanthropist Banner Logo")
+![The Philanthropist Banner Logo](static/images/core_img/logo.png "The Philanthropist Banner Logo")
 
 ## **Introduction**
 
