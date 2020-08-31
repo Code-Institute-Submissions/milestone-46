@@ -1,6 +1,6 @@
-# **ORIGINAL FANTASY GAME&trade;**
+# **The Philanthropist**
 
-![Original Fantasy Game Banner Logo](static/images/core_img/logo_main.png "Original Fantasy Game Banner Logo")
+![The Philanthropist Banner Logo](static/images/core_img/logo_main.png "The Philanthropist Banner Logo")
 
 ## **Introduction**
 
