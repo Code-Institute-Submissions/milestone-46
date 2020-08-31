@@ -166,7 +166,7 @@ This is a multi-page fullstack framework site, with 6 separate **Django** apps. 
 
 ### **Existing Features**
 
-#### Base HTML
+#### **Home App**
 
 This the is main template for the site, which contains the Head and Footer and Navbar elements for every other page, route or view. There is also a **Subscription** section which appears just above the **Footer** on each page.
 
@@ -181,55 +181,51 @@ This the is main template for the site, which contains the Head and Footer and N
 
    The Footer is a basic element that contains a small **Copyright** text and the site logo. The links in the navbar also appear here, and become a dropdown on smaller devices.
 
-#### Main Page
+#### **Main Page**
 
 The games opening page, containing the main logo and some information about the site, along with the [**Landing Page Background**](static/images/misc/landing_page_bg.jpg) which is an image of the Parthenon in Athens at night. There is also a CTA button asking the user to 'Donate Now'.
 
-#### List of Classes/Races/Characters
+#### **Latest Options App**
 
-The **List** screens fulfill the same purpose for Races, Classes and Characters. Here the user can see a selection of Classes/Races/Characters that they have already created or create a new item. There is also a set of **Preset Classes/Races** at the bottom of the List of Classes/Races pages to get the player started. From here the player can also **Edit** or **Delete** a Class/Race/Character.
+Here I amended the original **Amado** home page to create a new app for the latest antiquities to become available for donation. There is a separate 'latest_options' model and fixture which superusers can update from the admin panel, so the items can be refreshed when new ones become available for donation. Each option links through to the 'single_antiquity' view for that antiquity_id. I created an opaque background and styled the item's title information as it wasn't legible on the bright and detailed antiquity images (as opposed to the austere and white images used in the orginal template).
 
-#### Create/Edit Classes/Races
+#### **All Antiquities App**
 
-The Create and Edit screens and app routes are similar for both Classes and Races. These screens use the **CRUD Background Image**, which is a portait that suits the **Create/Edit Form's** shape. Here the player can create or edit a Class or Race using several criteria: **Class Name** (text input), **Class Information** (text input), **Class Stat Modifier** (dropdown choice) and **Class Image** (image carousel and dropdown choice). All of this information is stored in a **MongoDB** database for future use. The Class/Race Name and Stat Modifier information feeds directly into the **Form Fields** in the **Character Creation** screen.
+- All Antiquities View  
+This app adds an extra column between the navbar to the left and the antiquities information to the right. This is where you can sort by category or period. The antiquities section contains the image, value, date and name of each item, along with a shopping cart icon so you can add one donation to your cart. If logged in as a superuser, there are edit and delete options for each item.
 
-#### New Character/Edit Character
+- Single Antiquity View
+Here the user can see the antiquities information, including a 4-image carousel of photos, value, name, date and category. If the user is logged in, they also get a description. If not, there is a link instead to either login or register for the site. THere is a quantity input field so users can donate more than once for the same antiquity. The edit and delete options for superusers also appear here. 
 
-Similar to the Create/Edit Class/Race views, but with more field elements in the **Form**. These form elements are: Character Name, Character Information, Gender, Class, Race and Profile Image. The Class and Race information feeds into these fields from the database via JinJa template code (Class/Race Name + Class/Race Stat Modifier = Class/Race choice).
+#### **Bag App**
 
-#### New Game Page
+This page has two main sections: a Shopping Cart Detail section, with image, name, quantity and value of each item; a Cart Total section with a list of cultures supported, number of items and the total donation. Quantity can be changed for each item here, and the edit and delete options for supperusers appear again. The two sections appear side by side on larger resolutions, and with the cart detail above the cart total section on smaller resolutions.
 
-Similar aesthetically to the Main Page, here the player chooses to 'Pick a new character' or 'Select a saved character'. Accessible from either the Main Page CTA or the Navbar.
+#### **Checkout App**
 
-#### Start Game Page
+Similar to the Bag App, this page has two main sections: Chosen Donations section, where the user's order is detailed once more (but without the update, edit or delete options); Checkout Information section, where the user inputs their billing info and credit card details before checking out. The credit card section is linked to and enabled by **Stripe**. The form needs to be fully validated before submission. As with the Bag App, the two sections appear side by side on larger resolutions, and above one another on smaller resolutions.
 
-This page follows the same layout as the Main Page and New Game Page, but with a different background. This is the [**Start Game Background**](static/images/locations/beginning_path.jpg), which is an image of a path leading off into the distance. Here the player is asked to choose to 'Start with a selected characert' or 'Choose a different character'. Only accessible once the player has selected a Character.
+#### **Profiles App**
 
-#### Game Location 1
-
-What will be the opening location of the adventure, this screen uses one of the [**Game Locations Images**](static/images/locations/castle_in_distance.jpg) as a background. Here instead there is some text on an opaque background explaining that the game is under constuction. The player is can choose to 'Return to the main menu' or 'See the game location art'.
-
-#### Game Art Page
-
-This page uses the same background image as **Game Location 1**. It contains a **Game Location Art Carousel**, which is a collection of detailed fantasy landscapes. The user can return to the main screen from here using the button below the carousel.
+Once again this page has two main sections: Default Billing Information where the billing information the user has used for previous orders appears and can be updated; the Checkout information section, where each previous order appears with its order number, date, item name x quantity, and order total information visible. The user can click through via a link on the order number to the full details of the original order in the **Order History** view As with the last two apps above, the two sections appear side by side on larger resolutions, and above one another on smaller resolutions.
 
 ### **Future Features**
 
 * **Pagination**  
 
-    A soundtrack for the game is currently being composed by [**Corr Mhóna**](https://corrmona.bandcamp.com/) guitarist Martin Farrow. This will be multi-instrumental, and will be classical and atmospheric in tone.
+    The **Amado** template comes with pagination elements builtin, so it would be easy to add pagination as a future feature on the **All Antiquities** page.
 
-* **Sorting by Date through Age Field addition to antiquities.json**  
+* **Sorting by Date through Age Field addition to 'antiquities.json'**  
 
-    A full adventure is planned for the site, with a series of linked pages where the player can progress through the game locations, via simple Button prompts (Forward, Back, Left, Right), with scrolling text telling them about their surroundings.
+    Users can already sort by alphabetical order ascending and descending, as well as value of item ascending and descending. However, date is stored as a string in the 'antiquities.json' fixture, as it needs to use the **AD** and **BC** suffixes. A possible futreu addition to site would be to calculate the real-time age of each feature from the current year, add a field in the model that gives each antiquity its own **Age** value, and then sort through this field both ascending and descending.
 
 * **Full Subscription Service linked to Django ADmin backend**  
 
-    A designated collection in **MongoDB** will take the information for the player-selected Character. This will feed into the game GUI HUD, and will include the Character profile and stats. The character will also be able to roll for **Stamina**, **Skill**, **Luck** and **Intelligence** in the **Character Creation** screen. These stats will effect the players journey through the game in encounters with npcs and during player choices.
+    The **Sunscription Link** that appears in the 'base.html' at the bottom of every page is currently enabled by **EmailJS**. In future, the emails could be linked to the Django backend, enabling the admin superusers to deal with them in the admin login.
 
 * **Extra Information Wikipedia link available on Single Antiquities detail view upon login**  
 
-    A modal will come in to effect whenever the player encounters an enemy who they wish or have to fight. This will display the players stats vs. his enemy's stats and will show the outcome of the battle.
+    The item description on the **Single Antiquity** page is only viewable if you are a registered and logged in user of the site. A possible future feature would be to expand upon this, offering a longer description along with a link to the items **Wikipedia** page upon logging in.
 
 ___
 
@@ -255,17 +251,19 @@ All the technologies used to create this project are listed below, along with th
 
 [**Heroku**](https://www.heroku.com/) - The site was deployed live on **Heroku**.
 
+[**AWS**](https://aws.amazon.com/) - The site was deployed live on **Amazon Web Services** was used to store the media and static files for the Heroku enabled live version of the site.
+
 ### **Other Technologies**
+ 
+[**Django**](https://www.djangoproject.com/) - This is a fullstack site which uses the **Django** fullstack framework.
 
-[**Flask**](https://flask.palletsprojects.com/en/1.1.x/) - This project's template logic was created using **Flask**.
-
-[**MongoDB**](https://www.mongodb.com/) - This project's non-relational database is hosted by **MongoDB**.
+[**Postgres**](https://www.postgresql.org/) - This project's live relational database was ennabled by the open-source **Postgres** database.
 
 [**VSCode**](https://code.visualstudio.com) - All code for this site (including this README file), and all **Github** versioning of this code, was done with **VSCode**.
 
 [**Bootstrap**](https://getbootstrap.com) - The site was built using **Bootstrap's** grid system (**Bootstrap 4.5.0**).
 
-[**Start Bootstrap**](https://startbootstrap.com/) - I sourced my website template from this site.
+[**Colorlib**](https://colorlib.com/) - I sourced my website template from this site.
 
 ### **Design**
 
@@ -273,7 +271,7 @@ All the technologies used to create this project are listed below, along with th
 
 [**DBDiagram**](https://dbdiagram.io/) - The database schema for this site was designed with **DBDiagram**.
 
-[**Photoshop**](httpshttps://en.wikipedia.org/wiki/Adobe_Photoshopwww.gimp.org/) - I used **Photoshop** to edit all art and the **Favicon**.
+[**Photoshop**](httpshttps://en.wikipedia.org/wiki/Adobe_Photoshopwww.gimp.org/) - I used **Photoshop** to edit all images, the **Favicon** and the site **Logo**.
 
 ### **Validators**
 
@@ -359,13 +357,21 @@ I used the full gamut of responsivity in **Developer Tools**, but I also tested 
 
 ### **Media Queries**
 
-There are 8 separate **Media Query** resolution denominations in the [**CSS**](static/css/style.css) code. Every imaginable variation, from the smallest phone to the largest 4K monitor, was used to test the responsivity of the site. There are multiple elements being targeted and styled within several **Media Queries**.
+There are multiple **Media Query** resolution denominations in the templates css files, and I have several in my own [**CSS**](static/css/style.css) code also. Every imaginable variation, from the smallest phone to the largest 4K monitor, was used to test the responsivity of the site. There are multiple elements being targeted and styled within several **Media Queries**.
 
 ### **Validation**
 
-* [**HTML Code Checker**](https://validator.w3.org) - I checked my HTML with the **W3C Markup Validation Service**. It received the following messages:
+* [**HTML Code Checker**](https://validator.w3.org) - I checked my HTML with the **W3C Markup Validation Service**. All errors were caused by the validator having difficulty with Django template code. It received the following messages:
 
-  - Several "Error: Bad value for attribute href on element link: Illegal character in path segment: { is not allowed" warnings, for Jinja template language code across all HTML documents.
+  - Several "Error: Bad value for attribute href on element link: Illegal character in path segment: { is not allowed" warnings, for Django template language code across HTML documents in all Apps.
+
+  - Several "Error: Text not allowed in element ul in this context" errors, once again due to Django template code.
+
+  - The '{% load static %} code at the top of 'base.html' was the cause of these errors:
+    - "Error: Element head is missing a required instance of child element title".
+    - "Error: Stray doctype"
+    - "Error: Stray start tag html"
+    - "Fatal Error: Cannot recover after last error. Any further errors will be ignored."
 
   - A "Warning: Consider adding a lang attribute to the html start tag to declare the language of this document" for each template besides base.html.
 
@@ -373,52 +379,39 @@ There are 8 separate **Media Query** resolution denominations in the [**CSS**](s
 
   - An "Error: Element head is missing a required instance of child element title" for each template besides base.html.
 
-  - A "Warning: The first occurrence of ID delete_class was here" for each html document that have jinja urls that match element ids.
+  - Several "Error: Misplaced non-space characters inside a table" errors for Django 'if' loops.
+
+  - Several "Error: Bad character = after <. Probable cause: Unescaped <. Try escaping it as &lt;" errors for template language loop counters.
+
+  - Several "Error: Text not allowed in element ol in this context" messages for template language in ordered lists.
   
 * [**CSS Code Checker**](https://jigsaw.w3.org/css-validator) - I checked my CSS with the **W3C CSS Validation Service**. It received the following messages for vendor prefixes unknown to the validator:
 
-  - Style.css:
-    - Line 33: "moz-transition is an unknown vendor extension".
+  - Core-style.css: Received several messages for vendor prefixes unknown to the validator, and for importing style sheets at the top of the CSS document.
 
-    - Line 34: "webkit-transition is an unknown vendor extension".
+  - Nice-select.css: Received several messages for vendor prefixes unknown to the validator.
 
-    - Line 35: "o-transition is an unknown vendor extension".
+  - Owl-carousel.css: Received several messages for vendor prefixes unknown to the validator.
 
-    - Line 121: "moz-transition is an unknown vendor extension".
-
-    - Line 122: "webkit-transition is an unknown vendor extension".
-
-    - Line 123: "o-transition is an unknown vendor extension".
-
-  - Grayscale.css:
-    - 34 Errors; Mostly parse errors, with 2 property and one value error.
-
-    - 225 Warnings; For vendor prefixes unknown to the validator, for duplicate colour selection for one element, and for pseudo-elements unknown to the validator.
+  - style.css: Received a "Congratulations! No Error Found" message.
 
 * [**CSS Auto-prefixer**](https://autoprefixer.github.io) - The **CSS Online Auto-prefixer** provided a **Vendor Prefix** check for my code. I added all suggestions to my CSS.
 
-* [**Javascript Code Checker**](https://jshint.com/) - I checked the JavaScript in grayscale.js with **JS Hint**. It received the following messages:
+* [**Javascript Code Checker**](https://jshint.com/) - I checked my JavaScript **JS Hint**. It received the following messages:
 
-  - Metrics:
-    - "There are 4 functions in this file".
+  - Active.js: Two undefined variables (WOW and jQuery)
 
-    - "Function with the largest signature take 1 arguments, while the median is 0".
+  - Map-active.js: One undefined variables (Google)
 
-    - "Largest function has 6 statements in it, while the median is 4.5".
-
-    - "The most complex function has a cyclomatic complexity value of 5 while the median is 1.5".
-
-  - One warning
-    - "Line 18; Misleading line break before '?'; readers may interpret this as an expression boundary".
-
-  - One undefined variable:
-    - "Line 56; jQuery"
+  - SendEmail.js: Two undefined variables (emailjs and swal)
 
 * [**ARIA Checker**](http://wave.webaim.org/) - I used **Wave** (Web Accessibility Evaluation Tool) to check that my code was accessible to all users.  It received the following messages:
 
-  - 30 x Contrast Errors (Mostly reffering to the black background of the list pages and the main button colour on the landing page background)
-  - 10 x Alerts for Redundant Links (All of which were legitimate links)
-  - 15 x Suspicious Alternative Text (Referring to Fantasy names unknown to the validator)
+  - Several Errors referring to "Missing Empty Links", which are in fact Django template code links.
+
+  - Several Contrast Errors (Mainly referring to the the gold Amado-btn on white backgrounds)
+
+  - Alerts for missing form labels.
 
 ### **User Scenarios**
 
@@ -502,6 +495,17 @@ There are 8 separate **Media Query** resolution denominations in the [**CSS**](s
 1. Follow steps 1-6 in the previous section.
 2. Read the current update on the game in the **Game Location 1** screen.
 3. Come back later to review the actual game.
+
+### **Oustanding Bugs**
+
+#### Original Template JQuery and Bootstrap JS Files
+
+- The original JS effects used to compile the page used an older version of JQuery
+
+#### ??
+
+- 
+
 
 ___
 
@@ -617,6 +621,46 @@ ___
 
     8. Finally, select the *Open App* button the top right of the screen to see your deployed application.
 
+
+### **AWS** FINISH THIS ??
+
+* To push the code to a Heroku and deploy it dynamically, follow the steps below.
+
+    1. Following on from **Local** deployment step 6 above, type the command 'git status' in the command line and check that the console reads:
+
+        ``` bash
+        Nothing to commit
+        working tree clean
+        ```
+
+    2. Next, create an App on Heroku. Log in to your previous Heroku account or set up a new one, select the *New* button on the top right of the screen, then select *Create New App*.
+
+    3. Name your app (usinb only lowercase characters and dashes) and choose the regional server that best suits your location.
+
+    4. Next, login to your Heroku account from your CLI using:
+
+        ``` bash
+        heroku login
+        ```
+
+        A browser window should open up where you can click to login to your account through your local IDE. If this does not open, select the link on the CLI with *ctrl + c* and open it manually.
+
+    5. Link your existing Git repository to Heroku by adding Heroku as a remote repository:
+
+
+        ``` bash
+        heroku git:remote -a <project-name>
+        ```
+
+    6. From now on you can push your code from the CLI with:
+
+        ``` bash
+        git push heroku master
+        ```
+
+    7. Set the necessary *Environment Variables*. Select the *Settings* tab, and then select the *Config Vars* button. Enter the KEY - VALUE pairs for your config variables here (e.g. SECRET_KEY, IP, PORT etc.)
+
+    8. Finally, select the *Open App* button the top right of the screen to see your deployed application.
 ___
 
 ## **Credits**
@@ -644,5 +688,3 @@ Except where stated, all rights for the images used lies with their respective o
 
 * I would like to acknowledge the wonderful books by Ian Livinsgtone and Peter Jackson that I spent many happy hours reading when I was younger.
 * I would also like to acknowledge the contributions of [**Inkle Studios**](https://www.inklestudios.com/) and their computer game adaptions of the Sorcery! series of Fighting Fantasy books, which were an inspiration for this project.
-
-![Original Fantasy Game Location Banner](static/images/misc/banner_2.jpg "Original Fantasy Game Location Banner")

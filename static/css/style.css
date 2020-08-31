@@ -1,9 +1,18 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* My own custom styles are added below */
 
 /* Base Template Styles */
 
 #add-product-btn {
     background-color: #a5a7aa;
+    -webkit-transition: all ease-in 0.3s;
+    -o-transition: all ease-in 0.3s;
     transition: all ease-in 0.3s;
 }
 
@@ -265,7 +274,7 @@
     padding-top: 0;
 }
 
-.cart-table-area .checkout_details_area form .add-antiquity-row #div_id_category .nice-select .current  {
+.cart-table-area .checkout_details_area form .add-antiquity-row #div_id_category .nice-select .current {
     color: #495057;
     font-size: medium;
 }
