@@ -12,7 +12,7 @@ The site code can be viewed in this [**GitHub Repository**](https://github.com/a
 
 My name is **Paul Quinn** and I designed and developed this site in its entirety as part of my [**Fullstack Web Development Diploma**](https://codeinstitut#e.net/courses) with the **Code Institute**, Ireland. For my Milestone 4 project, I designed a fully functional fullstack e-commerce site called 'The Philanthropist'. The inspiration for this came from my background as an archaeologist and a love for history and our cultural heritage. The concept is that site users can donate an amount of money to their selected site, monument, artefact or text. These donations would then nominally go to a fictional charity called **The World Heritage Foundation™**, which would distribute the funds proportionately to help preserve the antiquities the user had selected.
 
-The site is built on a fullstack **Django** framework, is deployed live on **Heroku** and uses AWS S3 to host media and static files. Locally, it uses the built-in **Django Db.sqlite3** database, whereas when deployed live it uses **Heroku's Postgres** database. Their is full authentication functionality on site using Django's Allauth: admin superusers can add and edit  items in the **Antiquities** and **Latest Options** apps, whereas normal users can register and login, gaining access to antiquity descriptions and their order history in the **Checkout** and **Profile** apps.
+The site is built on a fullstack **Django** framework, is deployed live on **Heroku** and uses **AWS S3** to host media and static files. Locally, it uses the built-in **Django Db.sqlite3** database, whereas when deployed live it uses **Heroku's Postgres** database. Their is full authentication functionality on site using Django's Allauth: admin superusers can add and edit  items in the **Antiquities** and **Latest Options** apps, whereas normal users can register and login, gaining access to antiquity descriptions and their order history in the **Checkout** and **Profile** apps.
 
 There is a full overview of the design/development process below, along with an extensive outline of the testing process, future features, user stories, responsivity and deployment.
 
@@ -26,8 +26,6 @@ There is a full overview of the design/development process below, along with an 
     - [Design Documents](#design-documents)
         * [Wireframes](#wireframes)
         * [Mockups](#mockups)
-        <!-- If there is time!! NB -->
-        <!-- * [Database Schema](#database-schema) -->
     - [Design Choices](#design-choices)
         * [Images](#images)
         * [Colours](#colours)
@@ -95,7 +93,7 @@ ___
 
 ## **User Experience**
 
-I wanted the user experience to be clean and clear, where the sites purpose and concept was quickly and intuitively conveyed. I wanted the antiquities and the images of them to be the main focus of the site. I used a combination of a Bootstrap Template called [**Amado ??**](https://startbootstrap.com/)and a selection of high quality photos of the antiquities to achieve this. The chosen template already had a smooth and elegant UI which I could incorporate into my code. I tried to include extra non-template features (such as the edit and delete buttons for superusers or the use of the template home page as the **Latest Options App**) into the existing flow to the site.
+I wanted the user experience to be clean and clear, where the sites purpose and concept was quickly and intuitively conveyed. I wanted the antiquities and the images of them to be the main focus of the site. I used a combination of a Bootstrap Template called [**Amado**](https://startbootstrap.com/) and a selection of high quality photos of the antiquities to achieve this. The chosen template already had a smooth and elegant UI which I could incorporate into my code. I tried to include extra non-template features (such as the edit and delete buttons for superusers or the use of the template home page as the **Latest Options App**) into the existing flow to the site.
 
 ### **User Stories**
 
@@ -132,12 +130,6 @@ The basic **Wireframes** are available in 8 PNGs; one which shows the [**Home Pa
 #### Mockups
 
 As the templae came with its own colour scheme that complimented the assets I had for the project, there was no need for full colour design mockups of the project.
-
-<!-- 
-If there is Time!! NB
-#### Database Schema
-
-The database in this project was non-relational, and therefore the actual schema is very simple. It can be found [here](static/design_docs/database_schema.pdf) and it shows how the Race and Class creation routes feed into the character creation section. -->
 
 ### **Design Choices**
 
@@ -409,7 +401,11 @@ There are multiple **Media Query** resolution denominations in the templates css
 
   - Several Errors referring to "Missing Empty Links", which are in fact Django template code links.
 
-  - Several Contrast Errors (Mainly referring to the the gold Amado-btn on white backgrounds)
+  - Several Contrast Errors (Mainly referring to the the gold Amado-btn or gold on white backgrounds)
+
+  - Several Possible Heading Errors (Referring to the name of each antiquity in the All Antiquities view, which is not a heading.)
+
+  - Several messages about redundant links regarding links which are legitimate.
 
   - Alerts for missing form labels.
 
@@ -417,95 +413,75 @@ There are multiple **Media Query** resolution denominations in the templates css
 
 #### **Unauthenticated user looking to browse antiquities**
 
-* **Navbar Link**
-    1. Go to the **Main Page**.
-    2. Click on the **Navbar** on the top of the screen.
-    3. Click on the link to **New Game**.
-    4. On the **New Game Page**, either select to **'Create a new character'** or to **'Select a saved character'**.
-    5. If **'Create a new character'** is selected, create a new Character and press **Save**, then continue to the **Start Game** screen.
-    6. If **'Select a saved character'** is selected, choose a saved Character from the **List of Characters**, press **Save** and continue to the **Start Game** screen.
-    7. On the **Start Game** screen, choose to **'Start with selected Character'**.
-
-* **New Game Button**
-    1. From the **Main Page**, press the CTA **'Start a new game!' button**.
-    2. Follow steps 4-7 in **Navbar Link** above.
-
-* **List of Characters**
-    1. When browsing the **List of Characters** screen, choose one of the Characters by pressing the **Select Button** for that Character.
-    2. Follow steps 4-7 in **Navbar Link** above.
+1. Go to the **Main Page**.
+2. Click on the **Navbar** link to **All Antiquities** to the left of the page.
 
 #### **Unauthenticated user looking to make a donation**
 
-#### **New Class/Race**
-
 1. Go to the **Main Page**.
-2. Click on the **Navbar** on the top of the screen.
-3. Click on the links to either **List of Classes** or **List of Races**.
-4. Select the **'Create a new class/race' button** at the top of the screen.
-5. Create a new Class/Race by entering information into the form fields. Press **Save** to save it to the database and have it display on the **List of Classes/Races** page.
+2. Click on the **Navbar** link to **All Antiquities** to the left of the page.
+3. Select some Antiquities to donate too, either by clicking the cart iocon on a particular item, or clicking to view the antiquity's details in the **Single Antiquity** view and choosing a quantity of donations.
+4. Select either the **Cart** option or the cart icon in the navbar.
+5. On the **Cart** page review the order and then select **Checkout**.
+5. Enter billing and credit card information and select donate.
 
 #### **Unauthenticated user trying to register for an account**
 
-* **New Game Button**
-    1. From the **Main Page**, press the CTA **'Start a new game!'** button.
-    2. On the **New Game Page**, select the **'Create a new character' button**.
-    3. Create a new Character by entering information into the form fields. Press **Save** to save it to the database and have it display on the **List of Characters** page.
-
-* **List of Characters Link**
-    1. When browsing the **List of Characters** screen, press the **'Create a new character' button** at the top of the screen.
-    2. Create a new Character by entering information into the form fields. Press **Save** to save it to the database and have it display on the **List of Characters** page.
-
-* **Navbar Options**
-    1. Alternatively, from the **Main Page**, click on the **Navbar** on the top of the screen.
-    2. Select either the **New Character**, **Saved Character** or **New Game** links.
-    3. For **New Character**, create a new Character by entering information into the form fields, then press **Save**.
-    4. For **Saved Characters** follow the steps in **List of Characters** above.
-    5. For **New Game** follow the steps in **New Game Button** above.
+1. Go to the **Main Page**.
+2. Click on the **Register** button to the left of the page.
+3. Enter registration details and select **Sign Up**.
+4. Find the confirmation email in your inbox.
+5. Go to the link and select confirm email.
 
 #### **Authenticated user trying to login**
 
-* **Navbar Link**
-    1. Go to the **Landing Page** section.
-    2. Click on the **Navbar** on the top of the screen.
-    3. Click on the links to either **List of Classes**, **List of Races** or **Saved Characters**.
-    4. For your the Class/Race/Character, press the **Edit Button** for that item.
-    5. Edit the form fields on the **Edit** page, and press the **Save Button**.
-
-* **On Screen UI Buttons**
-    1. While browsing the **List of Classes**, **List of Races** or **Saved Characters** screens, follow steps 4-5 in the previous section.
+1. Go to the **Main Page**.
+2. Click on the **Login** button to the left of the page.
+3. Enter login details and select **Sign In**.
 
 #### **Authenticated user trying to view profile information**
 
-1. On the Main Page, select **'Start New Game'**.
-2. On the **New Game Page**, either select to **'Create a new character'** or to **'Select a saved character'**.
-3. If **'Create a new character'** is selected, created a new Character and press **Save**, then continue to the **Start Game** screen.
-4. If **'Select a saved character'** is selected, choose a saved Character from the **List of Characters**, press **Save** and continue to the **Start Game** screen.
-5. On the **Start Game** screen, choose to **'Start with selected Character'**.
-6. On **Game Location 1** screen, press the **'See game location art'** button.
-7. Use the **Carousel** to browse the **Location Art**.
+1. Go to the **Main Page**.
+2. Click on the **Login** button to the left of the page.
+3. Enter login details and select the **My Profile** button to the left of page.
 
 #### **Site administrator looking to view backend information**
 
-1. Follow steps 1-6 in the previous section.
-2. Read the current update on the game in the **Game Location 1** screen.
-3. Come back later to review the actual game.
+1. Go to the **Main Page**.
+2. Add '/admin' to the end of the url in the browser.
+3. Enter admin login details.
 
-#### **Site administrator trying to add or edit an antiquity**
+#### **Site administrator trying to add an antiquity**
 
-1. Follow steps 1-6 in the previous section.
-2. Read the current update on the game in the **Game Location 1** screen.
-3. Come back later to review the actual game.
+1. Go to the **Main Page**.
+2. Click on the **Login** button to the left of the page and login as a superuser.
+3. Select the **Add Antiquity** button to the left of page.
+4. Add the items details and select **Save**.
+
+#### **Site administrator trying to edit an antiquity**
+
+1. Go to the **Main Page**.
+2. Click on the **Login** button to the left of the page and login as a superuser.
+3. Go to the **All Antiquities** page and select an item to edit, either by the links on the **All Antiquities** page or on the **Single Antiquity** details page.
+4. Edit the items details and select **Save**.
 
 ### **Oustanding Bugs**
 
 #### Original Template JQuery and Bootstrap JS Files
 
-- The original JS effects used to compile the page used an older version of JQuery
+- The original JS effects that came with the template files used an earlier version of JQuery. This meant that Bootstraps Toasts did not work. I used a CDN link to get th latest version of JQuery and the Bootstrap js links. This meant that the older functions in the template JS did not work on the **Latest Options** page. Instead, I used Bootstrap responsive classes to style the page so it had the same effect, iterating through the latest options json and creating an element for each.
 
-#### ??
+#### iPhone Scrolling Issue
 
-- 
+- On iPhones there is an issue with scrolling on the **Cart** screen. The screen would only scroll down when the user started swiping below the Shopping Cart heading. This was not seen on any other device.
 
+#### Stripe JS Browser Console Errors
+
+- Upon load in of the site there are three Stripe JS errors each time; these are with regard to fonts that Stripe uses (message= "Refused to load the font 'https://js.stripe.com/fonts/ProximaNova-Regular.otf' because it violates the following Content Security Policy directive: "font-src 'none'".") This does not seem to effect performance or the functionality of the site in any way.
+
+#### Failed bootstrap.min.css SourceMap Load
+
+- Upon load of site this error appears in the browser console: "DevTools failed to load SourceMap: Could not load content for http://127.0.0.1:8000/static/css/bootstrap.min.css.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE". I supplied a CDN link to the Bootstrap CSS and this error does not seem to cause any issues with the site.
 
 ___
 
@@ -513,7 +489,7 @@ ___
 
 ### **Local**
 
-* This project is deployed live on [**Heroku**](https://pq-original-fantasy-game.herokuapp.com/).
+* This project is deployed live on [**Heroku**](https://pq-the-philanthropist.herokuapp.com/).
 
 * You can run the code in your chosen local **Integrated Development Environment** (**IDE**, e.g. [**VS Code**](https://code.visualstudio.com), [**AWS CLoud9**](https://aws.amazon.com/cloud9)).
     1. Open the **Project Repository** in [**Github**](https://github.com/an-slua-sidhe/milestone-3).
@@ -621,70 +597,32 @@ ___
 
     8. Finally, select the *Open App* button the top right of the screen to see your deployed application.
 
-
-### **AWS** FINISH THIS ??
-
-* To push the code to a Heroku and deploy it dynamically, follow the steps below.
-
-    1. Following on from **Local** deployment step 6 above, type the command 'git status' in the command line and check that the console reads:
-
-        ``` bash
-        Nothing to commit
-        working tree clean
-        ```
-
-    2. Next, create an App on Heroku. Log in to your previous Heroku account or set up a new one, select the *New* button on the top right of the screen, then select *Create New App*.
-
-    3. Name your app (usinb only lowercase characters and dashes) and choose the regional server that best suits your location.
-
-    4. Next, login to your Heroku account from your CLI using:
-
-        ``` bash
-        heroku login
-        ```
-
-        A browser window should open up where you can click to login to your account through your local IDE. If this does not open, select the link on the CLI with *ctrl + c* and open it manually.
-
-    5. Link your existing Git repository to Heroku by adding Heroku as a remote repository:
-
-
-        ``` bash
-        heroku git:remote -a <project-name>
-        ```
-
-    6. From now on you can push your code from the CLI with:
-
-        ``` bash
-        git push heroku master
-        ```
-
-    7. Set the necessary *Environment Variables*. Select the *Settings* tab, and then select the *Config Vars* button. Enter the KEY - VALUE pairs for your config variables here (e.g. SECRET_KEY, IP, PORT etc.)
-
-    8. Finally, select the *Open App* button the top right of the screen to see your deployed application.
 ___
 
 ## **Credits**
 
 ### **Code Used**
 
-* **Grayscale Start Bootstrap Theme**  
+* **Amado Template**  
 
-    Source: https://startbootstrap.com/themes/grayscale/
-    Live Site: https://startbootstrap.github.io/startbootstrap-grayscale/
+The template used to create the site.
+
+- Source: https://colorlib.com/wp/template/amado/
+- Preview Site: https://colorlib.com/preview/#amado
+
+* **Boutique Ado**
+
+I learned so much while creating the above Code Institute mini-project. The HTML and CSS in The Philanthropist are largely my own dissection of the Amado template code into the various Django apps, but for the python needed to get such a complex site up and running I had to lean heavily on what I had learning in the Fullstack Frameworks and Django Module. I would like to acknowledge that here and give credit where credit is due.
 
 ### **Images Used**
 
-Except where stated, all rights for the images used lies with their respective owners. Art is merely used here for illustrative purposes in the context of this academic project. Any future professional deployment of the site will use only my own assets.
+All rights for the images used lies with their respective owners. Images used here for illustrative purposes only in the context of this academic project. Any future professional deployment of the site will use only my own assets.
 
 * Several images were sourced from [**Pinterest**](https://www.pinterest.ie/).
-* Several images were sourced from [**Deviant Art**](https://www.deviantart.com/)
-* Two fighting Fantasu gamebook covers were used: [Forest of Doom](https://en.wikipedia.org/wiki/The_Forest_of_Doom) and [Deathtrap Dungeon](https://en.wikipedia.org/wiki/Deathtrap_Dungeon)
-* The **Main Page Background** was created by [**Roger Dean**](https://www.rogerdean.com/)
-* The Class image of the Thief comes from the game of the same name by [**Looking Glass Studios**](https://en.wikipedia.org/wiki/Thief:_The_Dark_Project)
-* The Class image of the Warrior is by Simon Bisley, and comes from the 2000 A. D. comic [**Sláine**](https://en.wikipedia.org/wiki/Sl%C3%A1ine_(comics)) by Pat Mills.
-* I have also used my own assets in this project (e.g. the *CRUD Screen* background).
+* Several images were sourced from the [**Museum of Ireland**](https://www.museum.ie/en-IE/home) website.
+* Several images were sourced from the [**British Museum**](https://www.britishmuseum.org/) website.
+* Several images were sourced from the [**BBC**](https://www.bbc.com/) website.
 
 ### **Acknowledgements**
 
-* I would like to acknowledge the wonderful books by Ian Livinsgtone and Peter Jackson that I spent many happy hours reading when I was younger.
-* I would also like to acknowledge the contributions of [**Inkle Studios**](https://www.inklestudios.com/) and their computer game adaptions of the Sorcery! series of Fighting Fantasy books, which were an inspiration for this project.
+* I would like to acknowledge all the archaeologists I have worked besides over the years, and all those who strive to keep our cultural and archaeological heritage safe and available for the next generation.
